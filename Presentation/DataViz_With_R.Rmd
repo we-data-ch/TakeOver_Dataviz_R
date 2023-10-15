@@ -1,0 +1,214 @@
+---
+title: "Introduction à la Visualisation de Données et à la Grammaire des Graphiques avec R"
+author: "<br/><br/> David Munoz Tord <br/><br/> Vestin <br/><br/> Yvan"
+date: "<br/><br/> `r format(Sys.Date(), '%Y-%b-%d')`"
+output:
+  xaringan::moon_reader:
+    css: xaringan-themer.css
+    nature:
+      slideNumberFormat: "%current%"
+      highlightStyle: github
+      highlightLines: true
+      ratio: 16:9
+      countIncrementalSlides: true
+      titleSlideClass: ["left", "centre", "my-title"]
+---
+
+
+```{r setup, echo=FALSE}
+options(htmltools.dir.version = FALSE)
+knitr::opts_chunk$set(
+  dpi=300,
+  out.width = "100%",
+  cache = FALSE,
+  echo = FALSE,
+  message = FALSE, 
+  warning = FALSE,
+  hiline = TRUE
+)
+
+xaringanthemer::style_mono_accent(
+  base_color = "#1c5253",
+  header_font_google = xaringanthemer::google_font("Josefin Sans"),
+  text_font_google   = xaringanthemer::google_font("Montserrat", "300", "300i"),
+  code_font_google   = xaringanthemer::google_font("Fira Mono")
+)
+
+xaringanExtra::use_logo(
+  position = xaringanExtra::css_position(top = "2.5em", right = "1.5em"),
+  image_url = "https://wedata.ch/img/logo/wedata.png"
+)
+
+```
+
+<style>
+<!-- add styles manually -->
+.big_scroll {
+  height: 25pc;
+  overflow-y: scroll;
+}
+
+.med_scroll {
+  height: 20pc;
+  overflow-y: scroll;
+}
+
+.small_scroll {
+  height: 15pc;
+  overflow-y: scroll;
+}
+
+
+.startup {
+  padding: 40px 0px 0rem 0px !important;
+}
+
+.startup_center {
+  padding: 50px 0px 0rem 0px !important;
+}
+
+.div.blue { 
+  background-color:#1c5253 !important;
+  border-radius: 5px !important;
+  line-height: 70px;
+  padding: 0px 10px 0px 0px !important;
+  color: #3CBA7E !important;
+  font-size: 24px !important;
+  font-weight: bold;
+}
+
+
+.hljs-github .hljs {
+    background: white; !important;
+}
+
+
+
+</style>
+
+
+# Table des matières
+
+.startup_center[
+
+
+.div.blue[
+- Compréhension des Données et de l'Esthétique
+]
+
+.div.blue[
+- Couches de Graphiques et Visualisation Multidimensionnelle
+]
+
+
+.div.blue[
+- Personnalisation Avancée et Thèmes
+] 
+
+.div.blue[
+- Projets Pratiques
+] 
+
+]
+---
+
+
+
+
+```{r packages, results='hide', message=FALSE, include=FALSE, warning=FALSE}
+#this is to check to see if package are installed and if not to install them or just load them if they are installed!
+if(!require(pacman)) {install.packages(c("pacman", "remotes"))}
+
+pacman::p_load(dplyr, dbplyr, tidyverse, hrbrthemes, xaringanthemer)
+
+#The pacman package that can do this nicely. The function p_load in the package does this. The first line is just to ensure that pacman is installed.
+
+
+image_link <- function(image,url,...){
+  htmltools::a(
+    href=url,
+    htmltools::img(src=image,...)
+    )
+}
+```
+
+class: inverse center middle
+
+# Ressources
+
+.pull-left[
+
+```{r ,  fig.align="center"}
+urlImage <- "https://r4ds.hadley.nz/cover.jpg"
+url <- "https://r4ds.hadley.nz/data-visualize.html"
+image_link(urlImage,url,width="350px")
+
+```
+]
+
+
+.pull-right[
+```{r ,  fig.align="center"}
+urlImage <- "https://rkabacoff.github.io/datavis/img/cover.png"
+url <- "https://rkabacoff.github.io/datavis/"
+image_link(urlImage,url,width="300px")
+
+```
+]
+
+---
+
+# Fondamentaux
+
+.startup[
+
+]
+---
+
+# Coding Example
+
+.startup[
+
+.pull-left[
+
+```{r echo=TRUE, eval=FALSE}
+library(ggplot2)
+ggplot(diamonds) +
+  aes(cut, fill = cut) +
+  geom_bar(show.legend = FALSE) +
+  labs(
+    x = "Cut",
+    y = "Count",
+    title = "A Fancy diamonds Plot"
+  # ) 
+```
+]
+.pull-right[
+```{r fig.align="center", fig.width=10, fig.height=6}
+
+ggplot(diamonds) +
+  aes(cut, fill = cut) +
+  geom_bar(show.legend = FALSE) +
+  labs(
+    x = "Cut",
+    y = "Count",
+    title = "A Fancy diamonds Plot"
+  ) +
+  theme_xaringan(background_color = "#FFFFFF") +
+  scale_xaringan_fill_discrete()
+```
+]]
+
+
+
+
+---
+
+#  Iframe
+
+.startup[
+
+ <iframe src="http://example.com/" width="100%" height="500px" id="iframe1" marginheight="0" frameborder="0" onload='javascript:resizeIframe(this);'></iframe>
+ 
+]
+ 
