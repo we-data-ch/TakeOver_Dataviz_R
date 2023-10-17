@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="author" content="   David Munoz Tord    Vestin    Yvan" />
     <script src="DataViz_With_R_files/header-attrs/header-attrs.js"></script>
-    <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
+    <link rel="stylesheet" href="css/xaringan-themer.css" type="text/css" />
   </head>
   <body>
     <textarea id="source">
@@ -18,7 +18,7 @@ class: left, centre, my-title, title-slide
 ### <br/><br/> David Munoz Tord <br/><br/> Vestin <br/><br/> Yvan
 ]
 .date[
-### <br/><br/> 2023-Oct-15
+### <br/><br/> 2023-Oct-17
 ]
 
 ---
@@ -61,46 +61,6 @@ top:2.5em;right:1.5em;
 
 &lt;style&gt;
 &lt;!-- add styles manually --&gt;
-.big_scroll {
-  height: 25pc;
-  overflow-y: scroll;
-}
-
-.med_scroll {
-  height: 20pc;
-  overflow-y: scroll;
-}
-
-.small_scroll {
-  height: 15pc;
-  overflow-y: scroll;
-}
-
-
-.startup {
-  padding: 40px 0px 0rem 0px !important;
-}
-
-.startup_center {
-  padding: 50px 0px 0rem 0px !important;
-}
-
-.div.blue { 
-  background-color:#1c5253 !important;
-  border-radius: 5px !important;
-  line-height: 70px;
-  padding: 0px 10px 0px 0px !important;
-  color: #3CBA7E !important;
-  font-size: 24px !important;
-  font-weight: bold;
-}
-
-
-.hljs-github .hljs {
-    background: white; !important;
-}
-
-
 
 &lt;/style&gt;
 
@@ -111,20 +71,21 @@ top:2.5em;right:1.5em;
 
 
 .div.blue[
-- Compréhension des Données et de l'Esthétique
+- Grammaire des Graphiques
 ]
 
 .div.blue[
-- Couches de Graphiques et Visualisation Multidimensionnelle
+- Aesthetic Mapping 
 ]
 
 
 .div.blue[
-- Personnalisation Avancée et Thèmes
+- Visualisation Multidimensionnelle
+&lt;!-- Personnalisation Avancée et Thèmes --&gt;
 ] 
 
 .div.blue[
-- Projets Pratiques
+- Graphiques Interactifs et Projets Pratiques
 ] 
 
 ]
@@ -147,10 +108,49 @@ class: inverse center middle
 ]
 
 
+
+
+
 .pull-right[
-<a href="https://rkabacoff.github.io/datavis/">
-<img src="https://rkabacoff.github.io/datavis/img/cover.png" width="300px"/>
+<a href="http://www.ievbras.ru/ecostat/Kiril/R/Biblio_N/R_Eng/Wickham2016.pdf">
+<img src="https://m.media-amazon.com/images/I/51smGgbUUjL._SL1251_.jpg" width="300px"/>
 </a>
+]
+
+???
+- Hadley Wickham, le créateur de ggplot2, a écrit un livre sur la visualisation de données avec R, [R for Data Science](https://r4ds.had.co.nz/), qui est un excellent point de départ pour apprendre à utiliser ggplot2.
+
+---
+
+# Grammaire des Graphiques
+
+.startup[
+
+- La grammaire des graphiques est un framework pour construire des graphiques en couches, en utilisant des composants de base pour construire des graphiques plus complexes
+
+
+]
+
+.startup[
+
+# Pourquoi?
+
+- Framework agile pour l'exploration des données
+
+- Permet de créer des graphiques complexes avec peu de code
+
+- Géneralise facilement à de vaste ensemble de variables avec des hiérarchies complexes
+]
+
+---
+
+# GGplot2
+
+.startup[
+
+- GGplot2 est une implémentation de la grammaire des graphiques en R, crée par Hadley Wickham 
+- Disponible sur R [ggplot2](https://ggplot2.tidyverse.org/) et Python [plotnine](https://plotnine.readthedocs.io/en/v0.12.3/)
+
 ]
 
 ---
@@ -158,6 +158,8 @@ class: inverse center middle
 # Fondamentaux
 
 .startup[
+
+
 
 ]
 ---

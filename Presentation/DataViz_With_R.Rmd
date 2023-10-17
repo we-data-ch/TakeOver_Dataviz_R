@@ -4,7 +4,7 @@ author: "<br/><br/> David Munoz Tord <br/><br/> Vestin <br/><br/> Yvan"
 date: "<br/><br/> `r format(Sys.Date(), '%Y-%b-%d')`"
 output:
   xaringan::moon_reader:
-    css: xaringan-themer.css
+    css: css/xaringan-themer.css
     nature:
       slideNumberFormat: "%current%"
       highlightStyle: github
@@ -43,46 +43,6 @@ xaringanExtra::use_logo(
 
 <style>
 <!-- add styles manually -->
-.big_scroll {
-  height: 25pc;
-  overflow-y: scroll;
-}
-
-.med_scroll {
-  height: 20pc;
-  overflow-y: scroll;
-}
-
-.small_scroll {
-  height: 15pc;
-  overflow-y: scroll;
-}
-
-
-.startup {
-  padding: 40px 0px 0rem 0px !important;
-}
-
-.startup_center {
-  padding: 50px 0px 0rem 0px !important;
-}
-
-.div.blue { 
-  background-color:#1c5253 !important;
-  border-radius: 5px !important;
-  line-height: 70px;
-  padding: 0px 10px 0px 0px !important;
-  color: #3CBA7E !important;
-  font-size: 24px !important;
-  font-weight: bold;
-}
-
-
-.hljs-github .hljs {
-    background: white; !important;
-}
-
-
 
 </style>
 
@@ -93,20 +53,21 @@ xaringanExtra::use_logo(
 
 
 .div.blue[
-- Compréhension des Données et de l'Esthétique
+- Grammaire des Graphiques
 ]
 
 .div.blue[
-- Couches de Graphiques et Visualisation Multidimensionnelle
+- Aesthetic Mapping 
 ]
 
 
 .div.blue[
-- Personnalisation Avancée et Thèmes
+- Visualisation Multidimensionnelle
+<!-- Personnalisation Avancée et Thèmes -->
 ] 
 
 .div.blue[
-- Projets Pratiques
+- Graphiques Interactifs et Projets Pratiques
 ] 
 
 ]
@@ -122,7 +83,6 @@ if(!require(pacman)) {install.packages(c("pacman", "remotes"))}
 pacman::p_load(dplyr, dbplyr, tidyverse, hrbrthemes, xaringanthemer)
 
 #The pacman package that can do this nicely. The function p_load in the package does this. The first line is just to ensure that pacman is installed.
-
 
 image_link <- function(image,url,...){
   htmltools::a(
@@ -147,13 +107,52 @@ image_link(urlImage,url,width="350px")
 ]
 
 
+
+
+
 .pull-right[
 ```{r ,  fig.align="center"}
-urlImage <- "https://rkabacoff.github.io/datavis/img/cover.png"
-url <- "https://rkabacoff.github.io/datavis/"
+urlImage <- "https://m.media-amazon.com/images/I/51smGgbUUjL._SL1251_.jpg"
+url <- "http://www.ievbras.ru/ecostat/Kiril/R/Biblio_N/R_Eng/Wickham2016.pdf"
 image_link(urlImage,url,width="300px")
 
 ```
+]
+
+???
+- Hadley Wickham, le créateur de ggplot2, a écrit un livre sur la visualisation de données avec R, [R for Data Science](https://r4ds.had.co.nz/), qui est un excellent point de départ pour apprendre à utiliser ggplot2.
+
+---
+
+# Grammaire des Graphiques
+
+.startup[
+
+- La grammaire des graphiques est un framework pour construire des graphiques en couches, en utilisant des composants de base pour construire des graphiques plus complexes
+
+
+]
+
+.startup[
+
+# Pourquoi?
+
+- Framework agile pour l'exploration des données
+
+- Permet de créer des graphiques complexes avec peu de code
+
+- Géneralise facilement à de vaste ensemble de variables avec des hiérarchies complexes
+]
+
+---
+
+# GGplot2
+
+.startup[
+
+- GGplot2 est une implémentation de la grammaire des graphiques en R, crée par Hadley Wickham 
+- Disponible sur R [ggplot2](https://ggplot2.tidyverse.org/) et Python [plotnine](https://plotnine.readthedocs.io/en/v0.12.3/)
+
 ]
 
 ---
@@ -161,6 +160,8 @@ image_link(urlImage,url,width="300px")
 # Fondamentaux
 
 .startup[
+
+
 
 ]
 ---
