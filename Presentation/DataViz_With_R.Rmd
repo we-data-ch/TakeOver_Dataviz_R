@@ -202,7 +202,7 @@ On peut faire 7 Meta categories de graphiques: Distribution, Relation, Ranking, 
 
 ---
 
-#### Visualize the distribution of one or more numeric variables 
+#### Distribution: Visualiser la tendance d'une ou plusieurs variables numériques
 
 .pull-left-small[
 
@@ -247,7 +247,7 @@ Ordonner votre boxplot/violine par la médiane peut le rendre plus efficace
 
 ---
 
-#### Relation entre 2 variables numériques/continues
+#### Relation: entre 2 variables numériques/continues
 
 .pull-left-small[
 
@@ -314,7 +314,7 @@ La perspective est également la pire chose que l'on puisse faire à un graphiqu
 
 ---
 
-#### Comparer des valeurs numériques (unique ou moyenne) entre elles
+#### Ranking: Comparer des valeurs numériques (unique ou moyenne) entre elles
 
 .pull-left-small[
 
