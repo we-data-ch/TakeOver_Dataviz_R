@@ -1,0 +1,16 @@
+pacman
+dplyr
+dbplyr
+tidyverse
+ggplot2
+tibble
+tidyr
+readr
+purrr
+stringr
+forcats
+lubridate
+hrbrthemes
+xaringanthemer
+reshape2
+kableExtra

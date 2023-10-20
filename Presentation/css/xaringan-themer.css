@@ -313,7 +313,7 @@ table.dataTable.hover tbody tr:hover, table.dataTable.display tbody tr:hover {
 
 
 .startup {
-  padding: 40px 0px 0rem 0px !important;
+  padding: 10px 0px 0rem 0px !important;
 }
 
 .startup_center {
@@ -333,4 +333,29 @@ table.dataTable.hover tbody tr:hover, table.dataTable.display tbody tr:hover {
 
 .hljs-github .hljs {
     background: white; !important;
+}
+
+body {
+  line-height: 1.8; /* Adjust the value as needed */
+}
+
+
+.pull-left-large {
+  float: left;
+  width: 57%;
+}
+.pull-right-small {
+  float: right;
+  width: 37%;
+}
+
+.pull-left-small {
+  float: left;
+  width: 10%;
+}
+.pull-right-large {
+  padding: 30px 0px 0rem 0px !important;
+  line-height: 2.1;
+  float: right;
+  width: 87%;
 }

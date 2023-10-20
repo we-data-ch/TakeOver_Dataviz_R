@@ -1,7 +1,7 @@
 ---
 title: "Introduction à la Visualisation de Données et à la Grammaire des Graphiques avec R"
-author: "<br/><br/> David Munoz Tord <br/><br/> Vestin <br/><br/> Yvan"
-date: "<br/><br/> `r format(Sys.Date(), '%Y-%b-%d')`"
+author: " <br/>David Munoz Tord, Vestin, Iván"
+date: " <br/>  `r format(Sys.Date(), '%Y-%b-%d')`"
 output:
   xaringan::moon_reader:
     css: css/xaringan-themer.css
@@ -16,11 +16,11 @@ output:
 
 
 ```{r setup, echo=FALSE}
-options(htmltools.dir.version = FALSE)
+options(htmltools.dir.version = FALSE, warn = -1, message = -1, knitr.duplicate.label = 'allow')
 knitr::opts_chunk$set(
   dpi=300,
   out.width = "100%",
-  cache = FALSE,
+  cache = TRUE,
   echo = FALSE,
   message = FALSE, 
   warning = FALSE,
@@ -34,6 +34,11 @@ xaringanthemer::style_mono_accent(
   code_font_google   = xaringanthemer::google_font("Fira Mono")
 )
 
+custom_theme <- xaringanthemer::theme_xaringan(
+  background_color = "#FFFFFF",
+  text_font_size = 14
+)
+
 xaringanExtra::use_logo(
   position = xaringanExtra::css_position(top = "2.5em", right = "1.5em"),
   image_url = "https://wedata.ch/img/logo/wedata.png"
@@ -41,15 +46,27 @@ xaringanExtra::use_logo(
 
 ```
 
-<style>
-<!-- add styles manually -->
 
-</style>
+```{r packages-and-func, results='hide', message=FALSE, include=FALSE, warning=FALSE}
+#this is to check to see if package are installed and if not to install them or just load them if they are installed!
+if(!require(pacman)) {install.packages(c("pacman", "remotes"))}
+
+pacman::p_load(dplyr, dbplyr, tidyverse, hrbrthemes, xaringanthemer, kableExtra)
+
+#The pacman package that can do this nicely. The function p_load in the package does this. The first line is just to ensure that pacman is installed.
+
+
+#htmtools wrapper
+image_link <- function(image,url,...){
+  htmltools::a(
+    href=url,
+    htmltools::img(src=image,...)
+    )
+}
+```
 
 
 # Table des matières
-
-.startup_center[
 
 
 .div.blue[
@@ -70,27 +87,34 @@ xaringanExtra::use_logo(
 - Graphiques Interactifs et Projets Pratiques
 ] 
 
-]
+<!-- comments -->
+???
+
+Ce cours n'est pas une introduction à R, mais une introduction à la visualisation de données avec R. Il est donc nécessaire d'avoir une connaissance de base de R pour suivre ce cours. Si vous n'avez pas de connaissances de base en R, vous pouvez suivre le cours [Introduction à R](https://www.datacamp.com/courses/free-introduction-to-r) sur DataCamp.
+
+De plus, ce cours ne pourra pas etre une exaustif quant a l'utilisation de ggplot2 car cela pourrait prendres des jours, mais il vous donnera les bases pour commencer à explorer et à créer vos propres graphiques.
+
 ---
 
 
 
+# But
 
-```{r packages, results='hide', message=FALSE, include=FALSE, warning=FALSE}
-#this is to check to see if package are installed and if not to install them or just load them if they are installed!
-if(!require(pacman)) {install.packages(c("pacman", "remotes"))}
+- Tentative d'inciter les gens à en savoir plus par eux-mêmes
 
-pacman::p_load(dplyr, dbplyr, tidyverse, hrbrthemes, xaringanthemer)
+- Partager mon point de vue personnel sur la raison pour laquelle la grammaire des graphiques domine pour la plupart des ensembles de données
 
-#The pacman package that can do this nicely. The function p_load in the package does this. The first line is just to ensure that pacman is installed.
 
-image_link <- function(image,url,...){
-  htmltools::a(
-    href=url,
-    htmltools::img(src=image,...)
-    )
-}
+
+
+```{r ,  fig.align="left"}
+url <- "./img/graphs.png"
+image_link(url,url,width="1000px")
 ```
+
+
+
+---
 
 class: inverse center middle
 
@@ -101,12 +125,10 @@ class: inverse center middle
 ```{r ,  fig.align="center"}
 urlImage <- "https://r4ds.hadley.nz/cover.jpg"
 url <- "https://r4ds.hadley.nz/data-visualize.html"
-image_link(urlImage,url,width="350px")
+image_link(urlImage,url,width="300px")
 
 ```
 ]
-
-
 
 
 
@@ -114,61 +136,776 @@ image_link(urlImage,url,width="350px")
 ```{r ,  fig.align="center"}
 urlImage <- "https://m.media-amazon.com/images/I/51smGgbUUjL._SL1251_.jpg"
 url <- "http://www.ievbras.ru/ecostat/Kiril/R/Biblio_N/R_Eng/Wickham2016.pdf"
-image_link(urlImage,url,width="300px")
+image_link(urlImage,url,width="270px")
 
 ```
 ]
 
+
+<!-- comments -->
 ???
 - Hadley Wickham, le créateur de ggplot2, a écrit un livre sur la visualisation de données avec R, [R for Data Science](https://r4ds.had.co.nz/), qui est un excellent point de départ pour apprendre à utiliser ggplot2.
 
+
+
+
 ---
+
+class: inverse center middle
 
 # Grammaire des Graphiques
 
-.startup[
+---
+
+## Grammaire des Graphiques
+
 
 - La grammaire des graphiques est un framework pour construire des graphiques en couches, en utilisant des composants de base pour construire des graphiques plus complexes
 
 
-]
 
-.startup[
-
-# Pourquoi?
+## Pourquoi?
 
 - Framework agile pour l'exploration des données
 
 - Permet de créer des graphiques complexes avec peu de code
 
 - Géneralise facilement à de vaste ensemble de variables avec des hiérarchies complexes
-]
 
 ---
 
-# GGplot2
+class: inverse center middle
 
-.startup[
+# Dataviz: Théorie
 
-- GGplot2 est une implémentation de la grammaire des graphiques en R, crée par Hadley Wickham 
+---
+
+
+## Dataviz, un univers de possibilités
+
+- On va **essayer** de faire un aperçu général de tous les **genre** de graphiques que l'on peut faire. 
+
+  - **Distribution**: Histogramme, Densité, Boxplot, Violin, etc.
+  - **Relation**: Scatterplot, Corrélogramme, heatmap, etc.
+  - **Ranking**: Barplot, Spider chart, Parrallel, etc.
+  - **Evolution**: Line Chart, Area Chart, etc.
+  - **Partie d'un tout**: Treemap, Pie Chart, Dendogram, etc.
+  - **Cartographie**: Choropleth, Bubble Map, etc.
+  - **Réseau**: Network, Sankey, etc.
+
+
+<!-- comments-->
+
+???
+On peut faire 7 Meta categories de graphiques: Distribution, Relation, Ranking, Evolution, Partie d'un tout, Cartographie, Réseau.
+
+
+---
+
+#### Visualize the distribution of one or more numeric variables 
+
+.pull-left-small[
+
+```{r ,  fig.align="center"}
+url <- "./img/Distrib.png"
+image_link(url,url,width="200px")
+
+```
+]
+
+.pull-right-large[
+
+- **Violin plot**: un hybride entre un boxplot en boîte et un density plot
+
+<br>
+- **Density plot**: les proportions de valeurs dans un intervalle continu
+
+<br>
+- **Histogram**: la fréquence des données en utilisant des intervalles de largeur égale (bins)
+
+<br>
+- **Boxplot**:  résume la distribution des données (médiane, quartiles, valeurs aberrantes)
+
+]
+
+
+<!-- comments-->
+
+???
+
+- Les violons sont particulièrement adaptés lorsque la quantité de données est importante et qu'il est impossible de montrer des observations individuelles.
+
+- Les histogrammes et les diagrammes de densité sont tous deux utiles pour visualiser la distribution des données, mais ils montrent des choses légèrement différentes. Les histogrammes montrent les frequences, tandis que les diagrammes de densité montrent les proportions.
+
+- Un boxplot montre la distribution des données quantitatives d'une manière qui facilite les comparaisons entre les variables ou entre les niveaux d'une variable catégorielle.
+
+La ligne qui divise la boîte en deux parties représente la médiane. Les extrémités de la boîte indique les quartiles supérieur et inférieur. Les lignes extrêmes indiquent la valeur la plus élevée et la plus basse, apres cela on vois des  valeurs aberrantes. 
+/ Attention! Le boxplot cache la taille de l'échantillon de chaque groupe, il faut l'afficher avec une annotation ou la largeur de la boîte. / !
+
+Ordonner votre boxplot/violine par la médiane peut le rendre plus efficace
+
+
+---
+
+#### Relation entre 2 variables numériques/continues
+
+.pull-left-small[
+
+```{r ,  fig.align="center"}
+url <- "./img/Corre.png"
+image_link(url,url,width="200px")
+
+```
+]
+
+.pull-right-large[
+
+
+- **Scatter plot**: relation entre deux variables numériques
+
+<br>
+- **heatmap**: valeurs individuelles contenues dans une matrice sont représentées par des couleurs
+
+- **correlogram**:  une matrice, où chaque point représente la corrélation entre deux variables
+
+<br>
+- **bubble plot**:  un nuage de points avec une troisième variable numérique associée à la taille du cercle
+
+]
+
+
+<!-- comments-->
+
+???
+
+La Overplotting est l'erreur la plus fréquente lorsque la taille de l'échantillon est élevée.
+
+N'oubliez pas de montrer les sous-groupes si vous en avez.
+
+carte thermique : Il faut souvent normaliser les données
+
+Pensez aux échelles (log, sqrt, etc.) ! Et où elles commencent , a 0 ou autre chose ?
+
+heatmap : C'est un peu comme regarder un tableau de données depuis le haut.
+
+/ ! La palette de couleurs est importante / !
+
+N'oubliez pas une légende pour la taille des bulles 
+
+---
+
+#### Pourquoi les graphiques en 3D sont une mauvaise idée
+
+
+```{r ,  fig.align="right"}
+url <- "./img/failureCircle.png"
+image_link(url,url,width="800px")
+
+```
+
+<!-- commemnts -->
+
+???
+
+n'utilisez jamais le graphique à bulles 3D parce qu'il s'échelonne quadratiquement !
+
+La perspective est également la pire chose que l'on puisse faire à un graphique, car les objets les plus éloignés semblent plus petits, mais notre cerveau les perçoit comme étant plus grands qu'ils ne le sont.
+
+
+---
+
+#### Comparer des valeurs numériques (unique ou moyenne) entre elles
+
+.pull-left-small[
+
+```{r ,  fig.align="center"}
+url <- "./img/Ranking.png"
+image_link(url,url,width="200px")
+
+```
+]
+
+.pull-right-large[
+
+- **Barplot**: chaque valeur de la variable catégorielle est représentée par une barre
+
+<br>
+- **Spider plot**: chaque variable a son propre axe, tous les axes sont reliés au centre de la figure
+
+<br>
+- **Wordcloud**: affiche une liste de mots, l'importance de chacun étant indiquée par la taille ou la couleur de la police
+
+- **Parralel plot**: chaque observation est représentée par une ligne traversant une série d'axes parallèles, correspondant à une variable ou à une dimension spécifique 
+
+
+]
+
+
+<!-- comments-->
+
+???
+#Barplot vs histogramme
+Barplot a ne pas confondre avec un histogramme. 
+
+C-a-d -> la distance entre les barres n'a pas de sens, alors que la distance entre les barres dans un histogramme est importante.
+
+Des noms tres longs ? Pensez à une version horizontale.
+trier son barplot permet souvent de mieux comprendre la situation.
+
+
+Les lollipop plot sont souvent plus attrayants que les diagrammes en barres, où la barre est transformée en une ligne et un point, ce qui est plus attrayant et transmet aussi bien l'information tout en étant moins encombré. je recommande.
+
+Les wordcloud sont hype, mais ils déforment souvent la réalité et ne sont pas très effiace. Par exemple, les mots longs seront plus visibles etc..
+Utiliser plutôt un lolipop plot horizontal trier ?
+
+Le graphique parallèle permet de visualiser plusieurs dimensions à la fois. Il est souvent préférable au graphique en araignée, car les valeurs sont plus faciles à comparer lorsqu'elles sont disposées le long d'un seul axe vertical ou horizontal. 
+
+---
+
+class: inverse center middle
+
+# Implémentation: GGplot2 
+
+---
+
+## GGplot2 
+
+.pull-left-large[
+
+- GGplot2 est une implémentation de la grammaire des graphiques en R, crée par Hadley Wickham. 
+
+- Vous fournissez les données, dites à ggplot2 comment faire correspondre les variables à l'esthétique, quelles graphiques utiliser, et il s'occupe des détails.
+
 - Disponible sur R [ggplot2](https://ggplot2.tidyverse.org/) et Python [plotnine](https://plotnine.readthedocs.io/en/v0.12.3/)
 
+
+
+]
+
+
+
+
+.pull-right-small[
+```{r ,  fig.align="right"}
+
+url <- "https://camo.githubusercontent.com/a6cc89d06ac569b886318ed743f16cdbcf0f2fe7bce5804bdcd1c160b99797f2/687474703a2f2f692e696d6775722e636f6d2f4472496c522e706e67"
+image_link(url,url,width="270px")
+
+```
+]
+
+<!-- comments-->
+
+???
+
+Imaginer React vs Vanilla JS
+les gens peuvent trouver ca "trop compliquer" mais c'est plus facile a utiliser et plus puissant
+
+
+---
+
+## Syntaxe de GGplot2
+
+
+.pull-left-large[
+
+- **Data**: Les données à utiliser pour créer le graphique
+- **Aesthetic**: Les caractéristiques visuelles du graphique
+- **Geom**: La géométrie qui représente les données
+- **Scale**: Comment les caractéristiques visuelles sont converties en valeurs d'affichage
+- **Statistics**: Transformations statistiques. Comptes, Moyennes, etc.
+- **Coordinates**: Système numérique pour déterminer la position de la géométrie. Cartésien, Polaire, etc.
+- **Facets**: Diviser les données en sous-ensembles
+- **Theme**: Personnalisation des éléments non liés aux données
+
+]
+
+.pull-right-small[
+```{r ,  fig.align="right"}
+url <- "https://nbisweden.github.io/RaukR-2019/ggplot/presentation/ggplot_presentation_assets/gog.png"
+image_link(url,url,width="240px")
+
+
+url <- 'https://nbisweden.github.io/RaukR-2019/ggplot/presentation/ggplot_presentation_assets/syntax.png'
+
+image_link(url,url,width="370px")
+```
 ]
 
 ---
 
-# Fondamentaux
+class: inverse center middle
 
-.startup[
+# Familiarisation
 
+---
+
+class: inverse center middle
+
+# Familiarisation
+
+---
+
+
+## Données sur le taux de suicide (1985- 2016)
+
+```{r, echo=FALSE}
+
+##suicide rate data
+df <- read.csv("data/suicides.csv") 
+
+
+kable(df[1:100, ],format="html",escape = F, col.names = colnames(df)) %>% 
+  kable_styling() %>%
+  kableExtra::scroll_box(width = "100%", height = "400px")
+```
+
+
+<!-- comments-->
+
+???
+
+
+---
+## Basic R VS GGplot2
+
+.pull-left[
+```{r , eval=FALSE, echo=TRUE}
+
+plot(df$population, df$suicides_no) # Basic R
+```
+
+```{r ,  fig.align="left", out.width="400px", out.height="400px"}
+
+# Basic R 
+plot(df$population, df$suicides_no)
+
+```
+
+]
+
+.pull-right[
+```{r , eval=FALSE, echo=TRUE}
+ggplot(data=df, mapping=aes(x=population, y=suicides_no)) + 
+  geom_point() # ggplot2
+```
+
+
+```{r ,  fig.align="left", out.width="340px", out.height="340px"}
+
+# ggplot2
+ggplot(df, aes(x=population, y=suicides_no)) +
+  geom_point() +
+  theme_xaringan(background_color = "#FFFFFF")
+
+```
+
+]
+
+<!-- comments -->
+???
+ils sont tous les deux des graphiques de dispersion, 
+mais deja ggplot2 me parait plus facile a lire et a comprendre
+
+En quelque mots, le premier parametre est le dataframes, le deuxieme est aes qui est un objet qui contient les variables que l'on veut utiliser pour le graphique, ici x pour l'axe des abscisses et y pour l'axe des ordonnées,
+
+et le troisieme est la geometrie du graphique, ici un point
+
+---
+
+
+## Comment colorer les points par sexe?
+
+- Traditionnellement, on utilisait le fromat **wide** des données pour les graphiques groupés
+
+```{r , eval=T, echo=F}
+df_wide <- df %>% 
+  pivot_wider(values_from = c("population", "suicides_no"),
+              names_from = "sex",
+              id_cols = c("country", "year", "age"))
+
+kable(df_wide[1:100, ],format="html",
+      escape = F, col.names = colnames(df_wide)) %>% 
+  kable_styling(font_size=16) %>%
+  kableExtra::scroll_box(width = "100%", height = "400px")
+
+```
+
+<!-- comments  -->
+
+???
+
+---
+## Old school way
+
+.pull-left-large[
+```{r , eval=FALSE, echo=TRUE}
+# Basic R
+
+# First layer in one color (female)
+plot(df_wide$population_female, 
+     df_wide$suicides_no_female, col="blue") 
+
+# then  we overlay another layer (male)
+points(df_wide$population_male, 
+       df_wide$suicides_no_male, col="red") 
+```
+]
+
+.pull-right-small[
+
+```{r ,  fig.align="left", out.width="400px", out.height="400px"}
+
+# Basic R 
+plot(df_wide$population_male, df_wide$suicides_no_male, col="blue") #Basic R
+points(df_wide$population_female, df_wide$suicides_no_female, col="red") 
+
+```
+
+]
+
+<!-- comments  -->
+???
+Stupide et compliqué
+
+---
+
+## GGplot2 way
+
+- **ggplot2** utilise le format 'long' pour les graphiques groupés (reminder)
+
+- une columne = une variable !
+
+```{r, echo=FALSE}
+
+kable(df[1:100, ],format="html",escape = F, col.names = colnames(df)) %>% 
+  kable_styling() %>%
+  kableExtra::scroll_box(width = "100%", height = "300px")
+```
+
+
+---
+
+## Comment colorer les points par sexe?
+
+.pull-left[
+```{r , eval=FALSE, echo=TRUE}
+ggplot(df, aes(x=population, 
+               y=suicides_no, 
+               color=sex)) +
+geom_point()
+```
+]
+
+
+.pull-right[
+
+```{r ,  fig.align="left", out.width="500px", out.height="400px"}
+
+ggplot(df, aes(x=population, y=suicides_no, color=sex)) +
+  geom_point() +
+  custom_theme
+
+```
+
+]
+
+<!-- comments  -->
+???
+Deja la syntaxe est plus simple, on a pas besoin de specifier les variables a chaque fois, on peut les specifier une fois pour toute dans aes.
+
+On rajoute juste un nouveau mapping, ici "color" et bam tout le reste est fait pour nous
+
+---
+
+class: inverse center middle
+
+# Aesthetics 
+
+---
+
+## Aesthetics
+
+  -   **x** pour l'axe des abscisses
+  -   **y** pour l'axe des ordonnées
+  -   **color** pour la couleur (les bords)
+  -   **size** pour la taille
+  -   **shape** pour la forme
+  -   **alpha** pour la transparence
+  -   **linetype** pour le type de ligne
+  -   **fill** pour le remplissage
+  -   et plein d'autres encore...
+    
+<!-- comments-->
+
+???
+- **aes** est un objet qui contient les variables que l'on veut utiliser pour le graphique
+
+---
+
+
+## Colorer par pays? Easy
+
+.pull-left[
+```{r , eval=FALSE, echo=TRUE}
+ggplot(df, aes(x=population, 
+               y=suicides_no, 
+               color=country)) +
+geom_point()
+```
+]
+
+
+.pull-right[
+
+```{r ,  fig.align="left", out.width="500px", out.height="400px"}
+
+ggplot(df, aes(x=population, y=suicides_no, color=country)) +
+  geom_point() +
+  custom_theme
+
+```
+
+]
+
+<!-- comments  -->
+???
+Super easy on rmeplace juste le color aestic par la variable country
+
+La maniere traditionnelle de faire des graphiques groupés aurait demandé de recodé le tout
+
+---
+
+## Forme par pays? Pfff..
+
+.pull-left[
+```{r , eval=FALSE, echo=TRUE}
+ggplot(df, aes(x=population, 
+               y=suicides_no, 
+               shape=country)) +
+geom_point()
+```
+]
+
+
+.pull-right[
+
+```{r ,  fig.align="left", out.width="500px", out.height="400px"}
+
+ggplot(df, aes(x=population, y=suicides_no, shape=country)) +
+  geom_point() +
+  custom_theme
+
+```
+
+]
+
+<!-- comments  -->
+???
+Pff.. juste chnager color par shape !
+
+---
+
+class: inverse center middle
+
+# Geoms 
+
+---
+
+## Geoms 
+
+- Les **geoms** sont les élements géometrics qui vont reprensenter les données
+    -   ** geom_point()** pour les nuage de points
+    -  **geom_line()** pour les lignes
+    -   **geom_bar()** pour les barres
+    -   **geom_boxplot()** pour les boites à moustaches
+    -   **geom_histogram()** pour les histogrammes
+    -   **geom_density()** pour les densités
+    -   **geom_smooth()** pour les courbes de tendances
+    -  **geom_area()** pour les aires
+    - **geom_violin()** pour les violons
+    -   et plein d'autres encore...
+  
+  
+```{r ,  echo=TRUE, eval=FALSE}
+help.search("^geom_",package="ggplot2") 
+```
+
+
+<!-- comments-->
+
+???
+geom stands for geometric object 
+
+il y a des dizaines de geoms dans ggplot2, on va en voir quelques unes aujourd'hui
+
+---
+
+## Exemples
+
+```{r ,  fig.align="left", out.width="500px", out.height="400px"}
+url <- 'https://nbisweden.github.io/RaukR-2019/ggplot/presentation/ggplot_presentation_assets/geoms.png'
+
+image_link(url,url,width="1070px")
+```
+
+---
+
+## Regression par pays
+
+.pull-left[
+```{r , eval=FALSE, echo=TRUE}
+ggplot(df, aes(x=population, 
+               y=suicides_no, 
+               color=country)) +
+geom_point() + 
+geom_smooth() 
+# on rajoute une courbe de tendance
+```
+]
+
+
+.pull-right[
+
+```{r ,  fig.align="left", out.width="500px", out.height="400px"}
+
+ggplot(df, aes(x=population, 
+               y=suicides_no, 
+               color=country)) +
+geom_point(alpha=0.3) + 
+geom_smooth(method="lm", formula=y~x) +
+  custom_theme
+
+```
+
+]
+
+<!-- comments  -->
+???
+
+L'analogie est celle des genes et de l'environnement. L'aes est les genes, les geoms sont l'environnement.
+
+Dependant de l'environnement, les genes vont s'exprimer differement.
+
+---
+
+
+## Regression pour tous les pays
+
+
+
+
+.pull-left[
+```{r , eval=FALSE, echo=TRUE}
+ggplot(df, aes(x=population, 
+               y=suicides_no)) +
+geom_point(aes(color=country)) + 
+geom_smooth() 
+# on rajoute une courbe de tendance
+```
+
+- On peut séparer les geoms individuelement !
 
 
 ]
+
+
+.pull-right[
+
+```{r ,  fig.align="left", out.width="500px", out.height="400px"}
+
+ggplot(df, aes(x=population, 
+               y=suicides_no)) +
+geom_point(aes( color=country), alpha=0.3) + 
+geom_smooth(method="lm", formula=y~x) +
+  custom_theme
+
+```
+
+]
+
+<!-- comments  -->
+???
+En enlevent le color de aes, on peut le mettre dans geom_point et ca va colorer/grouper les points par les payes mais pas la courbe de tendance. 
+
+Elle reste globale.
+
+Attention l'ordre compte.
+
 ---
 
-# Coding Example
+class: inverse center middle
 
-.startup[
+# Stats
+
+---
+
+## Statistiques
+
+- On peut rajouter des statistiques sur les graphiques
+    -   **stat_smooth()** pour les courbes de tendances
+    -   **stat_summary()** pour les résumés statistiques
+    -   **stat_density()** pour les densités
+    -   **stat_ellipse()** pour les ellipses de confiance
+    -   **stat_qq()** pour les graphiques quantiles-quantiles
+    -   et plein d'autres encore...
+    
+---
+
+## Exemples
+
+
+.pull-left[
+
+- Les statistiques calculent de nouvelles variables à partir des données d'entrée. Les geoms ont des statistiques par défaut.
+
+```{r , eval=FALSE, echo=TRUE}
+
+ggplot(iris) + geom_bar(aes(x=Sepal.Length),
+                        stat="bin")
+
+ggplot(iris) + geom_bar(aes(x=Species),
+                        stat="count")
+
+ggplot(iris) + geom_bar(aes(x=Species,y=Sepal.Length),
+                        stat="identity")
+
+
+```
+
+]
+
+.pull-right[
+
+```{r ,  fig.align="left", out.width="500px", out.height="400px"}
+
+x <- ggplot(iris) + geom_bar(aes(x=Sepal.Length),stat="bin")
+y <- ggplot(iris) + geom_bar(aes(x=Species),stat="count")
+z <- ggplot(iris) + geom_bar(aes(x=Species,y=Sepal.Length),stat="identity")
+gridExtra::grid.arrange(x,y,z,nrow=1)
+
+```
+
+]
+
+---
+
+class: inverse center middle
+
+# Scales
+
+---
+
+## Chanher les échelles
+
+
+```{r , eval=FALSE, echo=TRUE}
+ggplot(df, aes(x=population, 
+               y=suicides_no)) +
+geom_point(aes( color=country), alpha=0.3) +
+scale_x_log10() +
+scale_y_log10() 
+```
 
 .pull-left[
 
@@ -195,13 +932,76 @@ ggplot(diamonds) +
     y = "Count",
     title = "A Fancy diamonds Plot"
   ) +
-  theme_xaringan(background_color = "#FFFFFF") +
+ custom_theme + 
   scale_xaringan_fill_discrete()
 ```
-]]
+]
+
+
+<!-- comments -->
+
+???
+
+scaling est très facile avec ggplot2
+
+---
+
+class: inverse center middle
+
+# Position
+
+---
+
+## Position
+
+- On peut changer la position des geoms
+    -   **position_dodge()** pour les barres
+    -   **position_jitter()** pour les points
+    -   **position_stack()** pour les barres empilées
+    -   **position_fill()** pour les barres empilées en pourcentage
+    -   **position_identity()** pour les points
+    -   et plein d'autres encore...
+    
+    s <- USArrests %>% mutate(state=rownames(.)) %>% slice(1:4) %>%
+                    gather(key=type,value=value,-state)
+p <- ggplot(us,aes(x=state,y=value,fill=type))
+p + geom_bar(stat="identity",position="stack")
+
+
+p + geom_bar(stat="identity",position="dodge")
 
 
 
+---
+
+class: inverse center middle
+
+# Facets
+
+---
+
+
+## Facettes
+
+Facetting in one dimensions
+
+wrap
+Facetting in two dimensions
+
+grid
+
+---
+class: inverse center middle
+
+# Interactivité
+
+---
+
+## Facile avec Plotly !
+
+p <- ggplot(iris,aes(x=Sepal.Length,y=Sepal.Width,col=Species))
+p1 <- p+geom_point()
+plotly::ggplotly(p1,width=400,height=300)
 
 ---
 

@@ -3,8 +3,10 @@
   <head>
     <title>Introduction à la Visualisation de Données et à la Grammaire des Graphiques avec R</title>
     <meta charset="utf-8" />
-    <meta name="author" content="   David Munoz Tord    Vestin    Yvan" />
+    <meta name="author" content=" David Munoz Tord, Vestin, Iván" />
     <script src="DataViz_With_R_files/header-attrs/header-attrs.js"></script>
+    <script src="DataViz_With_R_files/kePrint/kePrint.js"></script>
+    <link href="DataViz_With_R_files/lightable/lightable.css" rel="stylesheet" />
     <link rel="stylesheet" href="css/xaringan-themer.css" type="text/css" />
   </head>
   <body>
@@ -15,10 +17,10 @@ class: left, centre, my-title, title-slide
 # Introduction à la Visualisation de Données et à la Grammaire des Graphiques avec R
 ]
 .author[
-### <br/><br/> David Munoz Tord <br/><br/> Vestin <br/><br/> Yvan
+### <br/>David Munoz Tord, Vestin, Iván
 ]
 .date[
-### <br/><br/> 2023-Oct-17
+### <br/> 2023-Oct-20
 ]
 
 ---
@@ -59,15 +61,11 @@ top:2.5em;right:1.5em;
 })()</script>
 </div>
 
-&lt;style&gt;
-&lt;!-- add styles manually --&gt;
 
-&lt;/style&gt;
+
 
 
 # Table des matières
-
-.startup_center[
 
 
 .div.blue[
@@ -88,13 +86,33 @@ top:2.5em;right:1.5em;
 - Graphiques Interactifs et Projets Pratiques
 ] 
 
-]
+&lt;!-- comments --&gt;
+???
+
+Ce cours n'est pas une introduction à R, mais une introduction à la visualisation de données avec R. Il est donc nécessaire d'avoir une connaissance de base de R pour suivre ce cours. Si vous n'avez pas de connaissances de base en R, vous pouvez suivre le cours [Introduction à R](https://www.datacamp.com/courses/free-introduction-to-r) sur DataCamp.
+
+De plus, ce cours ne pourra pas etre une exaustif quant a l'utilisation de ggplot2 car cela pourrait prendres des jours, mais il vous donnera les bases pour commencer à explorer et à créer vos propres graphiques.
+
 ---
 
 
 
+# But
+
+- Tentative d'inciter les gens à en savoir plus par eux-mêmes
+
+- Partager mon point de vue personnel sur la raison pour laquelle la grammaire des graphiques domine pour la plupart des ensembles de données
 
 
+
+
+<a href="./img/graphs.png">
+<img src="img/graphs.png" width="1000px"/>
+</a>
+
+
+
+---
 
 class: inverse center middle
 
@@ -103,70 +121,3228 @@ class: inverse center middle
 .pull-left[
 
 <a href="https://r4ds.hadley.nz/data-visualize.html">
-<img src="https://r4ds.hadley.nz/cover.jpg" width="350px"/>
+<img src="https://r4ds.hadley.nz/cover.jpg" width="300px"/>
 </a>
 ]
-
-
 
 
 
 .pull-right[
 <a href="http://www.ievbras.ru/ecostat/Kiril/R/Biblio_N/R_Eng/Wickham2016.pdf">
-<img src="https://m.media-amazon.com/images/I/51smGgbUUjL._SL1251_.jpg" width="300px"/>
+<img src="https://m.media-amazon.com/images/I/51smGgbUUjL._SL1251_.jpg" width="270px"/>
 </a>
 ]
 
+
+&lt;!-- comments --&gt;
 ???
 - Hadley Wickham, le créateur de ggplot2, a écrit un livre sur la visualisation de données avec R, [R for Data Science](https://r4ds.had.co.nz/), qui est un excellent point de départ pour apprendre à utiliser ggplot2.
 
+
+
+
 ---
+
+class: inverse center middle
 
 # Grammaire des Graphiques
 
-.startup[
+---
+
+## Grammaire des Graphiques
+
 
 - La grammaire des graphiques est un framework pour construire des graphiques en couches, en utilisant des composants de base pour construire des graphiques plus complexes
 
 
-]
 
-.startup[
-
-# Pourquoi?
+## Pourquoi?
 
 - Framework agile pour l'exploration des données
 
 - Permet de créer des graphiques complexes avec peu de code
 
 - Géneralise facilement à de vaste ensemble de variables avec des hiérarchies complexes
-]
 
 ---
 
-# GGplot2
+class: inverse center middle
 
-.startup[
+# Dataviz: Théorie
 
-- GGplot2 est une implémentation de la grammaire des graphiques en R, crée par Hadley Wickham 
+---
+
+
+## Dataviz, un univers de possibilités
+
+- On va **essayer** de faire un aperçu général de tous les **genre** de graphiques que l'on peut faire. 
+
+  - **Distribution**: Histogramme, Densité, Boxplot, Violin, etc.
+  - **Relation**: Scatterplot, Corrélogramme, heatmap, etc.
+  - **Ranking**: Barplot, Spider chart, Parrallel, etc.
+  - **Evolution**: Line Chart, Area Chart, etc.
+  - **Partie d'un tout**: Treemap, Pie Chart, Dendogram, etc.
+  - **Cartographie**: Choropleth, Bubble Map, etc.
+  - **Réseau**: Network, Sankey, etc.
+
+
+&lt;!-- comments--&gt;
+
+???
+On peut faire 7 Meta categories de graphiques: Distribution, Relation, Ranking, Evolution, Partie d'un tout, Cartographie, Réseau.
+
+
+---
+
+#### Visualize the distribution of one or more numeric variables 
+
+.pull-left-small[
+
+<a href="./img/Distrib.png">
+<img src="img/Distrib.png" width="200px"/>
+</a>
+]
+
+.pull-right-large[
+
+- **Violin plot**: un hybride entre un boxplot en boîte et un density plot
+
+&lt;br&gt;
+- **Density plot**: les proportions de valeurs dans un intervalle continu
+
+&lt;br&gt;
+- **Histogram**: la fréquence des données en utilisant des intervalles de largeur égale (bins)
+
+&lt;br&gt;
+- **Boxplot**:  résume la distribution des données (médiane, quartiles, valeurs aberrantes)
+
+]
+
+
+&lt;!-- comments--&gt;
+
+???
+
+- Les violons sont particulièrement adaptés lorsque la quantité de données est importante et qu'il est impossible de montrer des observations individuelles.
+
+- Les histogrammes et les diagrammes de densité sont tous deux utiles pour visualiser la distribution des données, mais ils montrent des choses légèrement différentes. Les histogrammes montrent les frequences, tandis que les diagrammes de densité montrent les proportions.
+
+- Un boxplot montre la distribution des données quantitatives d'une manière qui facilite les comparaisons entre les variables ou entre les niveaux d'une variable catégorielle.
+
+La ligne qui divise la boîte en deux parties représente la médiane. Les extrémités de la boîte indique les quartiles supérieur et inférieur. Les lignes extrêmes indiquent la valeur la plus élevée et la plus basse, apres cela on vois des  valeurs aberrantes. 
+/ Attention! Le boxplot cache la taille de l'échantillon de chaque groupe, il faut l'afficher avec une annotation ou la largeur de la boîte. / !
+
+Ordonner votre boxplot/violine par la médiane peut le rendre plus efficace
+
+
+---
+
+#### Relation entre 2 variables numériques/continues
+
+.pull-left-small[
+
+<a href="./img/Corre.png">
+<img src="img/Corre.png" width="200px"/>
+</a>
+]
+
+.pull-right-large[
+
+
+- **Scatter plot**: relation entre deux variables numériques
+
+&lt;br&gt;
+- **heatmap**: valeurs individuelles contenues dans une matrice sont représentées par des couleurs
+
+- **correlogram**:  une matrice, où chaque point représente la corrélation entre deux variables
+
+&lt;br&gt;
+- **bubble plot**:  un nuage de points avec une troisième variable numérique associée à la taille du cercle
+
+]
+
+
+&lt;!-- comments--&gt;
+
+???
+
+La Overplotting est l'erreur la plus fréquente lorsque la taille de l'échantillon est élevée.
+
+N'oubliez pas de montrer les sous-groupes si vous en avez.
+
+carte thermique : Il faut souvent normaliser les données
+
+Pensez aux échelles (log, sqrt, etc.) ! Et où elles commencent , a 0 ou autre chose ?
+
+heatmap : C'est un peu comme regarder un tableau de données depuis le haut.
+
+/ ! La palette de couleurs est importante / !
+
+N'oubliez pas une légende pour la taille des bulles 
+
+---
+
+#### Pourquoi les graphiques en 3D sont une mauvaise idée
+
+
+<a href="./img/failureCircle.png">
+<img src="img/failureCircle.png" width="800px"/>
+</a>
+
+&lt;!-- commemnts --&gt;
+
+???
+
+n'utilisez jamais le graphique à bulles 3D parce qu'il s'échelonne quadratiquement !
+
+La perspective est également la pire chose que l'on puisse faire à un graphique, car les objets les plus éloignés semblent plus petits, mais notre cerveau les perçoit comme étant plus grands qu'ils ne le sont.
+
+
+---
+
+#### Comparer des valeurs numériques (unique ou moyenne) entre elles
+
+.pull-left-small[
+
+<a href="./img/Ranking.png">
+<img src="img/Ranking.png" width="200px"/>
+</a>
+]
+
+.pull-right-large[
+
+- **Barplot**: chaque valeur de la variable catégorielle est représentée par une barre
+
+&lt;br&gt;
+- **Spider plot**: chaque variable a son propre axe, tous les axes sont reliés au centre de la figure
+
+&lt;br&gt;
+- **Wordcloud**: affiche une liste de mots, l'importance de chacun étant indiquée par la taille ou la couleur de la police
+
+- **Parralel plot**: chaque observation est représentée par une ligne traversant une série d'axes parallèles, correspondant à une variable ou à une dimension spécifique 
+
+
+]
+
+
+&lt;!-- comments--&gt;
+
+???
+#Barplot vs histogramme
+Barplot a ne pas confondre avec un histogramme. 
+
+C-a-d -&gt; la distance entre les barres n'a pas de sens, alors que la distance entre les barres dans un histogramme est importante.
+
+Des noms tres longs ? Pensez à une version horizontale.
+trier son barplot permet souvent de mieux comprendre la situation.
+
+
+Les lollipop plot sont souvent plus attrayants que les diagrammes en barres, où la barre est transformée en une ligne et un point, ce qui est plus attrayant et transmet aussi bien l'information tout en étant moins encombré. je recommande.
+
+Les wordcloud sont hype, mais ils déforment souvent la réalité et ne sont pas très effiace. Par exemple, les mots longs seront plus visibles etc..
+Utiliser plutôt un lolipop plot horizontal trier ?
+
+Le graphique parallèle permet de visualiser plusieurs dimensions à la fois. Il est souvent préférable au graphique en araignée, car les valeurs sont plus faciles à comparer lorsqu'elles sont disposées le long d'un seul axe vertical ou horizontal. 
+
+---
+
+class: inverse center middle
+
+# Implémentation: GGplot2 
+
+---
+
+## GGplot2 
+
+.pull-left-large[
+
+- GGplot2 est une implémentation de la grammaire des graphiques en R, crée par Hadley Wickham. 
+
+- Vous fournissez les données, dites à ggplot2 comment faire correspondre les variables à l'esthétique, quelles graphiques utiliser, et il s'occupe des détails.
+
 - Disponible sur R [ggplot2](https://ggplot2.tidyverse.org/) et Python [plotnine](https://plotnine.readthedocs.io/en/v0.12.3/)
 
+
+
+]
+
+
+
+
+.pull-right-small[
+<a href="https://camo.githubusercontent.com/a6cc89d06ac569b886318ed743f16cdbcf0f2fe7bce5804bdcd1c160b99797f2/687474703a2f2f692e696d6775722e636f6d2f4472496c522e706e67">
+<img src="https://camo.githubusercontent.com/a6cc89d06ac569b886318ed743f16cdbcf0f2fe7bce5804bdcd1c160b99797f2/687474703a2f2f692e696d6775722e636f6d2f4472496c522e706e67" width="270px"/>
+</a>
+]
+
+&lt;!-- comments--&gt;
+
+???
+
+Imaginer React vs Vanilla JS
+les gens peuvent trouver ca "trop compliquer" mais c'est plus facile a utiliser et plus puissant
+
+
+---
+
+## Syntaxe de GGplot2
+
+
+.pull-left-large[
+
+- **Data**: Les données à utiliser pour créer le graphique
+- **Aesthetic**: Les caractéristiques visuelles du graphique
+- **Geom**: La géométrie qui représente les données
+- **Scale**: Comment les caractéristiques visuelles sont converties en valeurs d'affichage
+- **Statistics**: Transformations statistiques. Comptes, Moyennes, etc.
+- **Coordinates**: Système numérique pour déterminer la position de la géométrie. Cartésien, Polaire, etc.
+- **Facets**: Diviser les données en sous-ensembles
+- **Theme**: Personnalisation des éléments non liés aux données
+
+]
+
+.pull-right-small[
+<a href="https://nbisweden.github.io/RaukR-2019/ggplot/presentation/ggplot_presentation_assets/gog.png">
+<img src="https://nbisweden.github.io/RaukR-2019/ggplot/presentation/ggplot_presentation_assets/gog.png" width="240px"/>
+</a><a href="https://nbisweden.github.io/RaukR-2019/ggplot/presentation/ggplot_presentation_assets/syntax.png">
+<img src="https://nbisweden.github.io/RaukR-2019/ggplot/presentation/ggplot_presentation_assets/syntax.png" width="370px"/>
+</a>
 ]
 
 ---
 
-# Fondamentaux
+class: inverse center middle
 
-.startup[
+# Familiarisation
 
+---
+
+class: inverse center middle
+
+# Familiarisation
+
+---
+
+
+## Données sur le taux de suicide (1985- 2016)
+
+&lt;div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:400px; overflow-x: scroll; width:100%; "&gt;&lt;table class="table" style="margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;"&gt; country &lt;/th&gt;
+   &lt;th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;"&gt; year &lt;/th&gt;
+   &lt;th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;"&gt; age &lt;/th&gt;
+   &lt;th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;"&gt; sex &lt;/th&gt;
+   &lt;th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;"&gt; suicides_no &lt;/th&gt;
+   &lt;th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;"&gt; population &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1985 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 25-34 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; male &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 7 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 67600 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1985 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 35-54 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; male &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 3 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 49700 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1985 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 35-54 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; female &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 26900 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1985 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 15-24 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; female &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 37800 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1985 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 25-34 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; female &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 27600 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1985 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 5-14 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; female &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 41400 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1985 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 55-74 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; female &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 8700 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1985 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 75+ years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; female &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1500 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1985 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 15-24 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; male &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 49700 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1985 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 5-14 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; male &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 42000 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1985 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 55-74 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; male &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 11600 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1985 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 75+ years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; male &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1400 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1987 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 55-74 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; male &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 11800 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1987 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 35-54 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; male &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 3 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 47700 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1987 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 25-34 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; male &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 3 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 63900 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1987 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 25-34 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; female &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 27500 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1987 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 15-24 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; female &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 38600 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1987 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 35-54 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; female &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 27300 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1987 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 5-14 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; female &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 42500 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1987 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 55-74 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; female &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 8900 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1987 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 75+ years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; female &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1500 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1987 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 15-24 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; male &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 49400 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1987 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 5-14 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; male &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 43200 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1987 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 75+ years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; male &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1600 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1988 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 25-34 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; male &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 8 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 61600 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1988 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 35-54 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; male &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 63500 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1988 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 35-54 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; female &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 30900 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1988 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 15-24 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; male &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 44100 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1988 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 15-24 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; female &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 38300 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1988 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 25-34 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; female &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 32000 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1988 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 5-14 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; female &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 45400 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1988 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 55-74 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; female &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 10300 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1988 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 75+ years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; female &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1400 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1988 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 5-14 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; male &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 46500 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1988 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 55-74 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; male &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 14400 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1988 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 75+ years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; male &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1300 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1997 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 15-24 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; female &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 46573 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1997 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 25-34 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; female &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 50841 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1997 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 35-54 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; female &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 53562 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1997 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 5-14 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; female &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 55390 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1997 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 55-74 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; female &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 13826 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1997 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 75+ years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; female &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2250 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1997 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 15-24 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; male &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 54369 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1997 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 25-34 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; male &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 80297 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1997 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 35-54 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; male &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 96825 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1997 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 5-14 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; male &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 57431 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1997 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 55-74 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; male &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 16035 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1997 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 75+ years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; male &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2355 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1998 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 15-24 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; female &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 48147 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1998 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 25-34 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; female &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 51596 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1998 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 35-54 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; female &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 56917 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1998 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 5-14 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; female &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 56626 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1998 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 55-74 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; female &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 14404 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1998 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 75+ years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; female &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2312 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1998 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 15-24 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; male &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 56377 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1998 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 25-34 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; male &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 80849 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1998 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 35-54 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; male &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 101013 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1998 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 5-14 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; male &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 58935 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1998 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 55-74 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; male &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 16409 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1998 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 75+ years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; male &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2423 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1999 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 25-34 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; male &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 8 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 82791 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1999 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 35-54 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; male &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 105903 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1999 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 15-24 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; male &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 57914 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1999 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 15-24 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; female &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 49631 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1999 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 25-34 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; female &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 52339 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1999 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 35-54 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; female &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 60568 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1999 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 5-14 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; female &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 58374 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1999 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 55-74 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; female &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 15017 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1999 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 75+ years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; female &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2339 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1999 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 5-14 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; male &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 61554 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1999 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 55-74 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; male &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 16810 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1999 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 75+ years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; male &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2522 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2000 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 25-34 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; male &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 16 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 86231 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2000 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 35-54 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; male &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 10 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 112060 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2000 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 15-24 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; male &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 59208 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2000 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 25-34 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; female &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 53263 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2000 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 15-24 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; female &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 50968 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2000 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 35-54 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; female &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 64617 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2000 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 5-14 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; female &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 60791 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2000 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 55-74 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; female &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 15556 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2000 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 75+ years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; female &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2394 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2000 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 5-14 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; male &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 65512 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2000 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 55-74 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; male &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 17346 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2000 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 75+ years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; male &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2648 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2001 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 25-34 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; male &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 8 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 90920 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2001 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 35-54 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; male &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 8 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 118151 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2001 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 55-74 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; male &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 17917 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2001 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 15-24 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; male &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 68309 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2001 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 15-24 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; female &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 54497 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2001 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 25-34 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; female &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 55961 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2001 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 5-14 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; male &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 67127 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2001 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 35-54 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; female &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 67856 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2001 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 5-14 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; female &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 62316 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2001 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 55-74 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; female &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 15791 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2001 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 75+ years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; female &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2544 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2001 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 75+ years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; male &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2694 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2002 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 25-34 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; male &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 7 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 97288 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2002 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 35-54 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; male &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 9 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 126500 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2002 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 35-54 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; female &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 71376 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2002 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 15-24 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; female &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 57599 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;&lt;/div&gt;
+
+
+&lt;!-- comments--&gt;
+
+???
+
+
+---
+## Basic R VS GGplot2
+
+.pull-left[
+
+```r
+plot(df$population, df$suicides_no) # Basic R
+```
+
+&lt;img src="DataViz_With_R_files/figure-html/unnamed-chunk-12-1.png" width="400px" height="400px" style="display: block; margin: auto auto auto 0;" /&gt;
+
+]
+
+.pull-right[
+
+```r
+ggplot(data=df, mapping=aes(x=population, y=suicides_no)) + 
+  geom_point() # ggplot2
+```
+
+
+&lt;img src="DataViz_With_R_files/figure-html/unnamed-chunk-14-1.png" width="340px" height="340px" style="display: block; margin: auto auto auto 0;" /&gt;
+
+]
+
+&lt;!-- comments --&gt;
+???
+ils sont tous les deux des graphiques de dispersion, 
+mais deja ggplot2 me parait plus facile a lire et a comprendre
+
+En quelque mots, le premier parametre est le dataframes, le deuxieme est aes qui est un objet qui contient les variables que l'on veut utiliser pour le graphique, ici x pour l'axe des abscisses et y pour l'axe des ordonnées,
+
+et le troisieme est la geometrie du graphique, ici un point
+
+---
+
+
+## Comment colorer les points par sexe?
+
+- Traditionnellement, on utilisait le fromat **wide** des données pour les graphiques groupés
+
+&lt;div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:400px; overflow-x: scroll; width:100%; "&gt;&lt;table class="table" style="font-size: 16px; margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;"&gt; country &lt;/th&gt;
+   &lt;th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;"&gt; year &lt;/th&gt;
+   &lt;th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;"&gt; age &lt;/th&gt;
+   &lt;th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;"&gt; population_male &lt;/th&gt;
+   &lt;th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;"&gt; population_female &lt;/th&gt;
+   &lt;th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;"&gt; suicides_no_male &lt;/th&gt;
+   &lt;th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;"&gt; suicides_no_female &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1985 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 25-34 years &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 67600 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 27600 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 7 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1985 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 35-54 years &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 49700 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 26900 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 3 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1985 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 15-24 years &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 49700 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 37800 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1985 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 5-14 years &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 42000 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 41400 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1985 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 55-74 years &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 11600 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 8700 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1985 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 75+ years &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1400 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1500 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1987 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 55-74 years &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 11800 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 8900 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1987 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 35-54 years &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 47700 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 27300 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 3 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1987 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 25-34 years &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 63900 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 27500 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 3 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1987 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 15-24 years &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 49400 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 38600 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1987 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 5-14 years &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 43200 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 42500 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1987 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 75+ years &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1600 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1500 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1988 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 25-34 years &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 61600 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 32000 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 8 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1988 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 35-54 years &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 63500 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 30900 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1988 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 15-24 years &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 44100 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 38300 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1988 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 5-14 years &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 46500 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 45400 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1988 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 55-74 years &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 14400 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 10300 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1988 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 75+ years &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1300 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1400 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1997 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 15-24 years &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 54369 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 46573 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1997 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 25-34 years &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 80297 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 50841 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1997 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 35-54 years &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 96825 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 53562 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1997 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 5-14 years &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 57431 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 55390 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1997 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 55-74 years &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 16035 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 13826 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1997 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 75+ years &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2355 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2250 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1998 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 15-24 years &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 56377 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 48147 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1998 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 25-34 years &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 80849 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 51596 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1998 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 35-54 years &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 101013 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 56917 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1998 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 5-14 years &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 58935 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 56626 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1998 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 55-74 years &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 16409 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 14404 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1998 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 75+ years &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2423 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2312 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1999 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 25-34 years &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 82791 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 52339 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 8 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1999 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 35-54 years &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 105903 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 60568 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1999 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 15-24 years &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 57914 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 49631 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1999 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 5-14 years &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 61554 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 58374 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1999 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 55-74 years &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 16810 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 15017 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1999 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 75+ years &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2522 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2339 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2000 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 25-34 years &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 86231 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 53263 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 16 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2000 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 35-54 years &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 112060 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 64617 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 10 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2000 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 15-24 years &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 59208 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 50968 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2000 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 5-14 years &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 65512 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 60791 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2000 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 55-74 years &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 17346 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 15556 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2000 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 75+ years &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2648 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2394 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2001 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 25-34 years &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 90920 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 55961 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 8 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2001 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 35-54 years &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 118151 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 67856 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 8 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2001 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 55-74 years &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 17917 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 15791 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2001 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 15-24 years &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 68309 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 54497 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2001 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 5-14 years &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 67127 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 62316 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2001 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 75+ years &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2694 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2544 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2002 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 25-34 years &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 97288 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 59350 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 7 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2002 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 35-54 years &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 126500 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 71376 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 9 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2002 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 15-24 years &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 76442 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 57599 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2002 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 5-14 years &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 68596 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 63714 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2002 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 55-74 years &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 18646 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 16006 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2002 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 75+ years &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2755 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2738 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2003 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 35-54 years &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 137287 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 75430 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 17 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2003 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 25-34 years &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 105799 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 63380 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 9 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 5 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2003 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 15-24 years &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 83143 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 60298 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 3 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2003 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 5-14 years &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 70584 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 65298 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2003 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 55-74 years &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 19574 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 16343 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2003 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 75+ years &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2831 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2946 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2004 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 55-74 years &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 20717 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 16975 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2004 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 25-34 years &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 116777 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 68052 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 19 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 3 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2004 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 35-54 years &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 150835 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 80288 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 10 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 3 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2004 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 15-24 years &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 88431 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 62699 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2004 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 5-14 years &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 73422 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 67313 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2004 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 75+ years &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2924 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 3126 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2005 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 25-34 years &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 142375 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 73758 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 15 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 3 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2005 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 35-54 years &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 174785 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 92102 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 14 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2005 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 55-74 years &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 27261 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 19983 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2005 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 15-24 years &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 79928 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 64792 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2005 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 5-14 years &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 69742 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 66362 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2005 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 75+ years &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4063 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4389 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2006 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 25-34 years &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 158656 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 80271 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 12 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 5 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2006 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 15-24 years &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 86090 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 69020 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 3 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2006 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 55-74 years &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 29960 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 21363 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2006 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 35-54 years &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 192597 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 100668 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 3 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 3 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2006 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 5-14 years &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 71974 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 68590 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2006 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 75+ years &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4439 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4915 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2007 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 25-34 years &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 176938 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 87472 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 14 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 3 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2007 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 35-54 years &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 212426 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 110173 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 13 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2007 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 55-74 years &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 32965 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 22872 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2007 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 15-24 years &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 92875 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 73617 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 5 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2007 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 5-14 years &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 74222 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 70861 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2007 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 75+ years &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4852 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 5497 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2008 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 25-34 years &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 196832 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 93449 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 21 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2008 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 35-54 years &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 225866 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 115468 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 13 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 3 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2008 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 15-24 years &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 96458 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 76246 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 3 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2008 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 55-74 years &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 35879 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 24495 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2008 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 5-14 years &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 76617 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 72955 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2008 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 75+ years &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4654 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 5191 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2009 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 35-54 years &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 242558 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 118835 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 14 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2009 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 25-34 years &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 222448 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 99580 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 9 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2009 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 15-24 years &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 102256 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 80832 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2009 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 55-74 years &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 38002 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 25915 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2009 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 5-14 years &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 79180 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 75122 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2009 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 75+ years &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4091 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4103 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2010 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 35-54 years &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 252232 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 125709 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 8 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2010 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 25-34 years &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 235591 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 104368 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 6 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2010 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 55-74 years &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 41999 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 27834 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2010 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 15-24 years &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 103388 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 80571 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;&lt;/div&gt;
+
+&lt;!-- comments  --&gt;
+
+???
+
+---
+## Old school way
+
+.pull-left-large[
+
+```r
+# Basic R
+
+# First layer in one color (female)
+plot(df_wide$population_female, 
+     df_wide$suicides_no_female, col="blue") 
+
+# then  we overlay another layer (male)
+points(df_wide$population_male, 
+       df_wide$suicides_no_male, col="red") 
+```
+]
+
+.pull-right-small[
+
+&lt;img src="DataViz_With_R_files/figure-html/unnamed-chunk-17-1.png" width="400px" height="400px" style="display: block; margin: auto auto auto 0;" /&gt;
+
+]
+
+&lt;!-- comments  --&gt;
+???
+Stupide et compliqué
+
+---
+
+## GGplot2 way
+
+- **ggplot2** utilise le format 'long' pour les graphiques groupés (reminder)
+
+- une columne = une variable !
+
+&lt;div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:300px; overflow-x: scroll; width:100%; "&gt;&lt;table class="table" style="margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;"&gt; country &lt;/th&gt;
+   &lt;th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;"&gt; year &lt;/th&gt;
+   &lt;th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;"&gt; age &lt;/th&gt;
+   &lt;th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;"&gt; sex &lt;/th&gt;
+   &lt;th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;"&gt; suicides_no &lt;/th&gt;
+   &lt;th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;"&gt; population &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1985 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 25-34 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; male &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 7 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 67600 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1985 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 35-54 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; male &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 3 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 49700 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1985 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 35-54 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; female &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 26900 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1985 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 15-24 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; female &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 37800 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1985 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 25-34 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; female &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 27600 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1985 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 5-14 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; female &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 41400 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1985 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 55-74 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; female &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 8700 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1985 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 75+ years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; female &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1500 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1985 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 15-24 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; male &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 49700 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1985 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 5-14 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; male &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 42000 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1985 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 55-74 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; male &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 11600 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1985 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 75+ years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; male &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1400 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1987 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 55-74 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; male &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 11800 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1987 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 35-54 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; male &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 3 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 47700 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1987 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 25-34 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; male &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 3 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 63900 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1987 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 25-34 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; female &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 27500 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1987 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 15-24 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; female &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 38600 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1987 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 35-54 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; female &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 27300 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1987 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 5-14 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; female &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 42500 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1987 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 55-74 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; female &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 8900 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1987 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 75+ years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; female &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1500 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1987 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 15-24 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; male &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 49400 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1987 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 5-14 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; male &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 43200 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1987 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 75+ years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; male &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1600 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1988 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 25-34 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; male &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 8 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 61600 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1988 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 35-54 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; male &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 63500 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1988 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 35-54 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; female &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 30900 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1988 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 15-24 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; male &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 44100 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1988 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 15-24 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; female &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 38300 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1988 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 25-34 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; female &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 32000 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1988 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 5-14 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; female &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 45400 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1988 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 55-74 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; female &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 10300 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1988 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 75+ years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; female &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1400 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1988 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 5-14 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; male &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 46500 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1988 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 55-74 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; male &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 14400 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1988 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 75+ years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; male &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1300 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1997 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 15-24 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; female &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 46573 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1997 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 25-34 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; female &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 50841 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1997 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 35-54 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; female &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 53562 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1997 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 5-14 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; female &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 55390 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1997 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 55-74 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; female &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 13826 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1997 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 75+ years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; female &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2250 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1997 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 15-24 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; male &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 54369 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1997 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 25-34 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; male &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 80297 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1997 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 35-54 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; male &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 96825 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1997 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 5-14 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; male &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 57431 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1997 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 55-74 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; male &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 16035 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1997 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 75+ years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; male &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2355 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1998 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 15-24 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; female &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 48147 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1998 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 25-34 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; female &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 51596 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1998 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 35-54 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; female &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 56917 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1998 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 5-14 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; female &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 56626 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1998 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 55-74 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; female &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 14404 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1998 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 75+ years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; female &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2312 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1998 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 15-24 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; male &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 56377 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1998 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 25-34 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; male &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 80849 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1998 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 35-54 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; male &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 101013 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1998 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 5-14 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; male &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 58935 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1998 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 55-74 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; male &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 16409 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1998 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 75+ years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; male &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2423 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1999 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 25-34 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; male &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 8 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 82791 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1999 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 35-54 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; male &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 105903 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1999 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 15-24 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; male &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 57914 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1999 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 15-24 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; female &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 49631 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1999 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 25-34 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; female &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 52339 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1999 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 35-54 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; female &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 60568 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1999 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 5-14 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; female &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 58374 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1999 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 55-74 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; female &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 15017 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1999 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 75+ years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; female &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2339 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1999 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 5-14 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; male &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 61554 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1999 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 55-74 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; male &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 16810 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1999 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 75+ years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; male &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2522 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2000 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 25-34 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; male &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 16 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 86231 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2000 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 35-54 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; male &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 10 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 112060 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2000 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 15-24 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; male &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 59208 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2000 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 25-34 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; female &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 53263 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2000 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 15-24 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; female &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 50968 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2000 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 35-54 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; female &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 64617 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2000 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 5-14 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; female &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 60791 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2000 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 55-74 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; female &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 15556 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2000 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 75+ years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; female &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2394 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2000 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 5-14 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; male &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 65512 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2000 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 55-74 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; male &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 17346 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2000 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 75+ years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; male &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2648 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2001 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 25-34 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; male &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 8 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 90920 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2001 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 35-54 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; male &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 8 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 118151 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2001 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 55-74 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; male &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 17917 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2001 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 15-24 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; male &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 68309 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2001 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 15-24 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; female &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 54497 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2001 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 25-34 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; female &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 55961 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2001 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 5-14 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; male &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 67127 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2001 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 35-54 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; female &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 67856 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2001 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 5-14 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; female &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 62316 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2001 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 55-74 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; female &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 15791 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2001 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 75+ years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; female &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2544 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2001 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 75+ years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; male &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2694 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2002 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 25-34 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; male &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 7 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 97288 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2002 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 35-54 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; male &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 9 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 126500 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2002 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 35-54 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; female &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 71376 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bahrain &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2002 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 15-24 years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; female &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 57599 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;&lt;/div&gt;
+
+
+---
+
+## Comment colorer les points par sexe?
+
+.pull-left[
+
+```r
+ggplot(df, aes(x=population, 
+               y=suicides_no, 
+               color=sex)) +
+geom_point()
+```
+]
+
+
+.pull-right[
+
+&lt;img src="DataViz_With_R_files/figure-html/unnamed-chunk-20-1.png" width="500px" height="400px" style="display: block; margin: auto auto auto 0;" /&gt;
+
+]
+
+&lt;!-- comments  --&gt;
+???
+Deja la syntaxe est plus simple, on a pas besoin de specifier les variables a chaque fois, on peut les specifier une fois pour toute dans aes.
+
+On rajoute juste un nouveau mapping, ici "color" et bam tout le reste est fait pour nous
+
+---
+
+class: inverse center middle
+
+# Aesthetics 
+
+---
+
+## Aesthetics
+
+  -   **x** pour l'axe des abscisses
+  -   **y** pour l'axe des ordonnées
+  -   **color** pour la couleur (les bords)
+  -   **size** pour la taille
+  -   **shape** pour la forme
+  -   **alpha** pour la transparence
+  -   **linetype** pour le type de ligne
+  -   **fill** pour le remplissage
+  -   et plein d'autres encore...
+    
+&lt;!-- comments--&gt;
+
+???
+- **aes** est un objet qui contient les variables que l'on veut utiliser pour le graphique
+
+---
+
+
+## Colorer par pays? Easy
+
+.pull-left[
+
+```r
+ggplot(df, aes(x=population, 
+               y=suicides_no, 
+               color=country)) +
+geom_point()
+```
+]
+
+
+.pull-right[
+
+&lt;img src="DataViz_With_R_files/figure-html/unnamed-chunk-22-1.png" width="500px" height="400px" style="display: block; margin: auto auto auto 0;" /&gt;
+
+]
+
+&lt;!-- comments  --&gt;
+???
+Super easy on rmeplace juste le color aestic par la variable country
+
+La maniere traditionnelle de faire des graphiques groupés aurait demandé de recodé le tout
+
+---
+
+## Forme par pays? Pfff..
+
+.pull-left[
+
+```r
+ggplot(df, aes(x=population, 
+               y=suicides_no, 
+               shape=country)) +
+geom_point()
+```
+]
+
+
+.pull-right[
+
+&lt;img src="DataViz_With_R_files/figure-html/unnamed-chunk-24-1.png" width="500px" height="400px" style="display: block; margin: auto auto auto 0;" /&gt;
+
+]
+
+&lt;!-- comments  --&gt;
+???
+Pff.. juste chnager color par shape !
+
+---
+
+class: inverse center middle
+
+# Geoms 
+
+---
+
+## Geoms 
+
+- Les **geoms** sont les élements géometrics qui vont reprensenter les données
+    -   ** geom_point()** pour les nuage de points
+    -  **geom_line()** pour les lignes
+    -   **geom_bar()** pour les barres
+    -   **geom_boxplot()** pour les boites à moustaches
+    -   **geom_histogram()** pour les histogrammes
+    -   **geom_density()** pour les densités
+    -   **geom_smooth()** pour les courbes de tendances
+    -  **geom_area()** pour les aires
+    - **geom_violin()** pour les violons
+    -   et plein d'autres encore...
+  
+  
+
+```r
+help.search("^geom_",package="ggplot2") 
+```
+
+
+&lt;!-- comments--&gt;
+
+???
+geom stands for geometric object 
+
+il y a des dizaines de geoms dans ggplot2, on va en voir quelques unes aujourd'hui
+
+---
+
+## Exemples
+
+<a href="https://nbisweden.github.io/RaukR-2019/ggplot/presentation/ggplot_presentation_assets/geoms.png">
+<img src="https://nbisweden.github.io/RaukR-2019/ggplot/presentation/ggplot_presentation_assets/geoms.png" width="1070px"/>
+</a>
+
+---
+
+## Regression par pays
+
+.pull-left[
+
+```r
+ggplot(df, aes(x=population, 
+               y=suicides_no, 
+               color=country)) +
+geom_point() + 
+geom_smooth() 
+# on rajoute une courbe de tendance
+```
+]
+
+
+.pull-right[
+
+&lt;img src="DataViz_With_R_files/figure-html/unnamed-chunk-28-1.png" width="500px" height="400px" style="display: block; margin: auto auto auto 0;" /&gt;
+
+]
+
+&lt;!-- comments  --&gt;
+???
+
+L'analogie est celle des genes et de l'environnement. L'aes est les genes, les geoms sont l'environnement.
+
+Dependant de l'environnement, les genes vont s'exprimer differement.
+
+---
+
+
+## Regression pour tous les pays
+
+
+
+
+.pull-left[
+
+```r
+ggplot(df, aes(x=population, 
+               y=suicides_no)) +
+geom_point(aes(color=country)) + 
+geom_smooth() 
+# on rajoute une courbe de tendance
+```
+
+- On peut séparer les geoms individuelement !
 
 
 ]
+
+
+.pull-right[
+
+&lt;img src="DataViz_With_R_files/figure-html/unnamed-chunk-30-1.png" width="500px" height="400px" style="display: block; margin: auto auto auto 0;" /&gt;
+
+]
+
+&lt;!-- comments  --&gt;
+???
+En enlevent le color de aes, on peut le mettre dans geom_point et ca va colorer/grouper les points par les payes mais pas la courbe de tendance. 
+
+Elle reste globale.
+
+Attention l'ordre compte.
+
 ---
 
-# Coding Example
+class: inverse center middle
 
-.startup[
+# Stats
+
+---
+
+## Statistiques
+
+- On peut rajouter des statistiques sur les graphiques
+    -   **stat_smooth()** pour les courbes de tendances
+    -   **stat_summary()** pour les résumés statistiques
+    -   **stat_density()** pour les densités
+    -   **stat_ellipse()** pour les ellipses de confiance
+    -   **stat_qq()** pour les graphiques quantiles-quantiles
+    -   et plein d'autres encore...
+    
+---
+
+## Exemples
+
+
+.pull-left[
+
+- Les statistiques calculent de nouvelles variables à partir des données d'entrée. Les geoms ont des statistiques par défaut.
+
+
+```r
+ggplot(iris) + geom_bar(aes(x=Sepal.Length),
+                        stat="bin")
+
+ggplot(iris) + geom_bar(aes(x=Species),
+                        stat="count")
+
+ggplot(iris) + geom_bar(aes(x=Species,y=Sepal.Length),
+                        stat="identity")
+```
+
+]
+
+.pull-right[
+
+&lt;img src="DataViz_With_R_files/figure-html/unnamed-chunk-32-1.png" width="500px" height="400px" style="display: block; margin: auto auto auto 0;" /&gt;
+
+]
+
+---
+
+class: inverse center middle
+
+# Scales
+
+---
+
+## Chanher les échelles
+
+
+
+```r
+ggplot(df, aes(x=population, 
+               y=suicides_no)) +
+geom_point(aes( color=country), alpha=0.3) +
+scale_x_log10() +
+scale_y_log10() 
+```
 
 .pull-left[
 
@@ -184,11 +3360,74 @@ ggplot(diamonds) +
 ```
 ]
 .pull-right[
-&lt;img src="DataViz_With_R_files/figure-html/unnamed-chunk-4-1.png" width="100%" style="display: block; margin: auto;" /&gt;
-]]
+&lt;img src="DataViz_With_R_files/figure-html/unnamed-chunk-35-1.png" width="100%" style="display: block; margin: auto;" /&gt;
+]
+
+
+&lt;!-- comments --&gt;
+
+???
+
+scaling est très facile avec ggplot2
+
+---
+
+class: inverse center middle
+
+# Position
+
+---
+
+## Position
+
+- On peut changer la position des geoms
+    -   **position_dodge()** pour les barres
+    -   **position_jitter()** pour les points
+    -   **position_stack()** pour les barres empilées
+    -   **position_fill()** pour les barres empilées en pourcentage
+    -   **position_identity()** pour les points
+    -   et plein d'autres encore...
+    
+    s &lt;- USArrests %&gt;% mutate(state=rownames(.)) %&gt;% slice(1:4) %&gt;%
+                    gather(key=type,value=value,-state)
+p &lt;- ggplot(us,aes(x=state,y=value,fill=type))
+p + geom_bar(stat="identity",position="stack")
+
+
+p + geom_bar(stat="identity",position="dodge")
 
 
 
+---
+
+class: inverse center middle
+
+# Facets
+
+---
+
+
+## Facettes
+
+Facetting in one dimensions
+
+wrap
+Facetting in two dimensions
+
+grid
+
+---
+class: inverse center middle
+
+# Interactivité
+
+---
+
+## Facile avec Plotly !
+
+p &lt;- ggplot(iris,aes(x=Sepal.Length,y=Sepal.Width,col=Species))
+p1 &lt;- p+geom_point()
+plotly::ggplotly(p1,width=400,height=300)
 
 ---
 

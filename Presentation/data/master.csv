@@ -1,0 +1,1283 @@
+"","country","year","age","sex","suicides_no","population"
+"1","Bahrain",1985,"25-34 years","male",7,67600
+"2","Bahrain",1985,"35-54 years","male",3,49700
+"3","Bahrain",1985,"35-54 years","female",1,26900
+"4","Bahrain",1985,"15-24 years","female",0,37800
+"5","Bahrain",1985,"25-34 years","female",0,27600
+"6","Bahrain",1985,"5-14 years","female",0,41400
+"7","Bahrain",1985,"55-74 years","female",0,8700
+"8","Bahrain",1985,"75+ years","female",0,1500
+"9","Bahrain",1985,"15-24 years","male",0,49700
+"10","Bahrain",1985,"5-14 years","male",0,42000
+"11","Bahrain",1985,"55-74 years","male",0,11600
+"12","Bahrain",1985,"75+ years","male",0,1400
+"13","Bahrain",1987,"55-74 years","male",1,11800
+"14","Bahrain",1987,"35-54 years","male",3,47700
+"15","Bahrain",1987,"25-34 years","male",3,63900
+"16","Bahrain",1987,"25-34 years","female",1,27500
+"17","Bahrain",1987,"15-24 years","female",1,38600
+"18","Bahrain",1987,"35-54 years","female",0,27300
+"19","Bahrain",1987,"5-14 years","female",0,42500
+"20","Bahrain",1987,"55-74 years","female",0,8900
+"21","Bahrain",1987,"75+ years","female",0,1500
+"22","Bahrain",1987,"15-24 years","male",0,49400
+"23","Bahrain",1987,"5-14 years","male",0,43200
+"24","Bahrain",1987,"75+ years","male",0,1600
+"25","Bahrain",1988,"25-34 years","male",8,61600
+"26","Bahrain",1988,"35-54 years","male",4,63500
+"27","Bahrain",1988,"35-54 years","female",1,30900
+"28","Bahrain",1988,"15-24 years","male",1,44100
+"29","Bahrain",1988,"15-24 years","female",0,38300
+"30","Bahrain",1988,"25-34 years","female",0,32000
+"31","Bahrain",1988,"5-14 years","female",0,45400
+"32","Bahrain",1988,"55-74 years","female",0,10300
+"33","Bahrain",1988,"75+ years","female",0,1400
+"34","Bahrain",1988,"5-14 years","male",0,46500
+"35","Bahrain",1988,"55-74 years","male",0,14400
+"36","Bahrain",1988,"75+ years","male",0,1300
+"37","Bahrain",1997,"15-24 years","female",0,46573
+"38","Bahrain",1997,"25-34 years","female",0,50841
+"39","Bahrain",1997,"35-54 years","female",0,53562
+"40","Bahrain",1997,"5-14 years","female",0,55390
+"41","Bahrain",1997,"55-74 years","female",0,13826
+"42","Bahrain",1997,"75+ years","female",0,2250
+"43","Bahrain",1997,"15-24 years","male",0,54369
+"44","Bahrain",1997,"25-34 years","male",0,80297
+"45","Bahrain",1997,"35-54 years","male",0,96825
+"46","Bahrain",1997,"5-14 years","male",0,57431
+"47","Bahrain",1997,"55-74 years","male",0,16035
+"48","Bahrain",1997,"75+ years","male",0,2355
+"49","Bahrain",1998,"15-24 years","female",0,48147
+"50","Bahrain",1998,"25-34 years","female",0,51596
+"51","Bahrain",1998,"35-54 years","female",0,56917
+"52","Bahrain",1998,"5-14 years","female",0,56626
+"53","Bahrain",1998,"55-74 years","female",0,14404
+"54","Bahrain",1998,"75+ years","female",0,2312
+"55","Bahrain",1998,"15-24 years","male",0,56377
+"56","Bahrain",1998,"25-34 years","male",0,80849
+"57","Bahrain",1998,"35-54 years","male",0,101013
+"58","Bahrain",1998,"5-14 years","male",0,58935
+"59","Bahrain",1998,"55-74 years","male",0,16409
+"60","Bahrain",1998,"75+ years","male",0,2423
+"61","Bahrain",1999,"25-34 years","male",8,82791
+"62","Bahrain",1999,"35-54 years","male",4,105903
+"63","Bahrain",1999,"15-24 years","male",2,57914
+"64","Bahrain",1999,"15-24 years","female",1,49631
+"65","Bahrain",1999,"25-34 years","female",1,52339
+"66","Bahrain",1999,"35-54 years","female",1,60568
+"67","Bahrain",1999,"5-14 years","female",0,58374
+"68","Bahrain",1999,"55-74 years","female",0,15017
+"69","Bahrain",1999,"75+ years","female",0,2339
+"70","Bahrain",1999,"5-14 years","male",0,61554
+"71","Bahrain",1999,"55-74 years","male",0,16810
+"72","Bahrain",1999,"75+ years","male",0,2522
+"73","Bahrain",2000,"25-34 years","male",16,86231
+"74","Bahrain",2000,"35-54 years","male",10,112060
+"75","Bahrain",2000,"15-24 years","male",2,59208
+"76","Bahrain",2000,"25-34 years","female",1,53263
+"77","Bahrain",2000,"15-24 years","female",0,50968
+"78","Bahrain",2000,"35-54 years","female",0,64617
+"79","Bahrain",2000,"5-14 years","female",0,60791
+"80","Bahrain",2000,"55-74 years","female",0,15556
+"81","Bahrain",2000,"75+ years","female",0,2394
+"82","Bahrain",2000,"5-14 years","male",0,65512
+"83","Bahrain",2000,"55-74 years","male",0,17346
+"84","Bahrain",2000,"75+ years","male",0,2648
+"85","Bahrain",2001,"25-34 years","male",8,90920
+"86","Bahrain",2001,"35-54 years","male",8,118151
+"87","Bahrain",2001,"55-74 years","male",1,17917
+"88","Bahrain",2001,"15-24 years","male",2,68309
+"89","Bahrain",2001,"15-24 years","female",1,54497
+"90","Bahrain",2001,"25-34 years","female",1,55961
+"91","Bahrain",2001,"5-14 years","male",1,67127
+"92","Bahrain",2001,"35-54 years","female",1,67856
+"93","Bahrain",2001,"5-14 years","female",0,62316
+"94","Bahrain",2001,"55-74 years","female",0,15791
+"95","Bahrain",2001,"75+ years","female",0,2544
+"96","Bahrain",2001,"75+ years","male",0,2694
+"97","Bahrain",2002,"25-34 years","male",7,97288
+"98","Bahrain",2002,"35-54 years","male",9,126500
+"99","Bahrain",2002,"35-54 years","female",4,71376
+"100","Bahrain",2002,"15-24 years","female",2,57599
+"101","Bahrain",2002,"15-24 years","male",2,76442
+"102","Bahrain",2002,"25-34 years","female",1,59350
+"103","Bahrain",2002,"5-14 years","female",0,63714
+"104","Bahrain",2002,"55-74 years","female",0,16006
+"105","Bahrain",2002,"75+ years","female",0,2738
+"106","Bahrain",2002,"5-14 years","male",0,68596
+"107","Bahrain",2002,"55-74 years","male",0,18646
+"108","Bahrain",2002,"75+ years","male",0,2755
+"109","Bahrain",2003,"35-54 years","male",17,137287
+"110","Bahrain",2003,"25-34 years","male",9,105799
+"111","Bahrain",2003,"25-34 years","female",5,63380
+"112","Bahrain",2003,"15-24 years","male",3,83143
+"113","Bahrain",2003,"15-24 years","female",0,60298
+"114","Bahrain",2003,"35-54 years","female",0,75430
+"115","Bahrain",2003,"5-14 years","female",0,65298
+"116","Bahrain",2003,"55-74 years","female",0,16343
+"117","Bahrain",2003,"75+ years","female",0,2946
+"118","Bahrain",2003,"5-14 years","male",0,70584
+"119","Bahrain",2003,"55-74 years","male",0,19574
+"120","Bahrain",2003,"75+ years","male",0,2831
+"121","Bahrain",2004,"55-74 years","male",4,20717
+"122","Bahrain",2004,"25-34 years","male",19,116777
+"123","Bahrain",2004,"35-54 years","male",10,150835
+"124","Bahrain",2004,"25-34 years","female",3,68052
+"125","Bahrain",2004,"35-54 years","female",3,80288
+"126","Bahrain",2004,"15-24 years","male",2,88431
+"127","Bahrain",2004,"15-24 years","female",1,62699
+"128","Bahrain",2004,"5-14 years","female",0,67313
+"129","Bahrain",2004,"55-74 years","female",0,16975
+"130","Bahrain",2004,"75+ years","female",0,3126
+"131","Bahrain",2004,"5-14 years","male",0,73422
+"132","Bahrain",2004,"75+ years","male",0,2924
+"133","Bahrain",2005,"25-34 years","male",15,142375
+"134","Bahrain",2005,"35-54 years","male",14,174785
+"135","Bahrain",2005,"55-74 years","male",2,27261
+"136","Bahrain",2005,"15-24 years","male",4,79928
+"137","Bahrain",2005,"25-34 years","female",3,73758
+"138","Bahrain",2005,"15-24 years","female",2,64792
+"139","Bahrain",2005,"35-54 years","female",2,92102
+"140","Bahrain",2005,"5-14 years","female",0,66362
+"141","Bahrain",2005,"55-74 years","female",0,19983
+"142","Bahrain",2005,"75+ years","female",0,4389
+"143","Bahrain",2005,"5-14 years","male",0,69742
+"144","Bahrain",2005,"75+ years","male",0,4063
+"145","Bahrain",2006,"25-34 years","male",12,158656
+"146","Bahrain",2006,"25-34 years","female",5,80271
+"147","Bahrain",2006,"15-24 years","female",3,69020
+"148","Bahrain",2006,"55-74 years","male",1,29960
+"149","Bahrain",2006,"35-54 years","female",3,100668
+"150","Bahrain",2006,"35-54 years","male",3,192597
+"151","Bahrain",2006,"15-24 years","male",1,86090
+"152","Bahrain",2006,"5-14 years","female",0,68590
+"153","Bahrain",2006,"55-74 years","female",0,21363
+"154","Bahrain",2006,"75+ years","female",0,4915
+"155","Bahrain",2006,"5-14 years","male",0,71974
+"156","Bahrain",2006,"75+ years","male",0,4439
+"157","Bahrain",2007,"25-34 years","male",14,176938
+"158","Bahrain",2007,"35-54 years","male",13,212426
+"159","Bahrain",2007,"55-74 years","male",2,32965
+"160","Bahrain",2007,"15-24 years","male",5,92875
+"161","Bahrain",2007,"25-34 years","female",3,87472
+"162","Bahrain",2007,"35-54 years","female",2,110173
+"163","Bahrain",2007,"15-24 years","female",1,73617
+"164","Bahrain",2007,"5-14 years","female",0,70861
+"165","Bahrain",2007,"55-74 years","female",0,22872
+"166","Bahrain",2007,"75+ years","female",0,5497
+"167","Bahrain",2007,"5-14 years","male",0,74222
+"168","Bahrain",2007,"75+ years","male",0,4852
+"169","Bahrain",2008,"25-34 years","male",21,196832
+"170","Bahrain",2008,"35-54 years","male",13,225866
+"171","Bahrain",2008,"15-24 years","female",3,76246
+"172","Bahrain",2008,"55-74 years","male",1,35879
+"173","Bahrain",2008,"35-54 years","female",3,115468
+"174","Bahrain",2008,"25-34 years","female",2,93449
+"175","Bahrain",2008,"5-14 years","female",0,72955
+"176","Bahrain",2008,"55-74 years","female",0,24495
+"177","Bahrain",2008,"75+ years","female",0,5191
+"178","Bahrain",2008,"15-24 years","male",0,96458
+"179","Bahrain",2008,"5-14 years","male",0,76617
+"180","Bahrain",2008,"75+ years","male",0,4654
+"181","Bahrain",2009,"35-54 years","male",14,242558
+"182","Bahrain",2009,"25-34 years","male",9,222448
+"183","Bahrain",2009,"25-34 years","female",4,99580
+"184","Bahrain",2009,"15-24 years","male",4,102256
+"185","Bahrain",2009,"55-74 years","male",1,38002
+"186","Bahrain",2009,"5-14 years","male",2,79180
+"187","Bahrain",2009,"35-54 years","female",2,118835
+"188","Bahrain",2009,"15-24 years","female",0,80832
+"189","Bahrain",2009,"5-14 years","female",0,75122
+"190","Bahrain",2009,"55-74 years","female",0,25915
+"191","Bahrain",2009,"75+ years","female",0,4103
+"192","Bahrain",2009,"75+ years","male",0,4091
+"193","Bahrain",2010,"35-54 years","male",8,252232
+"194","Bahrain",2010,"25-34 years","male",6,235591
+"195","Bahrain",2010,"55-74 years","male",1,41999
+"196","Bahrain",2010,"35-54 years","female",2,125709
+"197","Bahrain",2010,"15-24 years","female",1,80571
+"198","Bahrain",2010,"25-34 years","female",1,104368
+"199","Bahrain",2010,"5-14 years","female",0,77140
+"200","Bahrain",2010,"55-74 years","female",0,27834
+"201","Bahrain",2010,"75+ years","female",0,4625
+"202","Bahrain",2010,"15-24 years","male",0,103388
+"203","Bahrain",2010,"5-14 years","male",0,81414
+"204","Bahrain",2010,"75+ years","male",0,4289
+"205","Bahrain",2011,"15-24 years","male",3,101695
+"206","Bahrain",2011,"55-74 years","male",1,43883
+"207","Bahrain",2011,"25-34 years","female",2,98138
+"208","Bahrain",2011,"25-34 years","male",4,220691
+"209","Bahrain",2011,"35-54 years","male",4,242955
+"210","Bahrain",2011,"35-54 years","female",2,123582
+"211","Bahrain",2011,"15-24 years","female",1,75788
+"212","Bahrain",2011,"5-14 years","female",1,77270
+"213","Bahrain",2011,"55-74 years","female",0,29140
+"214","Bahrain",2011,"75+ years","female",0,4742
+"215","Bahrain",2011,"5-14 years","male",0,81209
+"216","Bahrain",2011,"75+ years","male",0,4369
+"217","Bahrain",2012,"25-34 years","male",11,237133
+"218","Bahrain",2012,"35-54 years","male",6,268027
+"219","Bahrain",2012,"25-34 years","female",1,110796
+"220","Bahrain",2012,"15-24 years","male",1,111603
+"221","Bahrain",2012,"15-24 years","female",0,81091
+"222","Bahrain",2012,"35-54 years","female",0,135976
+"223","Bahrain",2012,"5-14 years","female",0,81275
+"224","Bahrain",2012,"55-74 years","female",0,31641
+"225","Bahrain",2012,"75+ years","female",0,4548
+"226","Bahrain",2012,"5-14 years","male",0,85538
+"227","Bahrain",2012,"55-74 years","male",0,50001
+"228","Bahrain",2012,"75+ years","male",0,4149
+"229","Bahrain",2013,"15-24 years","male",1,110064
+"230","Bahrain",2013,"25-34 years","male",2,237632
+"231","Bahrain",2013,"35-54 years","male",2,269162
+"232","Bahrain",2013,"15-24 years","female",0,80476
+"233","Bahrain",2013,"25-34 years","female",0,112513
+"234","Bahrain",2013,"35-54 years","female",0,139352
+"235","Bahrain",2013,"5-14 years","female",0,82726
+"236","Bahrain",2013,"55-74 years","female",0,33780
+"237","Bahrain",2013,"75+ years","female",0,4859
+"238","Bahrain",2013,"5-14 years","male",0,86269
+"239","Bahrain",2013,"55-74 years","male",0,53308
+"240","Bahrain",2013,"75+ years","male",0,4351
+"241","Bahrain",2014,"15-24 years","male",4,100635
+"242","Bahrain",2014,"25-34 years","male",3,237952
+"243","Bahrain",2014,"25-34 years","female",1,110838
+"244","Bahrain",2014,"35-54 years","male",1,258922
+"245","Bahrain",2014,"15-24 years","female",0,78926
+"246","Bahrain",2014,"35-54 years","female",0,139103
+"247","Bahrain",2014,"5-14 years","female",0,82452
+"248","Bahrain",2014,"55-74 years","female",0,41406
+"249","Bahrain",2014,"75+ years","female",0,6154
+"250","Bahrain",2014,"5-14 years","male",0,86539
+"251","Bahrain",2014,"55-74 years","male",0,64351
+"252","Bahrain",2014,"75+ years","male",0,6688
+"253","Lithuania",1995,"35-54 years","male",632,436306
+"254","Lithuania",1995,"75+ years","male",67,47214
+"255","Lithuania",1995,"55-74 years","male",325,274196
+"256","Lithuania",1995,"25-34 years","male",226,284758
+"257","Lithuania",1995,"15-24 years","male",134,263792
+"258","Lithuania",1995,"75+ years","female",37,109609
+"259","Lithuania",1995,"55-74 years","female",101,408926
+"260","Lithuania",1995,"35-54 years","female",113,481445
+"261","Lithuania",1995,"25-34 years","female",33,276055
+"262","Lithuania",1995,"15-24 years","female",20,256623
+"263","Lithuania",1995,"5-14 years","male",4,279260
+"264","Lithuania",1995,"5-14 years","female",2,268965
+"265","Lithuania",1996,"35-54 years","male",664,438770
+"266","Lithuania",1996,"55-74 years","male",336,275843
+"267","Lithuania",1996,"75+ years","male",40,47319
+"268","Lithuania",1996,"25-34 years","male",196,278848
+"269","Lithuania",1996,"15-24 years","male",147,257675
+"270","Lithuania",1996,"75+ years","female",39,110913
+"271","Lithuania",1996,"55-74 years","female",118,410808
+"272","Lithuania",1996,"35-54 years","female",129,484132
+"273","Lithuania",1996,"25-34 years","female",27,271013
+"274","Lithuania",1996,"15-24 years","female",20,251718
+"275","Lithuania",1996,"5-14 years","male",5,279323
+"276","Lithuania",1996,"5-14 years","female",1,268801
+"277","Lithuania",1997,"35-54 years","male",637,440546
+"278","Lithuania",1997,"55-74 years","male",294,277983
+"279","Lithuania",1997,"25-34 years","male",231,272292
+"280","Lithuania",1997,"75+ years","male",39,47892
+"281","Lithuania",1997,"15-24 years","male",144,252818
+"282","Lithuania",1997,"75+ years","female",29,113485
+"283","Lithuania",1997,"55-74 years","female",94,412839
+"284","Lithuania",1997,"35-54 years","female",109,485204
+"285","Lithuania",1997,"25-34 years","female",31,266372
+"286","Lithuania",1997,"15-24 years","female",17,247246
+"287","Lithuania",1997,"5-14 years","female",4,268373
+"288","Lithuania",1997,"5-14 years","male",3,279223
+"289","Lithuania",1998,"35-54 years","male",557,442825
+"290","Lithuania",1998,"55-74 years","male",345,278617
+"291","Lithuania",1998,"75+ years","male",47,49012
+"292","Lithuania",1998,"25-34 years","male",222,265304
+"293","Lithuania",1998,"15-24 years","male",112,250687
+"294","Lithuania",1998,"75+ years","female",40,117165
+"295","Lithuania",1998,"35-54 years","female",107,486222
+"296","Lithuania",1998,"55-74 years","female",80,412652
+"297","Lithuania",1998,"15-24 years","female",22,244923
+"298","Lithuania",1998,"25-34 years","female",18,261722
+"299","Lithuania",1998,"5-14 years","male",2,276408
+"300","Lithuania",1998,"5-14 years","female",1,265436
+"301","Lithuania",1999,"35-54 years","male",592,446764
+"302","Lithuania",1999,"55-74 years","male",284,277228
+"303","Lithuania",1999,"75+ years","male",48,50173
+"304","Lithuania",1999,"25-34 years","male",224,257244
+"305","Lithuania",1999,"15-24 years","male",129,251394
+"306","Lithuania",1999,"75+ years","female",37,121573
+"307","Lithuania",1999,"55-74 years","female",84,409039
+"308","Lithuania",1999,"35-54 years","female",97,489403
+"309","Lithuania",1999,"15-24 years","female",24,244706
+"310","Lithuania",1999,"25-34 years","female",22,256587
+"311","Lithuania",1999,"5-14 years","male",8,270111
+"312","Lithuania",1999,"5-14 years","female",1,259230
+"313","Lithuania",2000,"35-54 years","male",595,451103
+"314","Lithuania",2000,"55-74 years","male",324,276055
+"315","Lithuania",2000,"25-34 years","male",221,249865
+"316","Lithuania",2000,"75+ years","male",40,50557
+"317","Lithuania",2000,"15-24 years","male",131,252489
+"318","Lithuania",2000,"75+ years","female",36,124608
+"319","Lithuania",2000,"55-74 years","female",101,405061
+"320","Lithuania",2000,"35-54 years","female",121,493992
+"321","Lithuania",2000,"25-34 years","female",31,252324
+"322","Lithuania",2000,"15-24 years","female",25,245035
+"323","Lithuania",2000,"5-14 years","male",6,262637
+"324","Lithuania",2000,"5-14 years","female",0,251399
+"325","Lithuania",2001,"35-54 years","male",559,453841
+"326","Lithuania",2001,"55-74 years","male",322,276422
+"327","Lithuania",2001,"75+ years","male",57,51713
+"328","Lithuania",2001,"25-34 years","male",190,243174
+"329","Lithuania",2001,"15-24 years","male",119,253439
+"330","Lithuania",2001,"75+ years","female",40,128791
+"331","Lithuania",2001,"35-54 years","female",113,496684
+"332","Lithuania",2001,"55-74 years","female",87,402028
+"333","Lithuania",2001,"25-34 years","female",19,247712
+"334","Lithuania",2001,"15-24 years","female",18,245848
+"335","Lithuania",2001,"5-14 years","male",8,252622
+"336","Lithuania",2001,"5-14 years","female",1,241864
+"337","Lithuania",2002,"35-54 years","male",613,456468
+"338","Lithuania",2002,"55-74 years","male",285,275961
+"339","Lithuania",2002,"75+ years","male",47,54325
+"340","Lithuania",2002,"25-34 years","male",204,237814
+"341","Lithuania",2002,"15-24 years","male",156,255044
+"342","Lithuania",2002,"75+ years","female",39,135785
+"343","Lithuania",2002,"55-74 years","female",85,399066
+"344","Lithuania",2002,"35-54 years","female",74,498421
+"345","Lithuania",2002,"25-34 years","female",28,242244
+"346","Lithuania",2002,"15-24 years","female",15,247514
+"347","Lithuania",2002,"5-14 years","male",4,240849
+"348","Lithuania",2002,"5-14 years","female",1,230997
+"349","Lithuania",2003,"35-54 years","male",529,458658
+"350","Lithuania",2003,"55-74 years","male",288,274066
+"351","Lithuania",2003,"75+ years","male",53,57169
+"352","Lithuania",2003,"25-34 years","male",205,233362
+"353","Lithuania",2003,"15-24 years","male",122,255707
+"354","Lithuania",2003,"75+ years","female",36,143383
+"355","Lithuania",2003,"35-54 years","female",111,499080
+"356","Lithuania",2003,"55-74 years","female",72,396850
+"357","Lithuania",2003,"25-34 years","female",24,237053
+"358","Lithuania",2003,"15-24 years","female",11,247710
+"359","Lithuania",2003,"5-14 years","female",2,220424
+"360","Lithuania",2003,"5-14 years","male",2,230665
+"361","Lithuania",2004,"35-54 years","male",491,457735
+"362","Lithuania",2004,"55-74 years","male",271,272871
+"363","Lithuania",2004,"25-34 years","male",193,227897
+"364","Lithuania",2004,"75+ years","male",48,60017
+"365","Lithuania",2004,"15-24 years","male",115,254022
+"366","Lithuania",2004,"75+ years","female",41,150000
+"367","Lithuania",2004,"35-54 years","female",98,496461
+"368","Lithuania",2004,"55-74 years","female",73,395331
+"369","Lithuania",2004,"25-34 years","female",24,231241
+"370","Lithuania",2004,"15-24 years","female",19,245226
+"371","Lithuania",2004,"5-14 years","male",6,221380
+"372","Lithuania",2004,"5-14 years","female",1,210788
+"373","Lithuania",2005,"55-74 years","male",289,271641
+"374","Lithuania",2005,"35-54 years","male",469,453800
+"375","Lithuania",2005,"75+ years","male",52,62849
+"376","Lithuania",2005,"25-34 years","male",172,221170
+"377","Lithuania",2005,"15-24 years","male",100,249053
+"378","Lithuania",2005,"75+ years","female",34,154994
+"379","Lithuania",2005,"55-74 years","female",86,393282
+"380","Lithuania",2005,"35-54 years","female",84,492082
+"381","Lithuania",2005,"25-34 years","female",19,223982
+"382","Lithuania",2005,"15-24 years","female",11,240386
+"383","Lithuania",2005,"5-14 years","male",2,211022
+"384","Lithuania",2005,"5-14 years","female",1,200467
+"385","Lithuania",2006,"55-74 years","male",238,269578
+"386","Lithuania",2006,"35-54 years","male",366,450132
+"387","Lithuania",2006,"75+ years","male",51,65428
+"388","Lithuania",2006,"25-34 years","male",96,214726
+"389","Lithuania",2006,"15-24 years","male",97,244528
+"390","Lithuania",2006,"75+ years","female",37,159540
+"391","Lithuania",2006,"55-74 years","female",59,390589
+"392","Lithuania",2006,"35-54 years","female",70,488597
+"393","Lithuania",2006,"25-34 years","female",19,217069
+"394","Lithuania",2006,"15-24 years","female",10,236885
+"395","Lithuania",2006,"5-14 years","male",5,199438
+"396","Lithuania",2006,"5-14 years","female",1,189257
+"397","Lithuania",2007,"55-74 years","male",220,267333
+"398","Lithuania",2007,"75+ years","male",51,67551
+"399","Lithuania",2007,"35-54 years","male",326,447405
+"400","Lithuania",2007,"25-34 years","male",146,210164
+"401","Lithuania",2007,"15-24 years","male",101,243589
+"402","Lithuania",2007,"75+ years","female",40,164150
+"403","Lithuania",2007,"35-54 years","female",60,485943
+"404","Lithuania",2007,"55-74 years","female",46,387684
+"405","Lithuania",2007,"25-34 years","female",17,212154
+"406","Lithuania",2007,"15-24 years","female",10,236177
+"407","Lithuania",2007,"5-14 years","female",4,177982
+"408","Lithuania",2007,"5-14 years","male",4,187735
+"409","Lithuania",2008,"35-54 years","male",401,444829
+"410","Lithuania",2008,"75+ years","male",56,69533
+"411","Lithuania",2008,"25-34 years","male",155,207780
+"412","Lithuania",2008,"55-74 years","male",190,264954
+"413","Lithuania",2008,"15-24 years","male",114,242106
+"414","Lithuania",2008,"75+ years","female",36,168662
+"415","Lithuania",2008,"55-74 years","female",60,384300
+"416","Lithuania",2008,"35-54 years","female",65,483453
+"417","Lithuania",2008,"15-24 years","female",17,234198
+"418","Lithuania",2008,"25-34 years","female",15,208792
+"419","Lithuania",2008,"5-14 years","male",2,177345
+"420","Lithuania",2008,"5-14 years","female",0,167804
+"421","Lithuania",2009,"35-54 years","male",428,440281
+"422","Lithuania",2009,"55-74 years","male",239,263507
+"423","Lithuania",2009,"75+ years","male",57,71090
+"424","Lithuania",2009,"25-34 years","male",116,205749
+"425","Lithuania",2009,"15-24 years","male",109,237032
+"426","Lithuania",2009,"75+ years","female",40,172277
+"427","Lithuania",2009,"35-54 years","female",65,480247
+"428","Lithuania",2009,"55-74 years","female",48,381948
+"429","Lithuania",2009,"25-34 years","female",15,205781
+"430","Lithuania",2009,"15-24 years","female",16,229147
+"431","Lithuania",2009,"5-14 years","male",3,169250
+"432","Lithuania",2009,"5-14 years","female",2,160188
+"433","Lithuania",2010,"55-74 years","male",219,262907
+"434","Lithuania",2010,"35-54 years","male",357,430396
+"435","Lithuania",2010,"75+ years","male",49,72479
+"436","Lithuania",2010,"25-34 years","male",110,198028
+"437","Lithuania",2010,"15-24 years","male",93,227810
+"438","Lithuania",2010,"75+ years","female",41,175611
+"439","Lithuania",2010,"35-54 years","female",72,471491
+"440","Lithuania",2010,"55-74 years","female",50,380465
+"441","Lithuania",2010,"15-24 years","female",14,218961
+"442","Lithuania",2010,"25-34 years","female",11,196906
+"443","Lithuania",2010,"5-14 years","female",1,153084
+"444","Lithuania",2010,"5-14 years","male",1,161599
+"445","Lithuania",2011,"35-54 years","male",349,420391
+"446","Lithuania",2011,"55-74 years","male",213,262391
+"447","Lithuania",2011,"75+ years","male",56,74328
+"448","Lithuania",2011,"25-34 years","male",124,189937
+"449","Lithuania",2011,"15-24 years","male",74,217769
+"450","Lithuania",2011,"75+ years","female",38,179526
+"451","Lithuania",2011,"55-74 years","female",68,378929
+"452","Lithuania",2011,"35-54 years","female",67,460566
+"453","Lithuania",2011,"25-34 years","female",17,187312
+"454","Lithuania",2011,"15-24 years","female",10,207726
+"455","Lithuania",2011,"5-14 years","female",1,146411
+"456","Lithuania",2011,"5-14 years","male",1,154519
+"457","Lithuania",2012,"35-54 years","male",321,413107
+"458","Lithuania",2012,"55-74 years","male",195,263194
+"459","Lithuania",2012,"75+ years","male",53,76080
+"460","Lithuania",2012,"25-34 years","male",117,187811
+"461","Lithuania",2012,"15-24 years","male",64,209964
+"462","Lithuania",2012,"75+ years","female",37,183510
+"463","Lithuania",2012,"35-54 years","female",74,451819
+"464","Lithuania",2012,"55-74 years","female",45,378541
+"465","Lithuania",2012,"25-34 years","female",10,183799
+"466","Lithuania",2012,"15-24 years","female",8,199629
+"467","Lithuania",2012,"5-14 years","male",3,149055
+"468","Lithuania",2012,"5-14 years","female",0,141261
+"469","Lithuania",2013,"35-54 years","male",382,405191
+"470","Lithuania",2013,"55-74 years","male",223,265835
+"471","Lithuania",2013,"75+ years","male",63,77510
+"472","Lithuania",2013,"25-34 years","male",121,188010
+"473","Lithuania",2013,"15-24 years","male",96,203647
+"474","Lithuania",2013,"75+ years","female",40,186711
+"475","Lithuania",2013,"35-54 years","female",75,442140
+"476","Lithuania",2013,"25-34 years","female",22,182444
+"477","Lithuania",2013,"55-74 years","female",41,380096
+"478","Lithuania",2013,"15-24 years","female",17,192772
+"479","Lithuania",2013,"5-14 years","female",3,137471
+"480","Lithuania",2013,"5-14 years","male",2,144800
+"481","Lithuania",2014,"75+ years","male",72,78763
+"482","Lithuania",2014,"35-54 years","male",309,396758
+"483","Lithuania",2014,"55-74 years","male",204,269618
+"484","Lithuania",2014,"25-34 years","male",94,189300
+"485","Lithuania",2014,"15-24 years","male",88,197504
+"486","Lithuania",2014,"75+ years","female",45,189437
+"487","Lithuania",2014,"55-74 years","female",47,383128
+"488","Lithuania",2014,"35-54 years","female",43,431495
+"489","Lithuania",2014,"15-24 years","female",12,186406
+"490","Lithuania",2014,"25-34 years","female",11,182183
+"491","Lithuania",2014,"5-14 years","female",3,135051
+"492","Lithuania",2014,"5-14 years","male",2,141934
+"493","Lithuania",2015,"75+ years","male",67,79672
+"494","Lithuania",2015,"55-74 years","male",216,273776
+"495","Lithuania",2015,"35-54 years","male",275,387255
+"496","Lithuania",2015,"25-34 years","male",101,190800
+"497","Lithuania",2015,"15-24 years","male",66,188903
+"498","Lithuania",2015,"75+ years","female",38,191358
+"499","Lithuania",2015,"55-74 years","female",55,386892
+"500","Lithuania",2015,"35-54 years","female",46,419841
+"501","Lithuania",2015,"25-34 years","female",17,182926
+"502","Lithuania",2015,"15-24 years","female",10,178882
+"503","Lithuania",2015,"5-14 years","female",3,133506
+"504","Lithuania",2015,"5-14 years","male",2,140115
+"505","Lithuania",2016,"75+ years","male",78,80426
+"506","Lithuania",2016,"55-74 years","male",212,277763
+"507","Lithuania",2016,"35-54 years","male",266,376689
+"508","Lithuania",2016,"25-34 years","male",96,191346
+"509","Lithuania",2016,"15-24 years","male",41,177888
+"510","Lithuania",2016,"75+ years","female",29,193001
+"511","Lithuania",2016,"55-74 years","female",45,390385
+"512","Lithuania",2016,"35-54 years","female",41,406249
+"513","Lithuania",2016,"25-34 years","female",8,182632
+"514","Lithuania",2016,"15-24 years","female",6,168917
+"515","Sri Lanka",1985,"75+ years","male",144,115000
+"516","Sri Lanka",1985,"15-24 years","male",1432,1673000
+"517","Sri Lanka",1985,"25-34 years","male",1024,1288000
+"518","Sri Lanka",1985,"55-74 years","male",443,680000
+"519","Sri Lanka",1985,"15-24 years","female",943,1652000
+"520","Sri Lanka",1985,"35-54 years","male",824,1469000
+"521","Sri Lanka",1985,"25-34 years","female",426,1268000
+"522","Sri Lanka",1985,"75+ years","female",23,106000
+"523","Sri Lanka",1985,"35-54 years","female",203,1402000
+"524","Sri Lanka",1985,"55-74 years","female",80,600000
+"525","Sri Lanka",1985,"5-14 years","male",71,1836000
+"526","Sri Lanka",1985,"5-14 years","female",55,1768000
+"527","Sri Lanka",1986,"75+ years","male",145,117200
+"528","Sri Lanka",1986,"25-34 years","male",1045,1310300
+"529","Sri Lanka",1986,"15-24 years","male",1304,1702300
+"530","Sri Lanka",1986,"55-74 years","male",461,690600
+"531","Sri Lanka",1986,"35-54 years","male",851,1495400
+"532","Sri Lanka",1986,"15-24 years","female",804,1680400
+"533","Sri Lanka",1986,"25-34 years","female",365,1290400
+"534","Sri Lanka",1986,"75+ years","female",22,109400
+"535","Sri Lanka",1986,"35-54 years","female",193,1425200
+"536","Sri Lanka",1986,"55-74 years","female",72,611700
+"537","Sri Lanka",1986,"5-14 years","male",48,1868800
+"538","Sri Lanka",1986,"5-14 years","female",35,1799700
+"539","Sri Lanka",1996,"75+ years","male",146,191662
+"540","Sri Lanka",1996,"55-74 years","male",648,919081
+"541","Sri Lanka",1996,"25-34 years","male",918,1524411
+"542","Sri Lanka",1996,"35-54 years","male",1211,2095820
+"543","Sri Lanka",1996,"15-24 years","male",768,1772399
+"544","Sri Lanka",1996,"15-24 years","female",500,1726757
+"545","Sri Lanka",1996,"25-34 years","female",284,1516469
+"546","Sri Lanka",1996,"75+ years","female",30,196180
+"547","Sri Lanka",1996,"35-54 years","female",228,2135855
+"548","Sri Lanka",1996,"55-74 years","female",102,966021
+"549","Sri Lanka",1996,"5-14 years","male",37,1840930
+"550","Sri Lanka",1996,"5-14 years","female",26,1768842
+"551","Sri Lanka",1997,"75+ years","male",181,195537
+"552","Sri Lanka",1997,"25-34 years","male",1109,1514832
+"553","Sri Lanka",1997,"55-74 years","male",649,930446
+"554","Sri Lanka",1997,"35-54 years","male",1491,2161948
+"555","Sri Lanka",1997,"15-24 years","male",924,1779781
+"556","Sri Lanka",1997,"15-24 years","female",623,1738059
+"557","Sri Lanka",1997,"75+ years","female",53,201309
+"558","Sri Lanka",1997,"25-34 years","female",341,1514575
+"559","Sri Lanka",1997,"35-54 years","female",313,2204629
+"560","Sri Lanka",1997,"55-74 years","female",118,984037
+"561","Sri Lanka",1997,"5-14 years","female",49,1739451
+"562","Sri Lanka",1997,"5-14 years","male",36,1810805
+"563","Sri Lanka",1998,"75+ years","male",214,197754
+"564","Sri Lanka",1998,"55-74 years","male",677,946470
+"565","Sri Lanka",1998,"35-54 years","male",1567,2224435
+"566","Sri Lanka",1998,"25-34 years","male",968,1499623
+"567","Sri Lanka",1998,"15-24 years","male",740,1792565
+"568","Sri Lanka",1998,"15-24 years","female",522,1753245
+"569","Sri Lanka",1998,"25-34 years","female",310,1508958
+"570","Sri Lanka",1998,"75+ years","female",32,205515
+"571","Sri Lanka",1998,"35-54 years","female",278,2271131
+"572","Sri Lanka",1998,"55-74 years","female",118,1006698
+"573","Sri Lanka",1998,"5-14 years","female",52,1710834
+"574","Sri Lanka",1998,"5-14 years","male",40,1780463
+"575","Sri Lanka",1999,"75+ years","male",182,198230
+"576","Sri Lanka",1999,"35-54 years","male",1609,2281687
+"577","Sri Lanka",1999,"55-74 years","male",683,968940
+"578","Sri Lanka",1999,"25-34 years","male",997,1481693
+"579","Sri Lanka",1999,"15-24 years","male",765,1805721
+"580","Sri Lanka",1999,"15-24 years","female",536,1767426
+"581","Sri Lanka",1999,"75+ years","female",49,208739
+"582","Sri Lanka",1999,"25-34 years","female",303,1501778
+"583","Sri Lanka",1999,"35-54 years","female",304,2334618
+"584","Sri Lanka",1999,"55-74 years","female",121,1035715
+"585","Sri Lanka",1999,"5-14 years","female",35,1684408
+"586","Sri Lanka",1999,"5-14 years","male",35,1751332
+"587","Sri Lanka",2000,"75+ years","male",200,196877
+"588","Sri Lanka",2000,"55-74 years","male",729,999107
+"589","Sri Lanka",2000,"35-54 years","male",1521,2331906
+"590","Sri Lanka",2000,"25-34 years","male",873,1464384
+"591","Sri Lanka",2000,"15-24 years","male",615,1815183
+"592","Sri Lanka",2000,"15-24 years","female",504,1776940
+"593","Sri Lanka",2000,"25-34 years","female",288,1495529
+"594","Sri Lanka",2000,"75+ years","female",40,210936
+"595","Sri Lanka",2000,"35-54 years","female",309,2394085
+"596","Sri Lanka",2000,"55-74 years","female",125,1072256
+"597","Sri Lanka",2000,"5-14 years","female",27,1659830
+"598","Sri Lanka",2000,"5-14 years","male",21,1723309
+"599","Sri Lanka",2001,"75+ years","male",162,204801
+"600","Sri Lanka",2001,"55-74 years","male",671,1025106
+"601","Sri Lanka",2001,"35-54 years","male",1468,2362538
+"602","Sri Lanka",2001,"25-34 years","male",755,1469938
+"603","Sri Lanka",2001,"15-24 years","male",508,1811743
+"604","Sri Lanka",2001,"15-24 years","female",394,1778830
+"605","Sri Lanka",2001,"25-34 years","female",224,1503451
+"606","Sri Lanka",2001,"75+ years","female",31,222745
+"607","Sri Lanka",2001,"35-54 years","female",244,2437630
+"608","Sri Lanka",2001,"55-74 years","female",100,1109859
+"609","Sri Lanka",2001,"5-14 years","male",18,1699714
+"610","Sri Lanka",2001,"5-14 years","female",15,1640606
+"611","Sri Lanka",2002,"75+ years","male",165,211446
+"612","Sri Lanka",2002,"35-54 years","male",1476,2389646
+"613","Sri Lanka",2002,"55-74 years","male",641,1055685
+"614","Sri Lanka",2002,"25-34 years","male",639,1478000
+"615","Sri Lanka",2002,"15-24 years","male",520,1799884
+"616","Sri Lanka",2002,"15-24 years","female",335,1772766
+"617","Sri Lanka",2002,"25-34 years","female",213,1514774
+"618","Sri Lanka",2002,"75+ years","female",31,234216
+"619","Sri Lanka",2002,"55-74 years","female",106,1153099
+"620","Sri Lanka",2002,"35-54 years","female",204,2477980
+"621","Sri Lanka",2002,"5-14 years","female",28,1626383
+"622","Sri Lanka",2002,"5-14 years","male",24,1682076
+"623","Sri Lanka",2003,"75+ years","male",190,216549
+"624","Sri Lanka",2003,"55-74 years","male",690,1089743
+"625","Sri Lanka",2003,"35-54 years","male",1483,2413016
+"626","Sri Lanka",2003,"25-34 years","male",650,1488285
+"627","Sri Lanka",2003,"15-24 years","male",509,1781707
+"628","Sri Lanka",2003,"15-24 years","female",358,1760232
+"629","Sri Lanka",2003,"75+ years","female",38,245223
+"630","Sri Lanka",2003,"25-34 years","female",186,1529565
+"631","Sri Lanka",2003,"55-74 years","female",111,1200816
+"632","Sri Lanka",2003,"35-54 years","female",218,2514643
+"633","Sri Lanka",2003,"5-14 years","female",23,1615933
+"634","Sri Lanka",2003,"5-14 years","male",11,1668884
+"635","Sri Lanka",2006,"75+ years","male",211,224927
+"636","Sri Lanka",2006,"55-74 years","male",649,1187973
+"637","Sri Lanka",2006,"35-54 years","male",1246,2465505
+"638","Sri Lanka",2006,"25-34 years","male",573,1541529
+"639","Sri Lanka",2006,"15-24 years","male",423,1697398
+"640","Sri Lanka",2006,"15-24 years","female",333,1699144
+"641","Sri Lanka",2006,"75+ years","female",51,276505
+"642","Sri Lanka",2006,"25-34 years","female",194,1594072
+"643","Sri Lanka",2006,"55-74 years","female",111,1344897
+"644","Sri Lanka",2006,"35-54 years","female",198,2603293
+"645","Sri Lanka",2006,"5-14 years","male",15,1650300
+"646","Sri Lanka",2006,"5-14 years","female",11,1606015
+"647","United Kingdom",1985,"75+ years","male",264,1202838
+"648","United Kingdom",1985,"55-74 years","male",915,5170113
+"649","United Kingdom",1985,"35-54 years","male",1208,6899879
+"650","United Kingdom",1985,"25-34 years","male",620,3969689
+"651","United Kingdom",1985,"55-74 years","female",678,6002096
+"652","United Kingdom",1985,"75+ years","female",237,2418692
+"653","United Kingdom",1985,"15-24 years","male",411,4731293
+"654","United Kingdom",1985,"35-54 years","female",505,6879295
+"655","United Kingdom",1985,"25-34 years","female",176,3899906
+"656","United Kingdom",1985,"15-24 years","female",86,4549121
+"657","United Kingdom",1985,"5-14 years","male",3,3740694
+"658","United Kingdom",1985,"5-14 years","female",2,3542919
+"659","United Kingdom",1986,"75+ years","male",280,1227718
+"660","United Kingdom",1986,"55-74 years","male",892,5159651
+"661","United Kingdom",1986,"35-54 years","male",1152,6950315
+"662","United Kingdom",1986,"25-34 years","male",616,4039982
+"663","United Kingdom",1986,"15-24 years","male",449,4715034
+"664","United Kingdom",1986,"75+ years","female",223,2454593
+"665","United Kingdom",1986,"55-74 years","female",541,5964761
+"666","United Kingdom",1986,"35-54 years","female",424,6933075
+"667","United Kingdom",1986,"25-34 years","female",161,3980652
+"668","United Kingdom",1986,"15-24 years","female",97,4538658
+"669","United Kingdom",1986,"5-14 years","female",2,3480190
+"670","United Kingdom",1986,"5-14 years","male",2,3674904
+"671","United Kingdom",1987,"75+ years","male",248,1272201
+"672","United Kingdom",1987,"55-74 years","male",857,5141737
+"673","United Kingdom",1987,"35-54 years","male",1072,6997144
+"674","United Kingdom",1987,"25-34 years","male",618,4130709
+"675","United Kingdom",1987,"15-24 years","male",461,4665275
+"676","United Kingdom",1987,"55-74 years","female",464,5919684
+"677","United Kingdom",1987,"75+ years","female",174,2508896
+"678","United Kingdom",1987,"35-54 years","female",417,6986157
+"679","United Kingdom",1987,"25-34 years","female",168,4073306
+"680","United Kingdom",1987,"15-24 years","female",105,4483586
+"681","United Kingdom",1987,"5-14 years","male",7,3625848
+"682","United Kingdom",1987,"5-14 years","female",3,3435125
+"683","United Kingdom",1988,"75+ years","male",313,1304946
+"684","United Kingdom",1988,"35-54 years","male",1218,7060763
+"685","United Kingdom",1988,"25-34 years","male",695,4217963
+"686","United Kingdom",1988,"55-74 years","male",816,5119070
+"687","United Kingdom",1988,"15-24 years","male",565,4573487
+"688","United Kingdom",1988,"75+ years","female",205,2551912
+"689","United Kingdom",1988,"55-74 years","female",445,5863850
+"690","United Kingdom",1988,"35-54 years","female",417,7055435
+"691","United Kingdom",1988,"25-34 years","female",171,4162366
+"692","United Kingdom",1988,"15-24 years","female",120,4389539
+"693","United Kingdom",1988,"5-14 years","male",4,3599080
+"694","United Kingdom",1988,"5-14 years","female",2,3412369
+"695","United Kingdom",1989,"75+ years","male",267,1338351
+"696","United Kingdom",1989,"35-54 years","male",1117,7132941
+"697","United Kingdom",1989,"25-34 years","male",664,4320494
+"698","United Kingdom",1989,"55-74 years","male",703,5101514
+"699","United Kingdom",1989,"15-24 years","male",482,4444822
+"700","United Kingdom",1989,"75+ years","female",176,2599321
+"701","United Kingdom",1989,"55-74 years","female",352,5807846
+"702","United Kingdom",1989,"35-54 years","female",353,7131057
+"703","United Kingdom",1989,"25-34 years","female",157,4262150
+"704","United Kingdom",1989,"15-24 years","female",87,4270368
+"705","United Kingdom",1989,"5-14 years","female",2,3415806
+"706","United Kingdom",1989,"5-14 years","male",1,3600459
+"707","United Kingdom",1990,"75+ years","male",264,1360178
+"708","United Kingdom",1990,"35-54 years","male",1246,7192919
+"709","United Kingdom",1990,"25-34 years","male",763,4427270
+"710","United Kingdom",1990,"55-74 years","male",721,5093581
+"711","United Kingdom",1990,"15-24 years","male",528,4317816
+"712","United Kingdom",1990,"55-74 years","female",340,5762152
+"713","United Kingdom",1990,"75+ years","female",154,2625749
+"714","United Kingdom",1990,"35-54 years","female",360,7196514
+"715","United Kingdom",1990,"25-34 years","female",180,4366845
+"716","United Kingdom",1990,"15-24 years","female",85,4138638
+"717","United Kingdom",1990,"5-14 years","male",2,3630327
+"718","United Kingdom",1990,"5-14 years","female",0,3445865
+"719","United Kingdom",1991,"35-54 years","male",1342,7271111
+"720","United Kingdom",1991,"25-34 years","male",801,4577587
+"721","United Kingdom",1991,"75+ years","male",238,1367055
+"722","United Kingdom",1991,"55-74 years","male",628,5106574
+"723","United Kingdom",1991,"15-24 years","male",481,4218626
+"724","United Kingdom",1991,"75+ years","female",151,2671099
+"725","United Kingdom",1991,"55-74 years","female",311,5765907
+"726","United Kingdom",1991,"35-54 years","female",336,7264229
+"727","United Kingdom",1991,"25-34 years","female",161,4465693
+"728","United Kingdom",1991,"15-24 years","female",93,4021225
+"729","United Kingdom",1991,"5-14 years","male",4,3687655
+"730","United Kingdom",1991,"5-14 years","female",1,3486666
+"731","United Kingdom",1992,"35-54 years","male",1361,7357267
+"732","United Kingdom",1992,"25-34 years","male",785,4655305
+"733","United Kingdom",1992,"75+ years","male",216,1371639
+"734","United Kingdom",1992,"55-74 years","male",693,5128063
+"735","United Kingdom",1992,"15-24 years","male",500,4077682
+"736","United Kingdom",1992,"75+ years","female",143,2670510
+"737","United Kingdom",1992,"55-74 years","female",299,5765146
+"738","United Kingdom",1992,"35-54 years","female",347,7352110
+"739","United Kingdom",1992,"25-34 years","female",191,4529424
+"740","United Kingdom",1992,"15-24 years","female",91,3882211
+"741","United Kingdom",1992,"5-14 years","male",2,3742157
+"742","United Kingdom",1992,"5-14 years","female",0,3544844
+"743","United Kingdom",1993,"35-54 years","male",1274,7453705
+"744","United Kingdom",1993,"25-34 years","male",773,4707275
+"745","United Kingdom",1993,"75+ years","male",221,1361095
+"746","United Kingdom",1993,"15-24 years","male",501,3957719
+"747","United Kingdom",1993,"55-74 years","male",652,5170730
+"748","United Kingdom",1993,"75+ years","female",166,2647900
+"749","United Kingdom",1993,"55-74 years","female",263,5792600
+"750","United Kingdom",1993,"35-54 years","female",335,7448149
+"751","United Kingdom",1993,"25-34 years","female",181,4569482
+"752","United Kingdom",1993,"15-24 years","female",82,3760574
+"753","United Kingdom",1993,"5-14 years","male",12,3806053
+"754","United Kingdom",1993,"5-14 years","female",2,3608700
+"755","United Kingdom",1994,"25-34 years","male",881,4751200
+"756","United Kingdom",1994,"35-54 years","male",1242,7561779
+"757","United Kingdom",1994,"75+ years","male",218,1349491
+"758","United Kingdom",1994,"15-24 years","male",445,3868779
+"759","United Kingdom",1994,"55-74 years","male",595,5209306
+"760","United Kingdom",1994,"75+ years","female",148,2619957
+"761","United Kingdom",1994,"55-74 years","female",256,5816530
+"762","United Kingdom",1994,"35-54 years","female",324,7557704
+"763","United Kingdom",1994,"25-34 years","female",176,4606941
+"764","United Kingdom",1994,"15-24 years","female",82,3674808
+"765","United Kingdom",1994,"5-14 years","male",9,3837961
+"766","United Kingdom",1994,"5-14 years","female",4,3642837
+"767","United Kingdom",1995,"25-34 years","male",858,4776564
+"768","United Kingdom",1995,"35-54 years","male",1247,7691950
+"769","United Kingdom",1995,"75+ years","male",222,1412937
+"770","United Kingdom",1995,"55-74 years","male",602,5179979
+"771","United Kingdom",1995,"15-24 years","male",419,3811646
+"772","United Kingdom",1995,"75+ years","female",152,2692330
+"773","United Kingdom",1995,"35-54 years","female",344,7672199
+"774","United Kingdom",1995,"55-74 years","female",237,5746814
+"775","United Kingdom",1995,"25-34 years","female",143,4614434
+"776","United Kingdom",1995,"15-24 years","female",81,3624373
+"777","United Kingdom",1995,"5-14 years","male",6,3859464
+"778","United Kingdom",1995,"5-14 years","female",4,3664274
+"779","United Kingdom",1996,"25-34 years","male",858,4786490
+"780","United Kingdom",1996,"35-54 years","male",1189,7859858
+"781","United Kingdom",1996,"75+ years","male",218,1460275
+"782","United Kingdom",1996,"55-74 years","male",552,5146338
+"783","United Kingdom",1996,"15-24 years","male",362,3746067
+"784","United Kingdom",1996,"75+ years","female",134,2740309
+"785","United Kingdom",1996,"35-54 years","female",350,7826169
+"786","United Kingdom",1996,"25-34 years","female",190,4613261
+"787","United Kingdom",1996,"55-74 years","female",218,5677006
+"788","United Kingdom",1996,"15-24 years","female",88,3564927
+"789","United Kingdom",1996,"5-14 years","male",6,3894281
+"790","United Kingdom",1996,"5-14 years","female",0,3697226
+"791","United Kingdom",1997,"25-34 years","male",832,4758740
+"792","United Kingdom",1997,"75+ years","male",252,1500323
+"793","United Kingdom",1997,"35-54 years","male",1180,8015651
+"794","United Kingdom",1997,"15-24 years","male",411,3696059
+"795","United Kingdom",1997,"55-74 years","male",519,5148166
+"796","United Kingdom",1997,"35-54 years","female",358,7970382
+"797","United Kingdom",1997,"55-74 years","female",224,5648065
+"798","United Kingdom",1997,"75+ years","female",107,2771148
+"799","United Kingdom",1997,"25-34 years","female",171,4576730
+"800","United Kingdom",1997,"15-24 years","female",82,3520027
+"801","United Kingdom",1997,"5-14 years","female",4,3732059
+"802","United Kingdom",1997,"5-14 years","male",3,3929285
+"803","United Kingdom",1998,"25-34 years","male",968,4695840
+"804","United Kingdom",1998,"35-54 years","male",1280,8158001
+"805","United Kingdom",1998,"75+ years","male",204,1534356
+"806","United Kingdom",1998,"55-74 years","male",571,5191604
+"807","United Kingdom",1998,"15-24 years","male",382,3673423
+"808","United Kingdom",1998,"75+ years","female",122,2797439
+"809","United Kingdom",1998,"55-74 years","female",244,5664521
+"810","United Kingdom",1998,"35-54 years","female",334,8098801
+"811","United Kingdom",1998,"25-34 years","female",177,4508772
+"812","United Kingdom",1998,"15-24 years","female",101,3501036
+"813","United Kingdom",1998,"5-14 years","female",4,3753737
+"814","United Kingdom",1998,"5-14 years","male",2,3949849
+"815","United Kingdom",1999,"25-34 years","male",839,4615720
+"816","United Kingdom",1999,"35-54 years","male",1361,8305433
+"817","United Kingdom",1999,"75+ years","male",242,1562363
+"818","United Kingdom",1999,"55-74 years","male",604,5254251
+"819","United Kingdom",1999,"15-24 years","male",393,3680455
+"820","United Kingdom",1999,"75+ years","female",144,2807489
+"821","United Kingdom",1999,"35-54 years","female",369,8226330
+"822","United Kingdom",1999,"55-74 years","female",232,5703910
+"823","United Kingdom",1999,"25-34 years","female",171,4419817
+"824","United Kingdom",1999,"15-24 years","female",88,3503102
+"825","United Kingdom",1999,"5-14 years","male",4,3975507
+"826","United Kingdom",1999,"5-14 years","female",1,3778962
+"827","United Kingdom",2000,"25-34 years","male",768,4536556
+"828","United Kingdom",2000,"35-54 years","male",1357,8459117
+"829","United Kingdom",2000,"75+ years","male",223,1589527
+"830","United Kingdom",2000,"55-74 years","male",568,5314648
+"831","United Kingdom",2000,"15-24 years","male",390,3709456
+"832","United Kingdom",2000,"35-54 years","female",386,8366055
+"833","United Kingdom",2000,"75+ years","female",109,2816810
+"834","United Kingdom",2000,"25-34 years","female",167,4332330
+"835","United Kingdom",2000,"55-74 years","female",212,5750273
+"836","United Kingdom",2000,"15-24 years","female",101,3523496
+"837","United Kingdom",2000,"5-14 years","male",5,3967341
+"838","United Kingdom",2000,"5-14 years","female",4,3768300
+"839","United Kingdom",2001,"25-34 years","male",723,4243590
+"840","United Kingdom",2001,"35-54 years","male",1317,8222369
+"841","United Kingdom",2001,"75+ years","male",225,1618917
+"842","United Kingdom",2001,"55-74 years","male",569,5390372
+"843","United Kingdom",2001,"15-24 years","male",361,3650328
+"844","United Kingdom",2001,"35-54 years","female",373,8374702
+"845","United Kingdom",2001,"55-74 years","female",239,5820231
+"846","United Kingdom",2001,"75+ years","female",106,2801024
+"847","United Kingdom",2001,"25-34 years","female",136,4251558
+"848","United Kingdom",2001,"15-24 years","female",72,3581981
+"849","United Kingdom",2001,"5-14 years","male",4,3902253
+"850","United Kingdom",2001,"5-14 years","female",3,3714668
+"851","United Kingdom",2002,"25-34 years","male",747,4114056
+"852","United Kingdom",2002,"35-54 years","male",1350,8250038
+"853","United Kingdom",2002,"75+ years","male",175,1653523
+"854","United Kingdom",2002,"55-74 years","male",564,5545751
+"855","United Kingdom",2002,"15-24 years","male",323,3758190
+"856","United Kingdom",2002,"75+ years","female",117,2817222
+"857","United Kingdom",2002,"35-54 years","female",349,8405892
+"858","United Kingdom",2002,"25-34 years","female",170,4149794
+"859","United Kingdom",2002,"55-74 years","female",222,5969004
+"860","United Kingdom",2002,"15-24 years","female",90,3642294
+"861","United Kingdom",2002,"5-14 years","female",5,3706268
+"862","United Kingdom",2002,"5-14 years","male",5,3896912
+"863","United Kingdom",2003,"25-34 years","male",637,4023648
+"864","United Kingdom",2003,"35-54 years","male",1311,8282037
+"865","United Kingdom",2003,"75+ years","male",209,1681364
+"866","United Kingdom",2003,"55-74 years","male",575,5665717
+"867","United Kingdom",2003,"15-24 years","male",316,3854815
+"868","United Kingdom",2003,"35-54 years","female",381,8432837
+"869","United Kingdom",2003,"75+ years","female",104,2821243
+"870","United Kingdom",2003,"25-34 years","female",144,4059897
+"871","United Kingdom",2003,"55-74 years","female",207,6085995
+"872","United Kingdom",2003,"15-24 years","female",91,3718206
+"873","United Kingdom",2003,"5-14 years","female",2,3677964
+"874","United Kingdom",2003,"5-14 years","male",2,3868048
+"875","United Kingdom",2004,"35-54 years","male",1422,8324962
+"876","United Kingdom",2004,"25-34 years","male",599,3960327
+"877","United Kingdom",2004,"75+ years","male",221,1713028
+"878","United Kingdom",2004,"55-74 years","male",601,5755684
+"879","United Kingdom",2004,"15-24 years","male",315,3953382
+"880","United Kingdom",2004,"35-54 years","female",423,8494403
+"881","United Kingdom",2004,"75+ years","female",115,2829135
+"882","United Kingdom",2004,"55-74 years","female",244,6170678
+"883","United Kingdom",2004,"25-34 years","female",150,3993258
+"884","United Kingdom",2004,"15-24 years","female",88,3785230
+"885","United Kingdom",2004,"5-14 years","male",4,3832497
+"886","United Kingdom",2004,"5-14 years","female",1,3642427
+"887","United Kingdom",2005,"35-54 years","male",1359,8397155
+"888","United Kingdom",2005,"25-34 years","male",563,3951996
+"889","United Kingdom",2005,"75+ years","male",215,1749520
+"890","United Kingdom",2005,"55-74 years","male",617,5831367
+"891","United Kingdom",2005,"15-24 years","male",296,4029567
+"892","United Kingdom",2005,"35-54 years","female",405,8555323
+"893","United Kingdom",2005,"25-34 years","female",162,3983494
+"894","United Kingdom",2005,"55-74 years","female",237,6236531
+"895","United Kingdom",2005,"75+ years","female",97,2844822
+"896","United Kingdom",2005,"15-24 years","female",88,3856149
+"897","United Kingdom",2005,"5-14 years","female",4,3591721
+"898","United Kingdom",2005,"5-14 years","male",4,3781379
+"899","United Kingdom",2006,"35-54 years","male",1457,8462315
+"900","United Kingdom",2006,"25-34 years","male",562,3940414
+"901","United Kingdom",2006,"55-74 years","male",656,5891585
+"902","United Kingdom",2006,"75+ years","male",199,1792119
+"903","United Kingdom",2006,"15-24 years","male",308,4108191
+"904","United Kingdom",2006,"35-54 years","female",397,8633179
+"905","United Kingdom",2006,"55-74 years","female",238,6287636
+"906","United Kingdom",2006,"25-34 years","female",138,3955936
+"907","United Kingdom",2006,"75+ years","female",86,2866699
+"908","United Kingdom",2006,"15-24 years","female",74,3911869
+"909","United Kingdom",2006,"5-14 years","male",4,3709139
+"910","United Kingdom",2006,"5-14 years","female",3,3532047
+"911","United Kingdom",2007,"35-54 years","male",1332,8519029
+"912","United Kingdom",2007,"25-34 years","male",547,3935970
+"913","United Kingdom",2007,"75+ years","male",214,1834466
+"914","United Kingdom",2007,"55-74 years","male",613,5943853
+"915","United Kingdom",2007,"15-24 years","male",309,4193170
+"916","United Kingdom",2007,"35-54 years","female",354,8709169
+"917","United Kingdom",2007,"55-74 years","female",230,6345128
+"918","United Kingdom",2007,"25-34 years","female",132,3923507
+"919","United Kingdom",2007,"75+ years","female",82,2886921
+"920","United Kingdom",2007,"15-24 years","female",70,3963103
+"921","United Kingdom",2007,"5-14 years","male",10,3648686
+"922","United Kingdom",2007,"5-14 years","female",4,3479755
+"923","United Kingdom",2008,"35-54 years","male",1441,8559778
+"924","United Kingdom",2008,"25-34 years","male",617,3984635
+"925","United Kingdom",2008,"75+ years","male",221,1873437
+"926","United Kingdom",2008,"55-74 years","male",692,6013042
+"927","United Kingdom",2008,"15-24 years","male",323,4214828
+"928","United Kingdom",2008,"35-54 years","female",420,8751380
+"929","United Kingdom",2008,"25-34 years","female",156,3915840
+"930","United Kingdom",2008,"55-74 years","female",207,6414224
+"931","United Kingdom",2008,"75+ years","female",88,2901507
+"932","United Kingdom",2008,"15-24 years","female",81,4000750
+"933","United Kingdom",2008,"5-14 years","female",7,3443457
+"934","United Kingdom",2008,"5-14 years","male",6,3610494
+"935","United Kingdom",2009,"35-54 years","male",1542,8582671
+"936","United Kingdom",2009,"25-34 years","male",564,4047103
+"937","United Kingdom",2009,"55-74 years","male",676,6096376
+"938","United Kingdom",2009,"75+ years","male",195,1911370
+"939","United Kingdom",2009,"15-24 years","male",332,4210903
+"940","United Kingdom",2009,"35-54 years","female",387,8778984
+"941","United Kingdom",2009,"55-74 years","female",229,6497453
+"942","United Kingdom",2009,"25-34 years","female",133,3946153
+"943","United Kingdom",2009,"75+ years","female",97,2915785
+"944","United Kingdom",2009,"15-24 years","female",84,4009556
+"945","United Kingdom",2009,"5-14 years","male",4,3591283
+"946","United Kingdom",2009,"5-14 years","female",3,3425922
+"947","United Kingdom",2010,"35-54 years","male",1444,8592781
+"948","United Kingdom",2010,"25-34 years","male",513,4128369
+"949","United Kingdom",2010,"75+ years","male",227,1960939
+"950","United Kingdom",2010,"55-74 years","male",696,6171080
+"951","United Kingdom",2010,"15-24 years","male",344,4225926
+"952","United Kingdom",2010,"35-54 years","female",400,8788212
+"953","United Kingdom",2010,"55-74 years","female",232,6570278
+"954","United Kingdom",2010,"25-34 years","female",133,4012797
+"955","United Kingdom",2010,"75+ years","female",89,2944062
+"956","United Kingdom",2010,"15-24 years","female",106,3995780
+"957","United Kingdom",2010,"5-14 years","female",3,3426430
+"958","United Kingdom",2010,"5-14 years","male",1,3586875
+"959","United Kingdom",2011,"35-54 years","male",1611,8617712
+"960","United Kingdom",2011,"25-34 years","male",553,4222804
+"961","United Kingdom",2011,"55-74 years","male",708,6253024
+"962","United Kingdom",2011,"75+ years","male",207,2013814
+"963","United Kingdom",2011,"15-24 years","male",346,4236989
+"964","United Kingdom",2011,"35-54 years","female",417,8790957
+"965","United Kingdom",2011,"55-74 years","female",235,6652911
+"966","United Kingdom",2011,"25-34 years","female",134,4094631
+"967","United Kingdom",2011,"15-24 years","female",100,4001855
+"968","United Kingdom",2011,"75+ years","female",70,2973876
+"969","United Kingdom",2011,"5-14 years","male",8,3594112
+"970","United Kingdom",2011,"5-14 years","female",4,3429167
+"971","United Kingdom",2012,"35-54 years","male",1587,8673006
+"972","United Kingdom",2012,"25-34 years","male",597,4261254
+"973","United Kingdom",2012,"55-74 years","male",739,6392214
+"974","United Kingdom",2012,"75+ years","male",215,2043034
+"975","United Kingdom",2012,"15-24 years","male",364,4204765
+"976","United Kingdom",2012,"35-54 years","female",403,8852151
+"977","United Kingdom",2012,"25-34 years","female",153,4296499
+"978","United Kingdom",2012,"55-74 years","female",211,6737405
+"979","United Kingdom",2012,"75+ years","female",93,2976921
+"980","United Kingdom",2012,"15-24 years","female",70,4054017
+"981","United Kingdom",2012,"5-14 years","male",10,3695552
+"982","United Kingdom",2012,"5-14 years","female",2,3521812
+"983","United Kingdom",2013,"35-54 years","male",1743,8656572
+"984","United Kingdom",2013,"55-74 years","male",908,6488882
+"985","United Kingdom",2013,"25-34 years","male",586,4320298
+"986","United Kingdom",2013,"75+ years","male",258,2096518
+"987","United Kingdom",2013,"15-24 years","male",331,4180873
+"988","United Kingdom",2013,"35-54 years","female",449,8837469
+"989","United Kingdom",2013,"75+ years","female",103,3004685
+"990","United Kingdom",2013,"55-74 years","female",232,6839180
+"991","United Kingdom",2013,"25-34 years","female",124,4356539
+"992","United Kingdom",2013,"15-24 years","female",81,4017291
+"993","United Kingdom",2013,"5-14 years","male",5,3734237
+"994","United Kingdom",2013,"5-14 years","female",4,3559249
+"995","United Kingdom",2014,"35-54 years","male",1692,8665195
+"996","United Kingdom",2014,"25-34 years","male",602,4360457
+"997","United Kingdom",2014,"55-74 years","male",827,6597480
+"998","United Kingdom",2014,"75+ years","male",257,2158742
+"999","United Kingdom",2014,"15-24 years","male",332,4171187
+"1000","United Kingdom",2014,"35-54 years","female",462,8850139
+"1001","United Kingdom",2014,"55-74 years","female",262,6952444
+"1002","United Kingdom",2014,"25-34 years","female",155,4388346
+"1003","United Kingdom",2014,"75+ years","female",83,3052672
+"1004","United Kingdom",2014,"15-24 years","female",103,3992566
+"1005","United Kingdom",2014,"5-14 years","male",7,3778321
+"1006","United Kingdom",2014,"5-14 years","female",6,3602933
+"1007","United Kingdom",2015,"35-54 years","male",1579,8692440
+"1008","United Kingdom",2015,"25-34 years","male",596,4408293
+"1009","United Kingdom",2015,"55-74 years","male",906,6716557
+"1010","United Kingdom",2015,"75+ years","male",273,2200958
+"1011","United Kingdom",2015,"15-24 years","male",374,4151992
+"1012","United Kingdom",2015,"35-54 years","female",473,8881944
+"1013","United Kingdom",2015,"55-74 years","female",306,7075576
+"1014","United Kingdom",2015,"25-34 years","female",181,4414464
+"1015","United Kingdom",2015,"75+ years","female",108,3070457
+"1016","United Kingdom",2015,"15-24 years","female",104,3966564
+"1017","United Kingdom",2015,"5-14 years","female",6,3663221
+"1018","United Kingdom",2015,"5-14 years","male",4,3840476
+"1019","Uzbekistan",1990,"35-54 years","male",343,1491700
+"1020","Uzbekistan",1990,"55-74 years","male",129,660200
+"1021","Uzbekistan",1990,"25-34 years","male",283,1638100
+"1022","Uzbekistan",1990,"75+ years","male",20,118300
+"1023","Uzbekistan",1990,"75+ years","female",27,218400
+"1024","Uzbekistan",1990,"15-24 years","male",191,1955700
+"1025","Uzbekistan",1990,"55-74 years","female",77,856800
+"1026","Uzbekistan",1990,"35-54 years","female",105,1507400
+"1027","Uzbekistan",1990,"15-24 years","female",135,1956300
+"1028","Uzbekistan",1990,"25-34 years","female",87,1664200
+"1029","Uzbekistan",1990,"5-14 years","male",42,2574400
+"1030","Uzbekistan",1990,"5-14 years","female",20,2524200
+"1031","Uzbekistan",1991,"35-54 years","male",353,1510300
+"1032","Uzbekistan",1991,"55-74 years","male",119,668000
+"1033","Uzbekistan",1991,"25-34 years","male",289,1648400
+"1034","Uzbekistan",1991,"75+ years","male",20,115500
+"1035","Uzbekistan",1991,"75+ years","female",30,216200
+"1036","Uzbekistan",1991,"15-24 years","male",209,1970700
+"1037","Uzbekistan",1991,"55-74 years","female",57,856200
+"1038","Uzbekistan",1991,"15-24 years","female",117,1965200
+"1039","Uzbekistan",1991,"35-54 years","female",71,1531100
+"1040","Uzbekistan",1991,"25-34 years","female",72,1684500
+"1041","Uzbekistan",1991,"5-14 years","male",49,2615200
+"1042","Uzbekistan",1991,"5-14 years","female",7,2566500
+"1043","Uzbekistan",1992,"35-54 years","male",308,1586100
+"1044","Uzbekistan",1992,"75+ years","male",19,125500
+"1045","Uzbekistan",1992,"55-74 years","male",105,701800
+"1046","Uzbekistan",1992,"25-34 years","male",258,1741600
+"1047","Uzbekistan",1992,"75+ years","female",29,232900
+"1048","Uzbekistan",1992,"15-24 years","male",257,2079600
+"1049","Uzbekistan",1992,"55-74 years","female",57,912800
+"1050","Uzbekistan",1992,"15-24 years","female",108,2081800
+"1051","Uzbekistan",1992,"25-34 years","female",81,1769700
+"1052","Uzbekistan",1992,"35-54 years","female",65,1603900
+"1053","Uzbekistan",1992,"5-14 years","male",49,2737500
+"1054","Uzbekistan",1992,"5-14 years","female",8,2683800
+"1055","Uzbekistan",1993,"35-54 years","male",332,1635000
+"1056","Uzbekistan",1993,"75+ years","male",19,113000
+"1057","Uzbekistan",1993,"25-34 years","male",278,1714500
+"1058","Uzbekistan",1993,"55-74 years","male",111,730700
+"1059","Uzbekistan",1993,"75+ years","female",23,220200
+"1060","Uzbekistan",1993,"15-24 years","male",218,2098300
+"1061","Uzbekistan",1993,"55-74 years","female",60,917800
+"1062","Uzbekistan",1993,"15-24 years","female",117,2084700
+"1063","Uzbekistan",1993,"25-34 years","female",83,1763900
+"1064","Uzbekistan",1993,"35-54 years","female",60,1656100
+"1065","Uzbekistan",1993,"5-14 years","male",47,2817200
+"1066","Uzbekistan",1993,"5-14 years","female",7,2757900
+"1067","Uzbekistan",1994,"35-54 years","male",374,1737700
+"1068","Uzbekistan",1994,"55-74 years","male",151,786400
+"1069","Uzbekistan",1994,"25-34 years","male",264,1703700
+"1070","Uzbekistan",1994,"75+ years","female",25,204700
+"1071","Uzbekistan",1994,"15-24 years","male",246,2158200
+"1072","Uzbekistan",1994,"75+ years","male",10,95300
+"1073","Uzbekistan",1994,"55-74 years","female",53,940400
+"1074","Uzbekistan",1994,"15-24 years","female",110,2132800
+"1075","Uzbekistan",1994,"25-34 years","female",77,1759900
+"1076","Uzbekistan",1994,"35-54 years","female",74,1774300
+"1077","Uzbekistan",1994,"5-14 years","male",32,2960900
+"1078","Uzbekistan",1994,"5-14 years","female",3,2890400
+"1079","Uzbekistan",1995,"35-54 years","male",423,1817200
+"1080","Uzbekistan",1995,"55-74 years","male",171,811900
+"1081","Uzbekistan",1995,"25-34 years","male",275,1714800
+"1082","Uzbekistan",1995,"75+ years","male",11,92900
+"1083","Uzbekistan",1995,"15-24 years","male",236,2206700
+"1084","Uzbekistan",1995,"75+ years","female",15,199900
+"1085","Uzbekistan",1995,"55-74 years","female",64,957100
+"1086","Uzbekistan",1995,"25-34 years","female",80,1772700
+"1087","Uzbekistan",1995,"35-54 years","female",77,1856300
+"1088","Uzbekistan",1995,"15-24 years","female",88,2170200
+"1089","Uzbekistan",1995,"5-14 years","male",38,3038700
+"1090","Uzbekistan",1995,"5-14 years","female",7,2960600
+"1091","Uzbekistan",1996,"35-54 years","male",496,1864100
+"1092","Uzbekistan",1996,"55-74 years","male",195,819300
+"1093","Uzbekistan",1996,"25-34 years","male",334,1725200
+"1094","Uzbekistan",1996,"75+ years","male",12,92400
+"1095","Uzbekistan",1996,"15-24 years","male",255,2231200
+"1096","Uzbekistan",1996,"75+ years","female",18,199600
+"1097","Uzbekistan",1996,"55-74 years","female",55,959900
+"1098","Uzbekistan",1996,"25-34 years","female",99,1783300
+"1099","Uzbekistan",1996,"15-24 years","female",111,2192000
+"1100","Uzbekistan",1996,"35-54 years","female",74,1906900
+"1101","Uzbekistan",1996,"5-14 years","male",40,3080500
+"1102","Uzbekistan",1996,"5-14 years","female",10,3000100
+"1103","Uzbekistan",1997,"35-54 years","male",415,1958400
+"1104","Uzbekistan",1997,"55-74 years","male",165,832200
+"1105","Uzbekistan",1997,"25-34 years","male",298,1751200
+"1106","Uzbekistan",1997,"75+ years","male",13,93200
+"1107","Uzbekistan",1997,"15-24 years","male",278,2279700
+"1108","Uzbekistan",1997,"75+ years","female",13,202000
+"1109","Uzbekistan",1997,"15-24 years","female",120,2240100
+"1110","Uzbekistan",1997,"25-34 years","female",88,1803700
+"1111","Uzbekistan",1997,"55-74 years","female",44,961600
+"1112","Uzbekistan",1997,"35-54 years","female",74,2011500
+"1113","Uzbekistan",1997,"5-14 years","male",37,3159000
+"1114","Uzbekistan",1997,"5-14 years","female",9,3071700
+"1115","Uzbekistan",1998,"35-54 years","male",460,2062500
+"1116","Uzbekistan",1998,"55-74 years","male",160,832800
+"1117","Uzbekistan",1998,"25-34 years","male",302,1782600
+"1118","Uzbekistan",1998,"75+ years","male",11,94200
+"1119","Uzbekistan",1998,"15-24 years","male",266,2334400
+"1120","Uzbekistan",1998,"15-24 years","female",152,2298600
+"1121","Uzbekistan",1998,"75+ years","female",12,204400
+"1122","Uzbekistan",1998,"25-34 years","female",94,1823300
+"1123","Uzbekistan",1998,"55-74 years","female",42,950300
+"1124","Uzbekistan",1998,"35-54 years","female",61,2129600
+"1125","Uzbekistan",1998,"5-14 years","male",53,3222800
+"1126","Uzbekistan",1998,"5-14 years","female",7,3125700
+"1127","Uzbekistan",1999,"35-54 years","male",491,2177216
+"1128","Uzbekistan",1999,"25-34 years","male",361,1811725
+"1129","Uzbekistan",1999,"55-74 years","male",123,818124
+"1130","Uzbekistan",1999,"15-24 years","male",328,2406752
+"1131","Uzbekistan",1999,"75+ years","male",13,98024
+"1132","Uzbekistan",1999,"15-24 years","female",163,2369338
+"1133","Uzbekistan",1999,"75+ years","female",13,209948
+"1134","Uzbekistan",1999,"25-34 years","female",98,1842587
+"1135","Uzbekistan",1999,"55-74 years","female",39,923365
+"1136","Uzbekistan",1999,"35-54 years","female",89,2257145
+"1137","Uzbekistan",1999,"5-14 years","male",59,3260451
+"1138","Uzbekistan",1999,"5-14 years","female",18,3155241
+"1139","Uzbekistan",2000,"35-54 years","male",528,2289656
+"1140","Uzbekistan",2000,"25-34 years","male",355,1843476
+"1141","Uzbekistan",2000,"55-74 years","male",153,802122
+"1142","Uzbekistan",2000,"15-24 years","male",350,2492264
+"1143","Uzbekistan",2000,"75+ years","male",12,104358
+"1144","Uzbekistan",2000,"75+ years","female",19,217711
+"1145","Uzbekistan",2000,"15-24 years","female",180,2451893
+"1146","Uzbekistan",2000,"25-34 years","female",106,1864696
+"1147","Uzbekistan",2000,"55-74 years","female",48,896059
+"1148","Uzbekistan",2000,"35-54 years","female",98,2381166
+"1149","Uzbekistan",2000,"5-14 years","male",57,3279407
+"1150","Uzbekistan",2000,"5-14 years","female",13,3166259
+"1151","Uzbekistan",2001,"35-54 years","male",513,2389813
+"1152","Uzbekistan",2001,"25-34 years","male",377,1884542
+"1153","Uzbekistan",2001,"55-74 years","male",130,792247
+"1154","Uzbekistan",2001,"15-24 years","male",363,2580294
+"1155","Uzbekistan",2001,"75+ years","male",15,112545
+"1156","Uzbekistan",2001,"75+ years","female",16,223250
+"1157","Uzbekistan",2001,"15-24 years","female",176,2538466
+"1158","Uzbekistan",2001,"25-34 years","female",109,1895215
+"1159","Uzbekistan",2001,"55-74 years","female",40,881227
+"1160","Uzbekistan",2001,"35-54 years","female",93,2492917
+"1161","Uzbekistan",2001,"5-14 years","male",64,3281449
+"1162","Uzbekistan",2001,"5-14 years","female",18,3159562
+"1163","Uzbekistan",2002,"35-54 years","male",398,2474921
+"1164","Uzbekistan",2002,"25-34 years","male",288,1927000
+"1165","Uzbekistan",2002,"75+ years","male",17,123916
+"1166","Uzbekistan",2002,"55-74 years","male",100,789412
+"1167","Uzbekistan",2002,"15-24 years","male",325,2672936
+"1168","Uzbekistan",2002,"75+ years","female",14,230394
+"1169","Uzbekistan",2002,"25-34 years","female",107,1930142
+"1170","Uzbekistan",2002,"15-24 years","female",141,2627925
+"1171","Uzbekistan",2002,"35-54 years","female",91,2586025
+"1172","Uzbekistan",2002,"55-74 years","female",27,877155
+"1173","Uzbekistan",2002,"5-14 years","male",49,3260824
+"1174","Uzbekistan",2002,"5-14 years","female",19,3131606
+"1175","Uzbekistan",2003,"35-54 years","male",385,2557625
+"1176","Uzbekistan",2003,"25-34 years","male",259,1966790
+"1177","Uzbekistan",2003,"55-74 years","male",100,790059
+"1178","Uzbekistan",2003,"75+ years","male",13,134173
+"1179","Uzbekistan",2003,"15-24 years","male",235,2762675
+"1180","Uzbekistan",2003,"15-24 years","female",151,2713618
+"1181","Uzbekistan",2003,"25-34 years","female",99,1962726
+"1182","Uzbekistan",2003,"75+ years","female",10,237495
+"1183","Uzbekistan",2003,"55-74 years","female",31,877339
+"1184","Uzbekistan",2003,"35-54 years","female",77,2675118
+"1185","Uzbekistan",2003,"5-14 years","male",45,3219722
+"1186","Uzbekistan",2003,"5-14 years","female",11,3085543
+"1187","Uzbekistan",2004,"35-54 years","male",350,2639741
+"1188","Uzbekistan",2004,"25-34 years","male",234,2012929
+"1189","Uzbekistan",2004,"55-74 years","male",84,792630
+"1190","Uzbekistan",2004,"15-24 years","male",237,2836903
+"1191","Uzbekistan",2004,"75+ years","male",9,145877
+"1192","Uzbekistan",2004,"15-24 years","female",137,2782222
+"1193","Uzbekistan",2004,"75+ years","female",10,247300
+"1194","Uzbekistan",2004,"25-34 years","female",69,2003119
+"1195","Uzbekistan",2004,"35-54 years","female",70,2761019
+"1196","Uzbekistan",2004,"55-74 years","female",18,880059
+"1197","Uzbekistan",2004,"5-14 years","male",29,3167129
+"1198","Uzbekistan",2004,"5-14 years","female",4,3031913
+"1199","Uzbekistan",2005,"35-54 years","male",362,2712283
+"1200","Uzbekistan",2005,"55-74 years","male",94,808793
+"1201","Uzbekistan",2005,"25-34 years","male",238,2060925
+"1202","Uzbekistan",2005,"75+ years","male",13,154634
+"1203","Uzbekistan",2005,"15-24 years","male",184,2907415
+"1204","Uzbekistan",2005,"15-24 years","female",114,2846661
+"1205","Uzbekistan",2005,"25-34 years","female",69,2045225
+"1206","Uzbekistan",2005,"35-54 years","female",79,2836489
+"1207","Uzbekistan",2005,"75+ years","female",7,255163
+"1208","Uzbekistan",2005,"55-74 years","female",21,896756
+"1209","Uzbekistan",2005,"5-14 years","male",30,3105255
+"1210","Uzbekistan",2005,"5-14 years","female",10,2970748
+"1211","Uzbekistan",2009,"35-54 years","male",404,3072025
+"1212","Uzbekistan",2009,"25-34 years","male",252,2295850
+"1213","Uzbekistan",2009,"55-74 years","male",81,985960
+"1214","Uzbekistan",2009,"15-24 years","male",242,3176656
+"1215","Uzbekistan",2009,"15-24 years","female",186,3079271
+"1216","Uzbekistan",2009,"25-34 years","female",85,2313972
+"1217","Uzbekistan",2009,"75+ years","male",7,192006
+"1218","Uzbekistan",2009,"75+ years","female",7,318983
+"1219","Uzbekistan",2009,"35-54 years","female",65,3263931
+"1220","Uzbekistan",2009,"55-74 years","female",15,1105076
+"1221","Uzbekistan",2009,"5-14 years","male",37,2805898
+"1222","Uzbekistan",2009,"5-14 years","female",18,2678474
+"1223","Uzbekistan",2010,"35-54 years","male",371,3142694
+"1224","Uzbekistan",2010,"25-34 years","male",235,2375259
+"1225","Uzbekistan",2010,"55-74 years","male",102,1036963
+"1226","Uzbekistan",2010,"15-24 years","male",246,3208299
+"1227","Uzbekistan",2010,"15-24 years","female",208,3098743
+"1228","Uzbekistan",2010,"75+ years","male",9,196160
+"1229","Uzbekistan",2010,"25-34 years","female",93,2391172
+"1230","Uzbekistan",2010,"35-54 years","female",101,3339076
+"1231","Uzbekistan",2010,"5-14 years","male",48,2751752
+"1232","Uzbekistan",2010,"75+ years","female",5,322899
+"1233","Uzbekistan",2010,"55-74 years","female",16,1161422
+"1234","Uzbekistan",2010,"5-14 years","female",30,2627344
+"1235","Uzbekistan",2011,"35-54 years","male",457,3204569
+"1236","Uzbekistan",2011,"25-34 years","male",271,2457050
+"1237","Uzbekistan",2011,"15-24 years","male",264,3211080
+"1238","Uzbekistan",2011,"15-24 years","female",248,3092119
+"1239","Uzbekistan",2011,"55-74 years","male",76,1086405
+"1240","Uzbekistan",2011,"25-34 years","female",139,2469295
+"1241","Uzbekistan",2011,"75+ years","male",10,204956
+"1242","Uzbekistan",2011,"35-54 years","female",78,3404363
+"1243","Uzbekistan",2011,"5-14 years","male",45,2710780
+"1244","Uzbekistan",2011,"55-74 years","female",19,1218296
+"1245","Uzbekistan",2011,"75+ years","female",5,330662
+"1246","Uzbekistan",2011,"5-14 years","female",28,2588474
+"1247","Uzbekistan",2012,"35-54 years","male",404,3273281
+"1248","Uzbekistan",2012,"55-74 years","male",133,1141487
+"1249","Uzbekistan",2012,"25-34 years","male",290,2548472
+"1250","Uzbekistan",2012,"15-24 years","female",333,3072826
+"1251","Uzbekistan",2012,"15-24 years","male",311,3199204
+"1252","Uzbekistan",2012,"75+ years","male",15,213713
+"1253","Uzbekistan",2012,"25-34 years","female",148,2556673
+"1254","Uzbekistan",2012,"35-54 years","female",89,3474788
+"1255","Uzbekistan",2012,"5-14 years","male",67,2701361
+"1256","Uzbekistan",2012,"55-74 years","female",25,1283060
+"1257","Uzbekistan",2012,"75+ years","female",4,338557
+"1258","Uzbekistan",2012,"5-14 years","female",16,2578408
+"1259","Uzbekistan",2013,"35-54 years","male",481,3346411
+"1260","Uzbekistan",2013,"25-34 years","male",328,2644648
+"1261","Uzbekistan",2013,"15-24 years","female",323,3039740
+"1262","Uzbekistan",2013,"15-24 years","male",320,3171202
+"1263","Uzbekistan",2013,"55-74 years","male",119,1202790
+"1264","Uzbekistan",2013,"75+ years","male",13,221002
+"1265","Uzbekistan",2013,"25-34 years","female",146,2647820
+"1266","Uzbekistan",2013,"35-54 years","female",99,3547895
+"1267","Uzbekistan",2013,"75+ years","female",8,345180
+"1268","Uzbekistan",2013,"5-14 years","male",61,2720938
+"1269","Uzbekistan",2013,"55-74 years","female",21,1356298
+"1270","Uzbekistan",2013,"5-14 years","female",31,2595000
+"1271","Uzbekistan",2014,"35-54 years","male",519,3421300
+"1272","Uzbekistan",2014,"25-34 years","male",318,2739150
+"1273","Uzbekistan",2014,"15-24 years","female",347,2992817
+"1274","Uzbekistan",2014,"55-74 years","male",144,1271111
+"1275","Uzbekistan",2014,"15-24 years","male",347,3126905
+"1276","Uzbekistan",2014,"75+ years","male",17,224995
+"1277","Uzbekistan",2014,"25-34 years","female",162,2735238
+"1278","Uzbekistan",2014,"35-54 years","female",107,3620833
+"1279","Uzbekistan",2014,"75+ years","female",9,348465
+"1280","Uzbekistan",2014,"5-14 years","male",60,2762158
+"1281","Uzbekistan",2014,"5-14 years","female",44,2631600
+"1282","Uzbekistan",2014,"55-74 years","female",21,1438935
