@@ -20,7 +20,7 @@ class: left, centre, my-title, title-slide
 ### <br/>David Munoz Tord, Vestin, Iván
 ]
 .date[
-### <br/> 2023-Oct-20
+### <br/> 2023-Oct-21
 ]
 
 ---
@@ -181,7 +181,7 @@ class: inverse center middle
   - **Relation**: Scatterplot, Corrélogramme, heatmap, etc.
   - **Ranking**: Barplot, Spider chart, Parrallel, etc.
   - **Evolution**: Line Chart, Area Chart, etc.
-  - **Partie d'un tout**: Treemap, Pie Chart, Dendogram, etc.
+  - **Partie d'un tout**: Treemap, Pie Chart, Doughnut, etc.
   - **Cartographie**: Choropleth, Bubble Map, etc.
   - **Réseau**: Network, Sankey, etc.
 
@@ -237,7 +237,7 @@ Ordonner votre boxplot/violine par la médiane peut le rendre plus efficace
 
 ---
 
-#### Relation: entre 2 variables numériques/continues
+#### Relation: Relation entre 2 variables numériques/continues
 
 .pull-left-small[
 
@@ -252,8 +252,10 @@ Ordonner votre boxplot/violine par la médiane peut le rendre plus efficace
 - **Scatter plot**: relation entre deux variables numériques
 
 &lt;br&gt;
-- **heatmap**: valeurs individuelles contenues dans une matrice sont représentées par des couleurs
 
+- **heatmap**: valeurs individuelles dans une matrice représentées par des couleurs
+
+&lt;br&gt;
 - **correlogram**:  une matrice, où chaque point représente la corrélation entre deux variables
 
 &lt;br&gt;
@@ -300,7 +302,7 @@ La perspective est également la pire chose que l'on puisse faire à un graphiqu
 
 ---
 
-#### Ranking: Comparer des valeurs numériques (unique ou moyenne) entre elles
+#### Ranking: Comparer des valeurs numériques (unique ou moyenner) entre elles
 
 .pull-left-small[
 
@@ -328,7 +330,7 @@ La perspective est également la pire chose que l'on puisse faire à un graphiqu
 &lt;!-- comments--&gt;
 
 ???
-#Barplot vs histogramme
+Barplot vs histogramme
 Barplot a ne pas confondre avec un histogramme. 
 
 C-a-d -&gt; la distance entre les barres n'a pas de sens, alors que la distance entre les barres dans un histogramme est importante.
@@ -343,6 +345,209 @@ Les wordcloud sont hype, mais ils déforment souvent la réalité et ne sont pas
 Utiliser plutôt un lolipop plot horizontal trier ?
 
 Le graphique parallèle permet de visualiser plusieurs dimensions à la fois. Il est souvent préférable au graphique en araignée, car les valeurs sont plus faciles à comparer lorsqu'elles sont disposées le long d'un seul axe vertical ou horizontal. 
+
+
+---
+
+#### Partie d'un tout: illustrer des proportions numériques
+
+.pull-left-small[
+
+<a href="./img/Part.png">
+<img src="img/Part.png" width="200px"/>
+</a>
+]
+
+.pull-right-large[
+
+- **treemap**: chaque groupe est représenté par un rectangle dont la surface est proportionnelle à sa valeur
+
+- **Venn diagramme**: chaque ensemble est représenté par un cercle, la taille du cercle représente l'importance du groupe, l'intersection des cercles indique les points communs entre les groupes
+
+- **doughnut and pie chart**: un cercle divisé en secteurs qui représentent chacun une proportion de l'ensemble
+
+
+]
+
+
+&lt;!-- comments--&gt;
+
+???
+
+Treemaps ont l'avantage d'utiliser efficacement l'espace, ce qui les rend utiles pour représenter une grande quantité de données. Mais n'annotez pas plus de 3 niveaux de la hiérarchie, cela rendrait la figure illisible.
+
+Diagramme de Venn :  N'utilisez pas plus de 3 ensembles, cela rendrait la figure illisible.
+
+Les pie chart sont très critiqués et doivent être évités autant que possible. L'être humain est très mauvais pour traduire des angles en valeurs.
+
+Pourquoi ne pas plutôt envisager un barplot/lolipop plot ?
+
+---
+
+#### Evolution: Montrer des tendances temporelles pour ou plusieurs variables numeriqies
+
+.pull-left-small[
+
+<a href="./img/Evo.png">
+<img src="img/Evo.png" width="200px"/>
+</a>
+]
+
+.pull-right-large[
+
+- **line plot**: chaque observation est représentée par un point, les points sont reliés par des lignes
+
+- **area plot**:  extension d'un line plot, la zone entre l'axe des x et la ligne est rempli par une couleur
+
+&lt;br&gt;
+- **stacked area et streamcharts**: extension d'un area plot, les zones sont empilées les unes sur les autres pour montrer l'évolution de plusieurs groupes
+
+
+]
+
+
+&lt;!-- comments--&gt;
+
+???
+
+Lineplot : il est similaire à un scatter plot, à ceci près que les points de mesure sont ordonnés (généralement en fonction de leur valeur sur l'axe des x) et reliés par des segments de ligne droite. Un graphique linéaire est souvent utilisé pour visualiser une tendance dans les données sur des intervalles de temps - une série chronologique - et la ligne est donc souvent tracée chronologiquement.
+
+Attention au graphique spaghetti : trop de lignes rendent le graphique illisible.
+
+Je suis un grand fan des area chart et je pense qu'ils rendent la tendance plus évidente que l'utilisation d'un lineplot
+
+Stacked area : il peut être difficile de lire l'évolution d'un groupe spécifique. L'ordre des groupes (de bas en haut) peut avoir une influenc.
+Streamgraph (Graphique en flux) : il n'y a pas de coin : les bords sont arrondis, ce qui donne une belle impression de flux. 
+
+Bon pour étudier les proportions relatives de l'ensemble.
+
+---
+
+
+#### Cartographie: Visualiser des données géographiques
+
+.pull-left-small[
+
+<a href="./img/Cart.png">
+<img src="img/Cart.png" width="200px"/>
+</a>
+]
+
+.pull-right-large[
+
+- **carte**: projection de coordonnées géographiques sur une carte
+
+&lt;br&gt;
+- **chloropleth**:  chaque région est colorée en fonction de la valeur d'une variable
+
+&lt;br&gt;
+- **hexbin map**: chaque région est remplie de petits hexagones, la couleur de l'hexagone indique la valeur d'une variable
+
+&lt;br&gt;
+- **cartogram**: chaque région est redimensionnée en fonction de la valeur d'une variable
+
+]
+
+
+&lt;!-- comments--&gt;
+
+???
+
+Les cartes sont un excellent moyen de visualiser des données géographiques.
+
+carte choroplèthe : Normalisez votre variable : vous ne pouvez pas comparer des chiffres bruts entre des régions de taille ou de population différentes.
+
+Si vos régions ont des tailles très diverses, cela introduit un biais.
+Ne l'appelez pas carte choroplèthe, mais carte chOrOpleth.
+
+La carte hexagonale est une sorte de carte choroplèthe. Elle supprime le biais introduit par la taille différente des régions dans la carte choroplèthe, puisque chaque région est représentée par le même hexagone.
+
+Le cartogramme vise à corriger le biais : lorsqu'une variable est agrégée par région, une région avec très peu de points de données semblera aussi importante qu'une région avec beaucoup de points de données.
+
+
+---
+
+
+#### Réseaux: Visualiser des relations entre des entités (noeuds et liens)
+
+.pull-left-small[
+
+<a href="./img/Network.png">
+<img src="img/Network.png" width="200px"/>
+</a>
+]
+
+.pull-right-large[
+
+- **chord diagram**: chaque entité est représentée par un arc, la taille de l'arc est proportionnelle à la valeur d'une variable
+
+
+- **graph diagram**: la taille des noeuds et des arcs est proportionnelle à la valeur d'une variable
+
+&lt;br&gt;
+- **Sankey  diagram**: plusieurs entités (nœuds) sont représentées par des rectangles, la relation entre ces entités est représentée par des liens proportionnels à une valeur
+
+- **arc diagram**: nœuds sont affichés le long d'un axe unique et les liens sont représentés par des arcs
+
+]
+
+
+&lt;!-- comments--&gt;
+
+???
+
+Les réseaux constituent un domaine de recherche à part entière. Les diagrammes de réseaux ne sont pas faciles à comprendre. Donnez beaucoup d'explications à votre public lorsque vous les présentez.
+Attention à l'encombrement et à l'absence de connexions faibles ?
+
+Chord: L'ordre des groupes autour du cercle est important, il est préférable de minimiser le nombre d'arcs qui se croisent.
+
+Il existe plusieurs types de graphs dirgams Ils peuvent être dirigés (flux) ou non dirigés (connexion). Les liens peuvent être mis en évidence ou non.
+
+Sankey diagrams permet de visualiser les flux. 
+
+
+Arc : permet de mettre en évidence les clusters en 2D
+
+---
+
+class: inverse center middle
+
+# Quiz #1
+
+---
+
+## Quiz #1
+
+
+Quel type de graphique est le plus adapté pour visualiser la corrélation entre les variables d'un dataset ?
+-- 
+Correlogram 
+-- 
+- Quel type de graphique est le plus adapté pour visualiser la relation entre deux variables continues (e.g. taille et poids) ?
+-- 
+Scatter plot 
+-- 
+Reponse : Violin plot / Question: Quel type de graphique est le plus adapté pour comparer visuellement la distribution de deux variables continues avec beaucoup de points (e.g. 
+
+- Quel type de graphique est le plus adapté pour visualiser l'évolution de la température moyenne en France au cours des 50 dernières années ?
+--
+Reponse: line plot ou area plot
+--
+- Quel type de graphique est le plus adapté pour visualiser la répartition des ventes de voitures par marque ?
+--
+Reponse: bar plot
+
+- Quel type de graphique est le plus adapté pour visualiser la répartition des ventes de voitures par marque et par année ?
+- Reponse: stacked bar plot
+
+- Quel type de graphique est le plus adapté pour visualiser les relations entre les pays de l'UE ?
+- Reponse: graph diagram
+
+- Quel type de graphique est le plus adapté pour visualiser les relations entre les pays de l'UE et les flux de migrants entre ces pays ?
+- Reponse: Sankey diagram
+
+- Quel type de graphique est le plus adapté pour visualiser le
+
 
 ---
 
@@ -1256,7 +1461,7 @@ class: inverse center middle
 plot(df$population, df$suicides_no) # Basic R
 ```
 
-&lt;img src="DataViz_With_R_files/figure-html/unnamed-chunk-12-1.png" width="400px" height="400px" style="display: block; margin: auto auto auto 0;" /&gt;
+&lt;img src="DataViz_With_R_files/figure-html/unnamed-chunk-16-1.png" width="400px" height="400px" style="display: block; margin: auto auto auto 0;" /&gt;
 
 ]
 
@@ -1268,7 +1473,7 @@ ggplot(data=df, mapping=aes(x=population, y=suicides_no)) +
 ```
 
 
-&lt;img src="DataViz_With_R_files/figure-html/unnamed-chunk-14-1.png" width="340px" height="340px" style="display: block; margin: auto auto auto 0;" /&gt;
+&lt;img src="DataViz_With_R_files/figure-html/unnamed-chunk-18-1.png" width="340px" height="340px" style="display: block; margin: auto auto auto 0;" /&gt;
 
 ]
 
@@ -2228,7 +2433,7 @@ points(df_wide$population_male,
 
 .pull-right-small[
 
-&lt;img src="DataViz_With_R_files/figure-html/unnamed-chunk-17-1.png" width="400px" height="400px" style="display: block; margin: auto auto auto 0;" /&gt;
+&lt;img src="DataViz_With_R_files/figure-html/unnamed-chunk-21-1.png" width="400px" height="400px" style="display: block; margin: auto auto auto 0;" /&gt;
 
 ]
 
@@ -3077,7 +3282,7 @@ geom_point()
 
 .pull-right[
 
-&lt;img src="DataViz_With_R_files/figure-html/unnamed-chunk-20-1.png" width="500px" height="400px" style="display: block; margin: auto auto auto 0;" /&gt;
+&lt;img src="DataViz_With_R_files/figure-html/unnamed-chunk-24-1.png" width="500px" height="400px" style="display: block; margin: auto auto auto 0;" /&gt;
 
 ]
 
@@ -3130,7 +3335,7 @@ geom_point()
 
 .pull-right[
 
-&lt;img src="DataViz_With_R_files/figure-html/unnamed-chunk-22-1.png" width="500px" height="400px" style="display: block; margin: auto auto auto 0;" /&gt;
+&lt;img src="DataViz_With_R_files/figure-html/unnamed-chunk-26-1.png" width="500px" height="400px" style="display: block; margin: auto auto auto 0;" /&gt;
 
 ]
 
@@ -3157,7 +3362,7 @@ geom_point()
 
 .pull-right[
 
-&lt;img src="DataViz_With_R_files/figure-html/unnamed-chunk-24-1.png" width="500px" height="400px" style="display: block; margin: auto auto auto 0;" /&gt;
+&lt;img src="DataViz_With_R_files/figure-html/unnamed-chunk-28-1.png" width="500px" height="400px" style="display: block; margin: auto auto auto 0;" /&gt;
 
 ]
 
@@ -3228,7 +3433,7 @@ geom_smooth()
 
 .pull-right[
 
-&lt;img src="DataViz_With_R_files/figure-html/unnamed-chunk-28-1.png" width="500px" height="400px" style="display: block; margin: auto auto auto 0;" /&gt;
+&lt;img src="DataViz_With_R_files/figure-html/unnamed-chunk-32-1.png" width="500px" height="400px" style="display: block; margin: auto auto auto 0;" /&gt;
 
 ]
 
@@ -3265,7 +3470,7 @@ geom_smooth()
 
 .pull-right[
 
-&lt;img src="DataViz_With_R_files/figure-html/unnamed-chunk-30-1.png" width="500px" height="400px" style="display: block; margin: auto auto auto 0;" /&gt;
+&lt;img src="DataViz_With_R_files/figure-html/unnamed-chunk-34-1.png" width="500px" height="400px" style="display: block; margin: auto auto auto 0;" /&gt;
 
 ]
 
@@ -3320,7 +3525,7 @@ ggplot(iris) + geom_bar(aes(x=Species,y=Sepal.Length),
 
 .pull-right[
 
-&lt;img src="DataViz_With_R_files/figure-html/unnamed-chunk-32-1.png" width="500px" height="400px" style="display: block; margin: auto auto auto 0;" /&gt;
+&lt;img src="DataViz_With_R_files/figure-html/unnamed-chunk-36-1.png" width="500px" height="400px" style="display: block; margin: auto auto auto 0;" /&gt;
 
 ]
 
@@ -3330,9 +3535,11 @@ class: inverse center middle
 
 # Scales
 
+To cut or no to cut
+
 ---
 
-## Chanher les échelles
+## Changer les échelles
 
 
 
@@ -3360,7 +3567,7 @@ ggplot(diamonds) +
 ```
 ]
 .pull-right[
-&lt;img src="DataViz_With_R_files/figure-html/unnamed-chunk-35-1.png" width="100%" style="display: block; margin: auto;" /&gt;
+&lt;img src="DataViz_With_R_files/figure-html/unnamed-chunk-39-1.png" width="100%" style="display: block; margin: auto;" /&gt;
 ]
 
 
