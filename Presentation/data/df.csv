@@ -1,0 +1,1283 @@
+country,year,age,sex,suicides_no,population
+Bahrain,1985,25-34 years,male,7,67600
+Bahrain,1985,35-54 years,male,3,49700
+Bahrain,1985,35-54 years,female,1,26900
+Bahrain,1985,15-24 years,female,0,37800
+Bahrain,1985,25-34 years,female,0,27600
+Bahrain,1985,5-14 years,female,0,41400
+Bahrain,1985,55-74 years,female,0,8700
+Bahrain,1985,75+ years,female,0,1500
+Bahrain,1985,15-24 years,male,0,49700
+Bahrain,1985,5-14 years,male,0,42000
+Bahrain,1985,55-74 years,male,0,11600
+Bahrain,1985,75+ years,male,0,1400
+Bahrain,1987,55-74 years,male,1,11800
+Bahrain,1987,35-54 years,male,3,47700
+Bahrain,1987,25-34 years,male,3,63900
+Bahrain,1987,25-34 years,female,1,27500
+Bahrain,1987,15-24 years,female,1,38600
+Bahrain,1987,35-54 years,female,0,27300
+Bahrain,1987,5-14 years,female,0,42500
+Bahrain,1987,55-74 years,female,0,8900
+Bahrain,1987,75+ years,female,0,1500
+Bahrain,1987,15-24 years,male,0,49400
+Bahrain,1987,5-14 years,male,0,43200
+Bahrain,1987,75+ years,male,0,1600
+Bahrain,1988,25-34 years,male,8,61600
+Bahrain,1988,35-54 years,male,4,63500
+Bahrain,1988,35-54 years,female,1,30900
+Bahrain,1988,15-24 years,male,1,44100
+Bahrain,1988,15-24 years,female,0,38300
+Bahrain,1988,25-34 years,female,0,32000
+Bahrain,1988,5-14 years,female,0,45400
+Bahrain,1988,55-74 years,female,0,10300
+Bahrain,1988,75+ years,female,0,1400
+Bahrain,1988,5-14 years,male,0,46500
+Bahrain,1988,55-74 years,male,0,14400
+Bahrain,1988,75+ years,male,0,1300
+Bahrain,1997,15-24 years,female,0,46573
+Bahrain,1997,25-34 years,female,0,50841
+Bahrain,1997,35-54 years,female,0,53562
+Bahrain,1997,5-14 years,female,0,55390
+Bahrain,1997,55-74 years,female,0,13826
+Bahrain,1997,75+ years,female,0,2250
+Bahrain,1997,15-24 years,male,0,54369
+Bahrain,1997,25-34 years,male,0,80297
+Bahrain,1997,35-54 years,male,0,96825
+Bahrain,1997,5-14 years,male,0,57431
+Bahrain,1997,55-74 years,male,0,16035
+Bahrain,1997,75+ years,male,0,2355
+Bahrain,1998,15-24 years,female,0,48147
+Bahrain,1998,25-34 years,female,0,51596
+Bahrain,1998,35-54 years,female,0,56917
+Bahrain,1998,5-14 years,female,0,56626
+Bahrain,1998,55-74 years,female,0,14404
+Bahrain,1998,75+ years,female,0,2312
+Bahrain,1998,15-24 years,male,0,56377
+Bahrain,1998,25-34 years,male,0,80849
+Bahrain,1998,35-54 years,male,0,101013
+Bahrain,1998,5-14 years,male,0,58935
+Bahrain,1998,55-74 years,male,0,16409
+Bahrain,1998,75+ years,male,0,2423
+Bahrain,1999,25-34 years,male,8,82791
+Bahrain,1999,35-54 years,male,4,105903
+Bahrain,1999,15-24 years,male,2,57914
+Bahrain,1999,15-24 years,female,1,49631
+Bahrain,1999,25-34 years,female,1,52339
+Bahrain,1999,35-54 years,female,1,60568
+Bahrain,1999,5-14 years,female,0,58374
+Bahrain,1999,55-74 years,female,0,15017
+Bahrain,1999,75+ years,female,0,2339
+Bahrain,1999,5-14 years,male,0,61554
+Bahrain,1999,55-74 years,male,0,16810
+Bahrain,1999,75+ years,male,0,2522
+Bahrain,2000,25-34 years,male,16,86231
+Bahrain,2000,35-54 years,male,10,112060
+Bahrain,2000,15-24 years,male,2,59208
+Bahrain,2000,25-34 years,female,1,53263
+Bahrain,2000,15-24 years,female,0,50968
+Bahrain,2000,35-54 years,female,0,64617
+Bahrain,2000,5-14 years,female,0,60791
+Bahrain,2000,55-74 years,female,0,15556
+Bahrain,2000,75+ years,female,0,2394
+Bahrain,2000,5-14 years,male,0,65512
+Bahrain,2000,55-74 years,male,0,17346
+Bahrain,2000,75+ years,male,0,2648
+Bahrain,2001,25-34 years,male,8,90920
+Bahrain,2001,35-54 years,male,8,118151
+Bahrain,2001,55-74 years,male,1,17917
+Bahrain,2001,15-24 years,male,2,68309
+Bahrain,2001,15-24 years,female,1,54497
+Bahrain,2001,25-34 years,female,1,55961
+Bahrain,2001,5-14 years,male,1,67127
+Bahrain,2001,35-54 years,female,1,67856
+Bahrain,2001,5-14 years,female,0,62316
+Bahrain,2001,55-74 years,female,0,15791
+Bahrain,2001,75+ years,female,0,2544
+Bahrain,2001,75+ years,male,0,2694
+Bahrain,2002,25-34 years,male,7,97288
+Bahrain,2002,35-54 years,male,9,126500
+Bahrain,2002,35-54 years,female,4,71376
+Bahrain,2002,15-24 years,female,2,57599
+Bahrain,2002,15-24 years,male,2,76442
+Bahrain,2002,25-34 years,female,1,59350
+Bahrain,2002,5-14 years,female,0,63714
+Bahrain,2002,55-74 years,female,0,16006
+Bahrain,2002,75+ years,female,0,2738
+Bahrain,2002,5-14 years,male,0,68596
+Bahrain,2002,55-74 years,male,0,18646
+Bahrain,2002,75+ years,male,0,2755
+Bahrain,2003,35-54 years,male,17,137287
+Bahrain,2003,25-34 years,male,9,105799
+Bahrain,2003,25-34 years,female,5,63380
+Bahrain,2003,15-24 years,male,3,83143
+Bahrain,2003,15-24 years,female,0,60298
+Bahrain,2003,35-54 years,female,0,75430
+Bahrain,2003,5-14 years,female,0,65298
+Bahrain,2003,55-74 years,female,0,16343
+Bahrain,2003,75+ years,female,0,2946
+Bahrain,2003,5-14 years,male,0,70584
+Bahrain,2003,55-74 years,male,0,19574
+Bahrain,2003,75+ years,male,0,2831
+Bahrain,2004,55-74 years,male,4,20717
+Bahrain,2004,25-34 years,male,19,116777
+Bahrain,2004,35-54 years,male,10,150835
+Bahrain,2004,25-34 years,female,3,68052
+Bahrain,2004,35-54 years,female,3,80288
+Bahrain,2004,15-24 years,male,2,88431
+Bahrain,2004,15-24 years,female,1,62699
+Bahrain,2004,5-14 years,female,0,67313
+Bahrain,2004,55-74 years,female,0,16975
+Bahrain,2004,75+ years,female,0,3126
+Bahrain,2004,5-14 years,male,0,73422
+Bahrain,2004,75+ years,male,0,2924
+Bahrain,2005,25-34 years,male,15,142375
+Bahrain,2005,35-54 years,male,14,174785
+Bahrain,2005,55-74 years,male,2,27261
+Bahrain,2005,15-24 years,male,4,79928
+Bahrain,2005,25-34 years,female,3,73758
+Bahrain,2005,15-24 years,female,2,64792
+Bahrain,2005,35-54 years,female,2,92102
+Bahrain,2005,5-14 years,female,0,66362
+Bahrain,2005,55-74 years,female,0,19983
+Bahrain,2005,75+ years,female,0,4389
+Bahrain,2005,5-14 years,male,0,69742
+Bahrain,2005,75+ years,male,0,4063
+Bahrain,2006,25-34 years,male,12,158656
+Bahrain,2006,25-34 years,female,5,80271
+Bahrain,2006,15-24 years,female,3,69020
+Bahrain,2006,55-74 years,male,1,29960
+Bahrain,2006,35-54 years,female,3,100668
+Bahrain,2006,35-54 years,male,3,192597
+Bahrain,2006,15-24 years,male,1,86090
+Bahrain,2006,5-14 years,female,0,68590
+Bahrain,2006,55-74 years,female,0,21363
+Bahrain,2006,75+ years,female,0,4915
+Bahrain,2006,5-14 years,male,0,71974
+Bahrain,2006,75+ years,male,0,4439
+Bahrain,2007,25-34 years,male,14,176938
+Bahrain,2007,35-54 years,male,13,212426
+Bahrain,2007,55-74 years,male,2,32965
+Bahrain,2007,15-24 years,male,5,92875
+Bahrain,2007,25-34 years,female,3,87472
+Bahrain,2007,35-54 years,female,2,110173
+Bahrain,2007,15-24 years,female,1,73617
+Bahrain,2007,5-14 years,female,0,70861
+Bahrain,2007,55-74 years,female,0,22872
+Bahrain,2007,75+ years,female,0,5497
+Bahrain,2007,5-14 years,male,0,74222
+Bahrain,2007,75+ years,male,0,4852
+Bahrain,2008,25-34 years,male,21,196832
+Bahrain,2008,35-54 years,male,13,225866
+Bahrain,2008,15-24 years,female,3,76246
+Bahrain,2008,55-74 years,male,1,35879
+Bahrain,2008,35-54 years,female,3,115468
+Bahrain,2008,25-34 years,female,2,93449
+Bahrain,2008,5-14 years,female,0,72955
+Bahrain,2008,55-74 years,female,0,24495
+Bahrain,2008,75+ years,female,0,5191
+Bahrain,2008,15-24 years,male,0,96458
+Bahrain,2008,5-14 years,male,0,76617
+Bahrain,2008,75+ years,male,0,4654
+Bahrain,2009,35-54 years,male,14,242558
+Bahrain,2009,25-34 years,male,9,222448
+Bahrain,2009,25-34 years,female,4,99580
+Bahrain,2009,15-24 years,male,4,102256
+Bahrain,2009,55-74 years,male,1,38002
+Bahrain,2009,5-14 years,male,2,79180
+Bahrain,2009,35-54 years,female,2,118835
+Bahrain,2009,15-24 years,female,0,80832
+Bahrain,2009,5-14 years,female,0,75122
+Bahrain,2009,55-74 years,female,0,25915
+Bahrain,2009,75+ years,female,0,4103
+Bahrain,2009,75+ years,male,0,4091
+Bahrain,2010,35-54 years,male,8,252232
+Bahrain,2010,25-34 years,male,6,235591
+Bahrain,2010,55-74 years,male,1,41999
+Bahrain,2010,35-54 years,female,2,125709
+Bahrain,2010,15-24 years,female,1,80571
+Bahrain,2010,25-34 years,female,1,104368
+Bahrain,2010,5-14 years,female,0,77140
+Bahrain,2010,55-74 years,female,0,27834
+Bahrain,2010,75+ years,female,0,4625
+Bahrain,2010,15-24 years,male,0,103388
+Bahrain,2010,5-14 years,male,0,81414
+Bahrain,2010,75+ years,male,0,4289
+Bahrain,2011,15-24 years,male,3,101695
+Bahrain,2011,55-74 years,male,1,43883
+Bahrain,2011,25-34 years,female,2,98138
+Bahrain,2011,25-34 years,male,4,220691
+Bahrain,2011,35-54 years,male,4,242955
+Bahrain,2011,35-54 years,female,2,123582
+Bahrain,2011,15-24 years,female,1,75788
+Bahrain,2011,5-14 years,female,1,77270
+Bahrain,2011,55-74 years,female,0,29140
+Bahrain,2011,75+ years,female,0,4742
+Bahrain,2011,5-14 years,male,0,81209
+Bahrain,2011,75+ years,male,0,4369
+Bahrain,2012,25-34 years,male,11,237133
+Bahrain,2012,35-54 years,male,6,268027
+Bahrain,2012,25-34 years,female,1,110796
+Bahrain,2012,15-24 years,male,1,111603
+Bahrain,2012,15-24 years,female,0,81091
+Bahrain,2012,35-54 years,female,0,135976
+Bahrain,2012,5-14 years,female,0,81275
+Bahrain,2012,55-74 years,female,0,31641
+Bahrain,2012,75+ years,female,0,4548
+Bahrain,2012,5-14 years,male,0,85538
+Bahrain,2012,55-74 years,male,0,50001
+Bahrain,2012,75+ years,male,0,4149
+Bahrain,2013,15-24 years,male,1,110064
+Bahrain,2013,25-34 years,male,2,237632
+Bahrain,2013,35-54 years,male,2,269162
+Bahrain,2013,15-24 years,female,0,80476
+Bahrain,2013,25-34 years,female,0,112513
+Bahrain,2013,35-54 years,female,0,139352
+Bahrain,2013,5-14 years,female,0,82726
+Bahrain,2013,55-74 years,female,0,33780
+Bahrain,2013,75+ years,female,0,4859
+Bahrain,2013,5-14 years,male,0,86269
+Bahrain,2013,55-74 years,male,0,53308
+Bahrain,2013,75+ years,male,0,4351
+Bahrain,2014,15-24 years,male,4,100635
+Bahrain,2014,25-34 years,male,3,237952
+Bahrain,2014,25-34 years,female,1,110838
+Bahrain,2014,35-54 years,male,1,258922
+Bahrain,2014,15-24 years,female,0,78926
+Bahrain,2014,35-54 years,female,0,139103
+Bahrain,2014,5-14 years,female,0,82452
+Bahrain,2014,55-74 years,female,0,41406
+Bahrain,2014,75+ years,female,0,6154
+Bahrain,2014,5-14 years,male,0,86539
+Bahrain,2014,55-74 years,male,0,64351
+Bahrain,2014,75+ years,male,0,6688
+Lithuania,1995,35-54 years,male,632,436306
+Lithuania,1995,75+ years,male,67,47214
+Lithuania,1995,55-74 years,male,325,274196
+Lithuania,1995,25-34 years,male,226,284758
+Lithuania,1995,15-24 years,male,134,263792
+Lithuania,1995,75+ years,female,37,109609
+Lithuania,1995,55-74 years,female,101,408926
+Lithuania,1995,35-54 years,female,113,481445
+Lithuania,1995,25-34 years,female,33,276055
+Lithuania,1995,15-24 years,female,20,256623
+Lithuania,1995,5-14 years,male,4,279260
+Lithuania,1995,5-14 years,female,2,268965
+Lithuania,1996,35-54 years,male,664,438770
+Lithuania,1996,55-74 years,male,336,275843
+Lithuania,1996,75+ years,male,40,47319
+Lithuania,1996,25-34 years,male,196,278848
+Lithuania,1996,15-24 years,male,147,257675
+Lithuania,1996,75+ years,female,39,110913
+Lithuania,1996,55-74 years,female,118,410808
+Lithuania,1996,35-54 years,female,129,484132
+Lithuania,1996,25-34 years,female,27,271013
+Lithuania,1996,15-24 years,female,20,251718
+Lithuania,1996,5-14 years,male,5,279323
+Lithuania,1996,5-14 years,female,1,268801
+Lithuania,1997,35-54 years,male,637,440546
+Lithuania,1997,55-74 years,male,294,277983
+Lithuania,1997,25-34 years,male,231,272292
+Lithuania,1997,75+ years,male,39,47892
+Lithuania,1997,15-24 years,male,144,252818
+Lithuania,1997,75+ years,female,29,113485
+Lithuania,1997,55-74 years,female,94,412839
+Lithuania,1997,35-54 years,female,109,485204
+Lithuania,1997,25-34 years,female,31,266372
+Lithuania,1997,15-24 years,female,17,247246
+Lithuania,1997,5-14 years,female,4,268373
+Lithuania,1997,5-14 years,male,3,279223
+Lithuania,1998,35-54 years,male,557,442825
+Lithuania,1998,55-74 years,male,345,278617
+Lithuania,1998,75+ years,male,47,49012
+Lithuania,1998,25-34 years,male,222,265304
+Lithuania,1998,15-24 years,male,112,250687
+Lithuania,1998,75+ years,female,40,117165
+Lithuania,1998,35-54 years,female,107,486222
+Lithuania,1998,55-74 years,female,80,412652
+Lithuania,1998,15-24 years,female,22,244923
+Lithuania,1998,25-34 years,female,18,261722
+Lithuania,1998,5-14 years,male,2,276408
+Lithuania,1998,5-14 years,female,1,265436
+Lithuania,1999,35-54 years,male,592,446764
+Lithuania,1999,55-74 years,male,284,277228
+Lithuania,1999,75+ years,male,48,50173
+Lithuania,1999,25-34 years,male,224,257244
+Lithuania,1999,15-24 years,male,129,251394
+Lithuania,1999,75+ years,female,37,121573
+Lithuania,1999,55-74 years,female,84,409039
+Lithuania,1999,35-54 years,female,97,489403
+Lithuania,1999,15-24 years,female,24,244706
+Lithuania,1999,25-34 years,female,22,256587
+Lithuania,1999,5-14 years,male,8,270111
+Lithuania,1999,5-14 years,female,1,259230
+Lithuania,2000,35-54 years,male,595,451103
+Lithuania,2000,55-74 years,male,324,276055
+Lithuania,2000,25-34 years,male,221,249865
+Lithuania,2000,75+ years,male,40,50557
+Lithuania,2000,15-24 years,male,131,252489
+Lithuania,2000,75+ years,female,36,124608
+Lithuania,2000,55-74 years,female,101,405061
+Lithuania,2000,35-54 years,female,121,493992
+Lithuania,2000,25-34 years,female,31,252324
+Lithuania,2000,15-24 years,female,25,245035
+Lithuania,2000,5-14 years,male,6,262637
+Lithuania,2000,5-14 years,female,0,251399
+Lithuania,2001,35-54 years,male,559,453841
+Lithuania,2001,55-74 years,male,322,276422
+Lithuania,2001,75+ years,male,57,51713
+Lithuania,2001,25-34 years,male,190,243174
+Lithuania,2001,15-24 years,male,119,253439
+Lithuania,2001,75+ years,female,40,128791
+Lithuania,2001,35-54 years,female,113,496684
+Lithuania,2001,55-74 years,female,87,402028
+Lithuania,2001,25-34 years,female,19,247712
+Lithuania,2001,15-24 years,female,18,245848
+Lithuania,2001,5-14 years,male,8,252622
+Lithuania,2001,5-14 years,female,1,241864
+Lithuania,2002,35-54 years,male,613,456468
+Lithuania,2002,55-74 years,male,285,275961
+Lithuania,2002,75+ years,male,47,54325
+Lithuania,2002,25-34 years,male,204,237814
+Lithuania,2002,15-24 years,male,156,255044
+Lithuania,2002,75+ years,female,39,135785
+Lithuania,2002,55-74 years,female,85,399066
+Lithuania,2002,35-54 years,female,74,498421
+Lithuania,2002,25-34 years,female,28,242244
+Lithuania,2002,15-24 years,female,15,247514
+Lithuania,2002,5-14 years,male,4,240849
+Lithuania,2002,5-14 years,female,1,230997
+Lithuania,2003,35-54 years,male,529,458658
+Lithuania,2003,55-74 years,male,288,274066
+Lithuania,2003,75+ years,male,53,57169
+Lithuania,2003,25-34 years,male,205,233362
+Lithuania,2003,15-24 years,male,122,255707
+Lithuania,2003,75+ years,female,36,143383
+Lithuania,2003,35-54 years,female,111,499080
+Lithuania,2003,55-74 years,female,72,396850
+Lithuania,2003,25-34 years,female,24,237053
+Lithuania,2003,15-24 years,female,11,247710
+Lithuania,2003,5-14 years,female,2,220424
+Lithuania,2003,5-14 years,male,2,230665
+Lithuania,2004,35-54 years,male,491,457735
+Lithuania,2004,55-74 years,male,271,272871
+Lithuania,2004,25-34 years,male,193,227897
+Lithuania,2004,75+ years,male,48,60017
+Lithuania,2004,15-24 years,male,115,254022
+Lithuania,2004,75+ years,female,41,150000
+Lithuania,2004,35-54 years,female,98,496461
+Lithuania,2004,55-74 years,female,73,395331
+Lithuania,2004,25-34 years,female,24,231241
+Lithuania,2004,15-24 years,female,19,245226
+Lithuania,2004,5-14 years,male,6,221380
+Lithuania,2004,5-14 years,female,1,210788
+Lithuania,2005,55-74 years,male,289,271641
+Lithuania,2005,35-54 years,male,469,453800
+Lithuania,2005,75+ years,male,52,62849
+Lithuania,2005,25-34 years,male,172,221170
+Lithuania,2005,15-24 years,male,100,249053
+Lithuania,2005,75+ years,female,34,154994
+Lithuania,2005,55-74 years,female,86,393282
+Lithuania,2005,35-54 years,female,84,492082
+Lithuania,2005,25-34 years,female,19,223982
+Lithuania,2005,15-24 years,female,11,240386
+Lithuania,2005,5-14 years,male,2,211022
+Lithuania,2005,5-14 years,female,1,200467
+Lithuania,2006,55-74 years,male,238,269578
+Lithuania,2006,35-54 years,male,366,450132
+Lithuania,2006,75+ years,male,51,65428
+Lithuania,2006,25-34 years,male,96,214726
+Lithuania,2006,15-24 years,male,97,244528
+Lithuania,2006,75+ years,female,37,159540
+Lithuania,2006,55-74 years,female,59,390589
+Lithuania,2006,35-54 years,female,70,488597
+Lithuania,2006,25-34 years,female,19,217069
+Lithuania,2006,15-24 years,female,10,236885
+Lithuania,2006,5-14 years,male,5,199438
+Lithuania,2006,5-14 years,female,1,189257
+Lithuania,2007,55-74 years,male,220,267333
+Lithuania,2007,75+ years,male,51,67551
+Lithuania,2007,35-54 years,male,326,447405
+Lithuania,2007,25-34 years,male,146,210164
+Lithuania,2007,15-24 years,male,101,243589
+Lithuania,2007,75+ years,female,40,164150
+Lithuania,2007,35-54 years,female,60,485943
+Lithuania,2007,55-74 years,female,46,387684
+Lithuania,2007,25-34 years,female,17,212154
+Lithuania,2007,15-24 years,female,10,236177
+Lithuania,2007,5-14 years,female,4,177982
+Lithuania,2007,5-14 years,male,4,187735
+Lithuania,2008,35-54 years,male,401,444829
+Lithuania,2008,75+ years,male,56,69533
+Lithuania,2008,25-34 years,male,155,207780
+Lithuania,2008,55-74 years,male,190,264954
+Lithuania,2008,15-24 years,male,114,242106
+Lithuania,2008,75+ years,female,36,168662
+Lithuania,2008,55-74 years,female,60,384300
+Lithuania,2008,35-54 years,female,65,483453
+Lithuania,2008,15-24 years,female,17,234198
+Lithuania,2008,25-34 years,female,15,208792
+Lithuania,2008,5-14 years,male,2,177345
+Lithuania,2008,5-14 years,female,0,167804
+Lithuania,2009,35-54 years,male,428,440281
+Lithuania,2009,55-74 years,male,239,263507
+Lithuania,2009,75+ years,male,57,71090
+Lithuania,2009,25-34 years,male,116,205749
+Lithuania,2009,15-24 years,male,109,237032
+Lithuania,2009,75+ years,female,40,172277
+Lithuania,2009,35-54 years,female,65,480247
+Lithuania,2009,55-74 years,female,48,381948
+Lithuania,2009,25-34 years,female,15,205781
+Lithuania,2009,15-24 years,female,16,229147
+Lithuania,2009,5-14 years,male,3,169250
+Lithuania,2009,5-14 years,female,2,160188
+Lithuania,2010,55-74 years,male,219,262907
+Lithuania,2010,35-54 years,male,357,430396
+Lithuania,2010,75+ years,male,49,72479
+Lithuania,2010,25-34 years,male,110,198028
+Lithuania,2010,15-24 years,male,93,227810
+Lithuania,2010,75+ years,female,41,175611
+Lithuania,2010,35-54 years,female,72,471491
+Lithuania,2010,55-74 years,female,50,380465
+Lithuania,2010,15-24 years,female,14,218961
+Lithuania,2010,25-34 years,female,11,196906
+Lithuania,2010,5-14 years,female,1,153084
+Lithuania,2010,5-14 years,male,1,161599
+Lithuania,2011,35-54 years,male,349,420391
+Lithuania,2011,55-74 years,male,213,262391
+Lithuania,2011,75+ years,male,56,74328
+Lithuania,2011,25-34 years,male,124,189937
+Lithuania,2011,15-24 years,male,74,217769
+Lithuania,2011,75+ years,female,38,179526
+Lithuania,2011,55-74 years,female,68,378929
+Lithuania,2011,35-54 years,female,67,460566
+Lithuania,2011,25-34 years,female,17,187312
+Lithuania,2011,15-24 years,female,10,207726
+Lithuania,2011,5-14 years,female,1,146411
+Lithuania,2011,5-14 years,male,1,154519
+Lithuania,2012,35-54 years,male,321,413107
+Lithuania,2012,55-74 years,male,195,263194
+Lithuania,2012,75+ years,male,53,76080
+Lithuania,2012,25-34 years,male,117,187811
+Lithuania,2012,15-24 years,male,64,209964
+Lithuania,2012,75+ years,female,37,183510
+Lithuania,2012,35-54 years,female,74,451819
+Lithuania,2012,55-74 years,female,45,378541
+Lithuania,2012,25-34 years,female,10,183799
+Lithuania,2012,15-24 years,female,8,199629
+Lithuania,2012,5-14 years,male,3,149055
+Lithuania,2012,5-14 years,female,0,141261
+Lithuania,2013,35-54 years,male,382,405191
+Lithuania,2013,55-74 years,male,223,265835
+Lithuania,2013,75+ years,male,63,77510
+Lithuania,2013,25-34 years,male,121,188010
+Lithuania,2013,15-24 years,male,96,203647
+Lithuania,2013,75+ years,female,40,186711
+Lithuania,2013,35-54 years,female,75,442140
+Lithuania,2013,25-34 years,female,22,182444
+Lithuania,2013,55-74 years,female,41,380096
+Lithuania,2013,15-24 years,female,17,192772
+Lithuania,2013,5-14 years,female,3,137471
+Lithuania,2013,5-14 years,male,2,144800
+Lithuania,2014,75+ years,male,72,78763
+Lithuania,2014,35-54 years,male,309,396758
+Lithuania,2014,55-74 years,male,204,269618
+Lithuania,2014,25-34 years,male,94,189300
+Lithuania,2014,15-24 years,male,88,197504
+Lithuania,2014,75+ years,female,45,189437
+Lithuania,2014,55-74 years,female,47,383128
+Lithuania,2014,35-54 years,female,43,431495
+Lithuania,2014,15-24 years,female,12,186406
+Lithuania,2014,25-34 years,female,11,182183
+Lithuania,2014,5-14 years,female,3,135051
+Lithuania,2014,5-14 years,male,2,141934
+Lithuania,2015,75+ years,male,67,79672
+Lithuania,2015,55-74 years,male,216,273776
+Lithuania,2015,35-54 years,male,275,387255
+Lithuania,2015,25-34 years,male,101,190800
+Lithuania,2015,15-24 years,male,66,188903
+Lithuania,2015,75+ years,female,38,191358
+Lithuania,2015,55-74 years,female,55,386892
+Lithuania,2015,35-54 years,female,46,419841
+Lithuania,2015,25-34 years,female,17,182926
+Lithuania,2015,15-24 years,female,10,178882
+Lithuania,2015,5-14 years,female,3,133506
+Lithuania,2015,5-14 years,male,2,140115
+Lithuania,2016,75+ years,male,78,80426
+Lithuania,2016,55-74 years,male,212,277763
+Lithuania,2016,35-54 years,male,266,376689
+Lithuania,2016,25-34 years,male,96,191346
+Lithuania,2016,15-24 years,male,41,177888
+Lithuania,2016,75+ years,female,29,193001
+Lithuania,2016,55-74 years,female,45,390385
+Lithuania,2016,35-54 years,female,41,406249
+Lithuania,2016,25-34 years,female,8,182632
+Lithuania,2016,15-24 years,female,6,168917
+Sri Lanka,1985,75+ years,male,144,115000
+Sri Lanka,1985,15-24 years,male,1432,1673000
+Sri Lanka,1985,25-34 years,male,1024,1288000
+Sri Lanka,1985,55-74 years,male,443,680000
+Sri Lanka,1985,15-24 years,female,943,1652000
+Sri Lanka,1985,35-54 years,male,824,1469000
+Sri Lanka,1985,25-34 years,female,426,1268000
+Sri Lanka,1985,75+ years,female,23,106000
+Sri Lanka,1985,35-54 years,female,203,1402000
+Sri Lanka,1985,55-74 years,female,80,600000
+Sri Lanka,1985,5-14 years,male,71,1836000
+Sri Lanka,1985,5-14 years,female,55,1768000
+Sri Lanka,1986,75+ years,male,145,117200
+Sri Lanka,1986,25-34 years,male,1045,1310300
+Sri Lanka,1986,15-24 years,male,1304,1702300
+Sri Lanka,1986,55-74 years,male,461,690600
+Sri Lanka,1986,35-54 years,male,851,1495400
+Sri Lanka,1986,15-24 years,female,804,1680400
+Sri Lanka,1986,25-34 years,female,365,1290400
+Sri Lanka,1986,75+ years,female,22,109400
+Sri Lanka,1986,35-54 years,female,193,1425200
+Sri Lanka,1986,55-74 years,female,72,611700
+Sri Lanka,1986,5-14 years,male,48,1868800
+Sri Lanka,1986,5-14 years,female,35,1799700
+Sri Lanka,1996,75+ years,male,146,191662
+Sri Lanka,1996,55-74 years,male,648,919081
+Sri Lanka,1996,25-34 years,male,918,1524411
+Sri Lanka,1996,35-54 years,male,1211,2095820
+Sri Lanka,1996,15-24 years,male,768,1772399
+Sri Lanka,1996,15-24 years,female,500,1726757
+Sri Lanka,1996,25-34 years,female,284,1516469
+Sri Lanka,1996,75+ years,female,30,196180
+Sri Lanka,1996,35-54 years,female,228,2135855
+Sri Lanka,1996,55-74 years,female,102,966021
+Sri Lanka,1996,5-14 years,male,37,1840930
+Sri Lanka,1996,5-14 years,female,26,1768842
+Sri Lanka,1997,75+ years,male,181,195537
+Sri Lanka,1997,25-34 years,male,1109,1514832
+Sri Lanka,1997,55-74 years,male,649,930446
+Sri Lanka,1997,35-54 years,male,1491,2161948
+Sri Lanka,1997,15-24 years,male,924,1779781
+Sri Lanka,1997,15-24 years,female,623,1738059
+Sri Lanka,1997,75+ years,female,53,201309
+Sri Lanka,1997,25-34 years,female,341,1514575
+Sri Lanka,1997,35-54 years,female,313,2204629
+Sri Lanka,1997,55-74 years,female,118,984037
+Sri Lanka,1997,5-14 years,female,49,1739451
+Sri Lanka,1997,5-14 years,male,36,1810805
+Sri Lanka,1998,75+ years,male,214,197754
+Sri Lanka,1998,55-74 years,male,677,946470
+Sri Lanka,1998,35-54 years,male,1567,2224435
+Sri Lanka,1998,25-34 years,male,968,1499623
+Sri Lanka,1998,15-24 years,male,740,1792565
+Sri Lanka,1998,15-24 years,female,522,1753245
+Sri Lanka,1998,25-34 years,female,310,1508958
+Sri Lanka,1998,75+ years,female,32,205515
+Sri Lanka,1998,35-54 years,female,278,2271131
+Sri Lanka,1998,55-74 years,female,118,1006698
+Sri Lanka,1998,5-14 years,female,52,1710834
+Sri Lanka,1998,5-14 years,male,40,1780463
+Sri Lanka,1999,75+ years,male,182,198230
+Sri Lanka,1999,35-54 years,male,1609,2281687
+Sri Lanka,1999,55-74 years,male,683,968940
+Sri Lanka,1999,25-34 years,male,997,1481693
+Sri Lanka,1999,15-24 years,male,765,1805721
+Sri Lanka,1999,15-24 years,female,536,1767426
+Sri Lanka,1999,75+ years,female,49,208739
+Sri Lanka,1999,25-34 years,female,303,1501778
+Sri Lanka,1999,35-54 years,female,304,2334618
+Sri Lanka,1999,55-74 years,female,121,1035715
+Sri Lanka,1999,5-14 years,female,35,1684408
+Sri Lanka,1999,5-14 years,male,35,1751332
+Sri Lanka,2000,75+ years,male,200,196877
+Sri Lanka,2000,55-74 years,male,729,999107
+Sri Lanka,2000,35-54 years,male,1521,2331906
+Sri Lanka,2000,25-34 years,male,873,1464384
+Sri Lanka,2000,15-24 years,male,615,1815183
+Sri Lanka,2000,15-24 years,female,504,1776940
+Sri Lanka,2000,25-34 years,female,288,1495529
+Sri Lanka,2000,75+ years,female,40,210936
+Sri Lanka,2000,35-54 years,female,309,2394085
+Sri Lanka,2000,55-74 years,female,125,1072256
+Sri Lanka,2000,5-14 years,female,27,1659830
+Sri Lanka,2000,5-14 years,male,21,1723309
+Sri Lanka,2001,75+ years,male,162,204801
+Sri Lanka,2001,55-74 years,male,671,1025106
+Sri Lanka,2001,35-54 years,male,1468,2362538
+Sri Lanka,2001,25-34 years,male,755,1469938
+Sri Lanka,2001,15-24 years,male,508,1811743
+Sri Lanka,2001,15-24 years,female,394,1778830
+Sri Lanka,2001,25-34 years,female,224,1503451
+Sri Lanka,2001,75+ years,female,31,222745
+Sri Lanka,2001,35-54 years,female,244,2437630
+Sri Lanka,2001,55-74 years,female,100,1109859
+Sri Lanka,2001,5-14 years,male,18,1699714
+Sri Lanka,2001,5-14 years,female,15,1640606
+Sri Lanka,2002,75+ years,male,165,211446
+Sri Lanka,2002,35-54 years,male,1476,2389646
+Sri Lanka,2002,55-74 years,male,641,1055685
+Sri Lanka,2002,25-34 years,male,639,1478000
+Sri Lanka,2002,15-24 years,male,520,1799884
+Sri Lanka,2002,15-24 years,female,335,1772766
+Sri Lanka,2002,25-34 years,female,213,1514774
+Sri Lanka,2002,75+ years,female,31,234216
+Sri Lanka,2002,55-74 years,female,106,1153099
+Sri Lanka,2002,35-54 years,female,204,2477980
+Sri Lanka,2002,5-14 years,female,28,1626383
+Sri Lanka,2002,5-14 years,male,24,1682076
+Sri Lanka,2003,75+ years,male,190,216549
+Sri Lanka,2003,55-74 years,male,690,1089743
+Sri Lanka,2003,35-54 years,male,1483,2413016
+Sri Lanka,2003,25-34 years,male,650,1488285
+Sri Lanka,2003,15-24 years,male,509,1781707
+Sri Lanka,2003,15-24 years,female,358,1760232
+Sri Lanka,2003,75+ years,female,38,245223
+Sri Lanka,2003,25-34 years,female,186,1529565
+Sri Lanka,2003,55-74 years,female,111,1200816
+Sri Lanka,2003,35-54 years,female,218,2514643
+Sri Lanka,2003,5-14 years,female,23,1615933
+Sri Lanka,2003,5-14 years,male,11,1668884
+Sri Lanka,2006,75+ years,male,211,224927
+Sri Lanka,2006,55-74 years,male,649,1187973
+Sri Lanka,2006,35-54 years,male,1246,2465505
+Sri Lanka,2006,25-34 years,male,573,1541529
+Sri Lanka,2006,15-24 years,male,423,1697398
+Sri Lanka,2006,15-24 years,female,333,1699144
+Sri Lanka,2006,75+ years,female,51,276505
+Sri Lanka,2006,25-34 years,female,194,1594072
+Sri Lanka,2006,55-74 years,female,111,1344897
+Sri Lanka,2006,35-54 years,female,198,2603293
+Sri Lanka,2006,5-14 years,male,15,1650300
+Sri Lanka,2006,5-14 years,female,11,1606015
+United Kingdom,1985,75+ years,male,264,1202838
+United Kingdom,1985,55-74 years,male,915,5170113
+United Kingdom,1985,35-54 years,male,1208,6899879
+United Kingdom,1985,25-34 years,male,620,3969689
+United Kingdom,1985,55-74 years,female,678,6002096
+United Kingdom,1985,75+ years,female,237,2418692
+United Kingdom,1985,15-24 years,male,411,4731293
+United Kingdom,1985,35-54 years,female,505,6879295
+United Kingdom,1985,25-34 years,female,176,3899906
+United Kingdom,1985,15-24 years,female,86,4549121
+United Kingdom,1985,5-14 years,male,3,3740694
+United Kingdom,1985,5-14 years,female,2,3542919
+United Kingdom,1986,75+ years,male,280,1227718
+United Kingdom,1986,55-74 years,male,892,5159651
+United Kingdom,1986,35-54 years,male,1152,6950315
+United Kingdom,1986,25-34 years,male,616,4039982
+United Kingdom,1986,15-24 years,male,449,4715034
+United Kingdom,1986,75+ years,female,223,2454593
+United Kingdom,1986,55-74 years,female,541,5964761
+United Kingdom,1986,35-54 years,female,424,6933075
+United Kingdom,1986,25-34 years,female,161,3980652
+United Kingdom,1986,15-24 years,female,97,4538658
+United Kingdom,1986,5-14 years,female,2,3480190
+United Kingdom,1986,5-14 years,male,2,3674904
+United Kingdom,1987,75+ years,male,248,1272201
+United Kingdom,1987,55-74 years,male,857,5141737
+United Kingdom,1987,35-54 years,male,1072,6997144
+United Kingdom,1987,25-34 years,male,618,4130709
+United Kingdom,1987,15-24 years,male,461,4665275
+United Kingdom,1987,55-74 years,female,464,5919684
+United Kingdom,1987,75+ years,female,174,2508896
+United Kingdom,1987,35-54 years,female,417,6986157
+United Kingdom,1987,25-34 years,female,168,4073306
+United Kingdom,1987,15-24 years,female,105,4483586
+United Kingdom,1987,5-14 years,male,7,3625848
+United Kingdom,1987,5-14 years,female,3,3435125
+United Kingdom,1988,75+ years,male,313,1304946
+United Kingdom,1988,35-54 years,male,1218,7060763
+United Kingdom,1988,25-34 years,male,695,4217963
+United Kingdom,1988,55-74 years,male,816,5119070
+United Kingdom,1988,15-24 years,male,565,4573487
+United Kingdom,1988,75+ years,female,205,2551912
+United Kingdom,1988,55-74 years,female,445,5863850
+United Kingdom,1988,35-54 years,female,417,7055435
+United Kingdom,1988,25-34 years,female,171,4162366
+United Kingdom,1988,15-24 years,female,120,4389539
+United Kingdom,1988,5-14 years,male,4,3599080
+United Kingdom,1988,5-14 years,female,2,3412369
+United Kingdom,1989,75+ years,male,267,1338351
+United Kingdom,1989,35-54 years,male,1117,7132941
+United Kingdom,1989,25-34 years,male,664,4320494
+United Kingdom,1989,55-74 years,male,703,5101514
+United Kingdom,1989,15-24 years,male,482,4444822
+United Kingdom,1989,75+ years,female,176,2599321
+United Kingdom,1989,55-74 years,female,352,5807846
+United Kingdom,1989,35-54 years,female,353,7131057
+United Kingdom,1989,25-34 years,female,157,4262150
+United Kingdom,1989,15-24 years,female,87,4270368
+United Kingdom,1989,5-14 years,female,2,3415806
+United Kingdom,1989,5-14 years,male,1,3600459
+United Kingdom,1990,75+ years,male,264,1360178
+United Kingdom,1990,35-54 years,male,1246,7192919
+United Kingdom,1990,25-34 years,male,763,4427270
+United Kingdom,1990,55-74 years,male,721,5093581
+United Kingdom,1990,15-24 years,male,528,4317816
+United Kingdom,1990,55-74 years,female,340,5762152
+United Kingdom,1990,75+ years,female,154,2625749
+United Kingdom,1990,35-54 years,female,360,7196514
+United Kingdom,1990,25-34 years,female,180,4366845
+United Kingdom,1990,15-24 years,female,85,4138638
+United Kingdom,1990,5-14 years,male,2,3630327
+United Kingdom,1990,5-14 years,female,0,3445865
+United Kingdom,1991,35-54 years,male,1342,7271111
+United Kingdom,1991,25-34 years,male,801,4577587
+United Kingdom,1991,75+ years,male,238,1367055
+United Kingdom,1991,55-74 years,male,628,5106574
+United Kingdom,1991,15-24 years,male,481,4218626
+United Kingdom,1991,75+ years,female,151,2671099
+United Kingdom,1991,55-74 years,female,311,5765907
+United Kingdom,1991,35-54 years,female,336,7264229
+United Kingdom,1991,25-34 years,female,161,4465693
+United Kingdom,1991,15-24 years,female,93,4021225
+United Kingdom,1991,5-14 years,male,4,3687655
+United Kingdom,1991,5-14 years,female,1,3486666
+United Kingdom,1992,35-54 years,male,1361,7357267
+United Kingdom,1992,25-34 years,male,785,4655305
+United Kingdom,1992,75+ years,male,216,1371639
+United Kingdom,1992,55-74 years,male,693,5128063
+United Kingdom,1992,15-24 years,male,500,4077682
+United Kingdom,1992,75+ years,female,143,2670510
+United Kingdom,1992,55-74 years,female,299,5765146
+United Kingdom,1992,35-54 years,female,347,7352110
+United Kingdom,1992,25-34 years,female,191,4529424
+United Kingdom,1992,15-24 years,female,91,3882211
+United Kingdom,1992,5-14 years,male,2,3742157
+United Kingdom,1992,5-14 years,female,0,3544844
+United Kingdom,1993,35-54 years,male,1274,7453705
+United Kingdom,1993,25-34 years,male,773,4707275
+United Kingdom,1993,75+ years,male,221,1361095
+United Kingdom,1993,15-24 years,male,501,3957719
+United Kingdom,1993,55-74 years,male,652,5170730
+United Kingdom,1993,75+ years,female,166,2647900
+United Kingdom,1993,55-74 years,female,263,5792600
+United Kingdom,1993,35-54 years,female,335,7448149
+United Kingdom,1993,25-34 years,female,181,4569482
+United Kingdom,1993,15-24 years,female,82,3760574
+United Kingdom,1993,5-14 years,male,12,3806053
+United Kingdom,1993,5-14 years,female,2,3608700
+United Kingdom,1994,25-34 years,male,881,4751200
+United Kingdom,1994,35-54 years,male,1242,7561779
+United Kingdom,1994,75+ years,male,218,1349491
+United Kingdom,1994,15-24 years,male,445,3868779
+United Kingdom,1994,55-74 years,male,595,5209306
+United Kingdom,1994,75+ years,female,148,2619957
+United Kingdom,1994,55-74 years,female,256,5816530
+United Kingdom,1994,35-54 years,female,324,7557704
+United Kingdom,1994,25-34 years,female,176,4606941
+United Kingdom,1994,15-24 years,female,82,3674808
+United Kingdom,1994,5-14 years,male,9,3837961
+United Kingdom,1994,5-14 years,female,4,3642837
+United Kingdom,1995,25-34 years,male,858,4776564
+United Kingdom,1995,35-54 years,male,1247,7691950
+United Kingdom,1995,75+ years,male,222,1412937
+United Kingdom,1995,55-74 years,male,602,5179979
+United Kingdom,1995,15-24 years,male,419,3811646
+United Kingdom,1995,75+ years,female,152,2692330
+United Kingdom,1995,35-54 years,female,344,7672199
+United Kingdom,1995,55-74 years,female,237,5746814
+United Kingdom,1995,25-34 years,female,143,4614434
+United Kingdom,1995,15-24 years,female,81,3624373
+United Kingdom,1995,5-14 years,male,6,3859464
+United Kingdom,1995,5-14 years,female,4,3664274
+United Kingdom,1996,25-34 years,male,858,4786490
+United Kingdom,1996,35-54 years,male,1189,7859858
+United Kingdom,1996,75+ years,male,218,1460275
+United Kingdom,1996,55-74 years,male,552,5146338
+United Kingdom,1996,15-24 years,male,362,3746067
+United Kingdom,1996,75+ years,female,134,2740309
+United Kingdom,1996,35-54 years,female,350,7826169
+United Kingdom,1996,25-34 years,female,190,4613261
+United Kingdom,1996,55-74 years,female,218,5677006
+United Kingdom,1996,15-24 years,female,88,3564927
+United Kingdom,1996,5-14 years,male,6,3894281
+United Kingdom,1996,5-14 years,female,0,3697226
+United Kingdom,1997,25-34 years,male,832,4758740
+United Kingdom,1997,75+ years,male,252,1500323
+United Kingdom,1997,35-54 years,male,1180,8015651
+United Kingdom,1997,15-24 years,male,411,3696059
+United Kingdom,1997,55-74 years,male,519,5148166
+United Kingdom,1997,35-54 years,female,358,7970382
+United Kingdom,1997,55-74 years,female,224,5648065
+United Kingdom,1997,75+ years,female,107,2771148
+United Kingdom,1997,25-34 years,female,171,4576730
+United Kingdom,1997,15-24 years,female,82,3520027
+United Kingdom,1997,5-14 years,female,4,3732059
+United Kingdom,1997,5-14 years,male,3,3929285
+United Kingdom,1998,25-34 years,male,968,4695840
+United Kingdom,1998,35-54 years,male,1280,8158001
+United Kingdom,1998,75+ years,male,204,1534356
+United Kingdom,1998,55-74 years,male,571,5191604
+United Kingdom,1998,15-24 years,male,382,3673423
+United Kingdom,1998,75+ years,female,122,2797439
+United Kingdom,1998,55-74 years,female,244,5664521
+United Kingdom,1998,35-54 years,female,334,8098801
+United Kingdom,1998,25-34 years,female,177,4508772
+United Kingdom,1998,15-24 years,female,101,3501036
+United Kingdom,1998,5-14 years,female,4,3753737
+United Kingdom,1998,5-14 years,male,2,3949849
+United Kingdom,1999,25-34 years,male,839,4615720
+United Kingdom,1999,35-54 years,male,1361,8305433
+United Kingdom,1999,75+ years,male,242,1562363
+United Kingdom,1999,55-74 years,male,604,5254251
+United Kingdom,1999,15-24 years,male,393,3680455
+United Kingdom,1999,75+ years,female,144,2807489
+United Kingdom,1999,35-54 years,female,369,8226330
+United Kingdom,1999,55-74 years,female,232,5703910
+United Kingdom,1999,25-34 years,female,171,4419817
+United Kingdom,1999,15-24 years,female,88,3503102
+United Kingdom,1999,5-14 years,male,4,3975507
+United Kingdom,1999,5-14 years,female,1,3778962
+United Kingdom,2000,25-34 years,male,768,4536556
+United Kingdom,2000,35-54 years,male,1357,8459117
+United Kingdom,2000,75+ years,male,223,1589527
+United Kingdom,2000,55-74 years,male,568,5314648
+United Kingdom,2000,15-24 years,male,390,3709456
+United Kingdom,2000,35-54 years,female,386,8366055
+United Kingdom,2000,75+ years,female,109,2816810
+United Kingdom,2000,25-34 years,female,167,4332330
+United Kingdom,2000,55-74 years,female,212,5750273
+United Kingdom,2000,15-24 years,female,101,3523496
+United Kingdom,2000,5-14 years,male,5,3967341
+United Kingdom,2000,5-14 years,female,4,3768300
+United Kingdom,2001,25-34 years,male,723,4243590
+United Kingdom,2001,35-54 years,male,1317,8222369
+United Kingdom,2001,75+ years,male,225,1618917
+United Kingdom,2001,55-74 years,male,569,5390372
+United Kingdom,2001,15-24 years,male,361,3650328
+United Kingdom,2001,35-54 years,female,373,8374702
+United Kingdom,2001,55-74 years,female,239,5820231
+United Kingdom,2001,75+ years,female,106,2801024
+United Kingdom,2001,25-34 years,female,136,4251558
+United Kingdom,2001,15-24 years,female,72,3581981
+United Kingdom,2001,5-14 years,male,4,3902253
+United Kingdom,2001,5-14 years,female,3,3714668
+United Kingdom,2002,25-34 years,male,747,4114056
+United Kingdom,2002,35-54 years,male,1350,8250038
+United Kingdom,2002,75+ years,male,175,1653523
+United Kingdom,2002,55-74 years,male,564,5545751
+United Kingdom,2002,15-24 years,male,323,3758190
+United Kingdom,2002,75+ years,female,117,2817222
+United Kingdom,2002,35-54 years,female,349,8405892
+United Kingdom,2002,25-34 years,female,170,4149794
+United Kingdom,2002,55-74 years,female,222,5969004
+United Kingdom,2002,15-24 years,female,90,3642294
+United Kingdom,2002,5-14 years,female,5,3706268
+United Kingdom,2002,5-14 years,male,5,3896912
+United Kingdom,2003,25-34 years,male,637,4023648
+United Kingdom,2003,35-54 years,male,1311,8282037
+United Kingdom,2003,75+ years,male,209,1681364
+United Kingdom,2003,55-74 years,male,575,5665717
+United Kingdom,2003,15-24 years,male,316,3854815
+United Kingdom,2003,35-54 years,female,381,8432837
+United Kingdom,2003,75+ years,female,104,2821243
+United Kingdom,2003,25-34 years,female,144,4059897
+United Kingdom,2003,55-74 years,female,207,6085995
+United Kingdom,2003,15-24 years,female,91,3718206
+United Kingdom,2003,5-14 years,female,2,3677964
+United Kingdom,2003,5-14 years,male,2,3868048
+United Kingdom,2004,35-54 years,male,1422,8324962
+United Kingdom,2004,25-34 years,male,599,3960327
+United Kingdom,2004,75+ years,male,221,1713028
+United Kingdom,2004,55-74 years,male,601,5755684
+United Kingdom,2004,15-24 years,male,315,3953382
+United Kingdom,2004,35-54 years,female,423,8494403
+United Kingdom,2004,75+ years,female,115,2829135
+United Kingdom,2004,55-74 years,female,244,6170678
+United Kingdom,2004,25-34 years,female,150,3993258
+United Kingdom,2004,15-24 years,female,88,3785230
+United Kingdom,2004,5-14 years,male,4,3832497
+United Kingdom,2004,5-14 years,female,1,3642427
+United Kingdom,2005,35-54 years,male,1359,8397155
+United Kingdom,2005,25-34 years,male,563,3951996
+United Kingdom,2005,75+ years,male,215,1749520
+United Kingdom,2005,55-74 years,male,617,5831367
+United Kingdom,2005,15-24 years,male,296,4029567
+United Kingdom,2005,35-54 years,female,405,8555323
+United Kingdom,2005,25-34 years,female,162,3983494
+United Kingdom,2005,55-74 years,female,237,6236531
+United Kingdom,2005,75+ years,female,97,2844822
+United Kingdom,2005,15-24 years,female,88,3856149
+United Kingdom,2005,5-14 years,female,4,3591721
+United Kingdom,2005,5-14 years,male,4,3781379
+United Kingdom,2006,35-54 years,male,1457,8462315
+United Kingdom,2006,25-34 years,male,562,3940414
+United Kingdom,2006,55-74 years,male,656,5891585
+United Kingdom,2006,75+ years,male,199,1792119
+United Kingdom,2006,15-24 years,male,308,4108191
+United Kingdom,2006,35-54 years,female,397,8633179
+United Kingdom,2006,55-74 years,female,238,6287636
+United Kingdom,2006,25-34 years,female,138,3955936
+United Kingdom,2006,75+ years,female,86,2866699
+United Kingdom,2006,15-24 years,female,74,3911869
+United Kingdom,2006,5-14 years,male,4,3709139
+United Kingdom,2006,5-14 years,female,3,3532047
+United Kingdom,2007,35-54 years,male,1332,8519029
+United Kingdom,2007,25-34 years,male,547,3935970
+United Kingdom,2007,75+ years,male,214,1834466
+United Kingdom,2007,55-74 years,male,613,5943853
+United Kingdom,2007,15-24 years,male,309,4193170
+United Kingdom,2007,35-54 years,female,354,8709169
+United Kingdom,2007,55-74 years,female,230,6345128
+United Kingdom,2007,25-34 years,female,132,3923507
+United Kingdom,2007,75+ years,female,82,2886921
+United Kingdom,2007,15-24 years,female,70,3963103
+United Kingdom,2007,5-14 years,male,10,3648686
+United Kingdom,2007,5-14 years,female,4,3479755
+United Kingdom,2008,35-54 years,male,1441,8559778
+United Kingdom,2008,25-34 years,male,617,3984635
+United Kingdom,2008,75+ years,male,221,1873437
+United Kingdom,2008,55-74 years,male,692,6013042
+United Kingdom,2008,15-24 years,male,323,4214828
+United Kingdom,2008,35-54 years,female,420,8751380
+United Kingdom,2008,25-34 years,female,156,3915840
+United Kingdom,2008,55-74 years,female,207,6414224
+United Kingdom,2008,75+ years,female,88,2901507
+United Kingdom,2008,15-24 years,female,81,4000750
+United Kingdom,2008,5-14 years,female,7,3443457
+United Kingdom,2008,5-14 years,male,6,3610494
+United Kingdom,2009,35-54 years,male,1542,8582671
+United Kingdom,2009,25-34 years,male,564,4047103
+United Kingdom,2009,55-74 years,male,676,6096376
+United Kingdom,2009,75+ years,male,195,1911370
+United Kingdom,2009,15-24 years,male,332,4210903
+United Kingdom,2009,35-54 years,female,387,8778984
+United Kingdom,2009,55-74 years,female,229,6497453
+United Kingdom,2009,25-34 years,female,133,3946153
+United Kingdom,2009,75+ years,female,97,2915785
+United Kingdom,2009,15-24 years,female,84,4009556
+United Kingdom,2009,5-14 years,male,4,3591283
+United Kingdom,2009,5-14 years,female,3,3425922
+United Kingdom,2010,35-54 years,male,1444,8592781
+United Kingdom,2010,25-34 years,male,513,4128369
+United Kingdom,2010,75+ years,male,227,1960939
+United Kingdom,2010,55-74 years,male,696,6171080
+United Kingdom,2010,15-24 years,male,344,4225926
+United Kingdom,2010,35-54 years,female,400,8788212
+United Kingdom,2010,55-74 years,female,232,6570278
+United Kingdom,2010,25-34 years,female,133,4012797
+United Kingdom,2010,75+ years,female,89,2944062
+United Kingdom,2010,15-24 years,female,106,3995780
+United Kingdom,2010,5-14 years,female,3,3426430
+United Kingdom,2010,5-14 years,male,1,3586875
+United Kingdom,2011,35-54 years,male,1611,8617712
+United Kingdom,2011,25-34 years,male,553,4222804
+United Kingdom,2011,55-74 years,male,708,6253024
+United Kingdom,2011,75+ years,male,207,2013814
+United Kingdom,2011,15-24 years,male,346,4236989
+United Kingdom,2011,35-54 years,female,417,8790957
+United Kingdom,2011,55-74 years,female,235,6652911
+United Kingdom,2011,25-34 years,female,134,4094631
+United Kingdom,2011,15-24 years,female,100,4001855
+United Kingdom,2011,75+ years,female,70,2973876
+United Kingdom,2011,5-14 years,male,8,3594112
+United Kingdom,2011,5-14 years,female,4,3429167
+United Kingdom,2012,35-54 years,male,1587,8673006
+United Kingdom,2012,25-34 years,male,597,4261254
+United Kingdom,2012,55-74 years,male,739,6392214
+United Kingdom,2012,75+ years,male,215,2043034
+United Kingdom,2012,15-24 years,male,364,4204765
+United Kingdom,2012,35-54 years,female,403,8852151
+United Kingdom,2012,25-34 years,female,153,4296499
+United Kingdom,2012,55-74 years,female,211,6737405
+United Kingdom,2012,75+ years,female,93,2976921
+United Kingdom,2012,15-24 years,female,70,4054017
+United Kingdom,2012,5-14 years,male,10,3695552
+United Kingdom,2012,5-14 years,female,2,3521812
+United Kingdom,2013,35-54 years,male,1743,8656572
+United Kingdom,2013,55-74 years,male,908,6488882
+United Kingdom,2013,25-34 years,male,586,4320298
+United Kingdom,2013,75+ years,male,258,2096518
+United Kingdom,2013,15-24 years,male,331,4180873
+United Kingdom,2013,35-54 years,female,449,8837469
+United Kingdom,2013,75+ years,female,103,3004685
+United Kingdom,2013,55-74 years,female,232,6839180
+United Kingdom,2013,25-34 years,female,124,4356539
+United Kingdom,2013,15-24 years,female,81,4017291
+United Kingdom,2013,5-14 years,male,5,3734237
+United Kingdom,2013,5-14 years,female,4,3559249
+United Kingdom,2014,35-54 years,male,1692,8665195
+United Kingdom,2014,25-34 years,male,602,4360457
+United Kingdom,2014,55-74 years,male,827,6597480
+United Kingdom,2014,75+ years,male,257,2158742
+United Kingdom,2014,15-24 years,male,332,4171187
+United Kingdom,2014,35-54 years,female,462,8850139
+United Kingdom,2014,55-74 years,female,262,6952444
+United Kingdom,2014,25-34 years,female,155,4388346
+United Kingdom,2014,75+ years,female,83,3052672
+United Kingdom,2014,15-24 years,female,103,3992566
+United Kingdom,2014,5-14 years,male,7,3778321
+United Kingdom,2014,5-14 years,female,6,3602933
+United Kingdom,2015,35-54 years,male,1579,8692440
+United Kingdom,2015,25-34 years,male,596,4408293
+United Kingdom,2015,55-74 years,male,906,6716557
+United Kingdom,2015,75+ years,male,273,2200958
+United Kingdom,2015,15-24 years,male,374,4151992
+United Kingdom,2015,35-54 years,female,473,8881944
+United Kingdom,2015,55-74 years,female,306,7075576
+United Kingdom,2015,25-34 years,female,181,4414464
+United Kingdom,2015,75+ years,female,108,3070457
+United Kingdom,2015,15-24 years,female,104,3966564
+United Kingdom,2015,5-14 years,female,6,3663221
+United Kingdom,2015,5-14 years,male,4,3840476
+Uzbekistan,1990,35-54 years,male,343,1491700
+Uzbekistan,1990,55-74 years,male,129,660200
+Uzbekistan,1990,25-34 years,male,283,1638100
+Uzbekistan,1990,75+ years,male,20,118300
+Uzbekistan,1990,75+ years,female,27,218400
+Uzbekistan,1990,15-24 years,male,191,1955700
+Uzbekistan,1990,55-74 years,female,77,856800
+Uzbekistan,1990,35-54 years,female,105,1507400
+Uzbekistan,1990,15-24 years,female,135,1956300
+Uzbekistan,1990,25-34 years,female,87,1664200
+Uzbekistan,1990,5-14 years,male,42,2574400
+Uzbekistan,1990,5-14 years,female,20,2524200
+Uzbekistan,1991,35-54 years,male,353,1510300
+Uzbekistan,1991,55-74 years,male,119,668000
+Uzbekistan,1991,25-34 years,male,289,1648400
+Uzbekistan,1991,75+ years,male,20,115500
+Uzbekistan,1991,75+ years,female,30,216200
+Uzbekistan,1991,15-24 years,male,209,1970700
+Uzbekistan,1991,55-74 years,female,57,856200
+Uzbekistan,1991,15-24 years,female,117,1965200
+Uzbekistan,1991,35-54 years,female,71,1531100
+Uzbekistan,1991,25-34 years,female,72,1684500
+Uzbekistan,1991,5-14 years,male,49,2615200
+Uzbekistan,1991,5-14 years,female,7,2566500
+Uzbekistan,1992,35-54 years,male,308,1586100
+Uzbekistan,1992,75+ years,male,19,125500
+Uzbekistan,1992,55-74 years,male,105,701800
+Uzbekistan,1992,25-34 years,male,258,1741600
+Uzbekistan,1992,75+ years,female,29,232900
+Uzbekistan,1992,15-24 years,male,257,2079600
+Uzbekistan,1992,55-74 years,female,57,912800
+Uzbekistan,1992,15-24 years,female,108,2081800
+Uzbekistan,1992,25-34 years,female,81,1769700
+Uzbekistan,1992,35-54 years,female,65,1603900
+Uzbekistan,1992,5-14 years,male,49,2737500
+Uzbekistan,1992,5-14 years,female,8,2683800
+Uzbekistan,1993,35-54 years,male,332,1635000
+Uzbekistan,1993,75+ years,male,19,113000
+Uzbekistan,1993,25-34 years,male,278,1714500
+Uzbekistan,1993,55-74 years,male,111,730700
+Uzbekistan,1993,75+ years,female,23,220200
+Uzbekistan,1993,15-24 years,male,218,2098300
+Uzbekistan,1993,55-74 years,female,60,917800
+Uzbekistan,1993,15-24 years,female,117,2084700
+Uzbekistan,1993,25-34 years,female,83,1763900
+Uzbekistan,1993,35-54 years,female,60,1656100
+Uzbekistan,1993,5-14 years,male,47,2817200
+Uzbekistan,1993,5-14 years,female,7,2757900
+Uzbekistan,1994,35-54 years,male,374,1737700
+Uzbekistan,1994,55-74 years,male,151,786400
+Uzbekistan,1994,25-34 years,male,264,1703700
+Uzbekistan,1994,75+ years,female,25,204700
+Uzbekistan,1994,15-24 years,male,246,2158200
+Uzbekistan,1994,75+ years,male,10,95300
+Uzbekistan,1994,55-74 years,female,53,940400
+Uzbekistan,1994,15-24 years,female,110,2132800
+Uzbekistan,1994,25-34 years,female,77,1759900
+Uzbekistan,1994,35-54 years,female,74,1774300
+Uzbekistan,1994,5-14 years,male,32,2960900
+Uzbekistan,1994,5-14 years,female,3,2890400
+Uzbekistan,1995,35-54 years,male,423,1817200
+Uzbekistan,1995,55-74 years,male,171,811900
+Uzbekistan,1995,25-34 years,male,275,1714800
+Uzbekistan,1995,75+ years,male,11,92900
+Uzbekistan,1995,15-24 years,male,236,2206700
+Uzbekistan,1995,75+ years,female,15,199900
+Uzbekistan,1995,55-74 years,female,64,957100
+Uzbekistan,1995,25-34 years,female,80,1772700
+Uzbekistan,1995,35-54 years,female,77,1856300
+Uzbekistan,1995,15-24 years,female,88,2170200
+Uzbekistan,1995,5-14 years,male,38,3038700
+Uzbekistan,1995,5-14 years,female,7,2960600
+Uzbekistan,1996,35-54 years,male,496,1864100
+Uzbekistan,1996,55-74 years,male,195,819300
+Uzbekistan,1996,25-34 years,male,334,1725200
+Uzbekistan,1996,75+ years,male,12,92400
+Uzbekistan,1996,15-24 years,male,255,2231200
+Uzbekistan,1996,75+ years,female,18,199600
+Uzbekistan,1996,55-74 years,female,55,959900
+Uzbekistan,1996,25-34 years,female,99,1783300
+Uzbekistan,1996,15-24 years,female,111,2192000
+Uzbekistan,1996,35-54 years,female,74,1906900
+Uzbekistan,1996,5-14 years,male,40,3080500
+Uzbekistan,1996,5-14 years,female,10,3000100
+Uzbekistan,1997,35-54 years,male,415,1958400
+Uzbekistan,1997,55-74 years,male,165,832200
+Uzbekistan,1997,25-34 years,male,298,1751200
+Uzbekistan,1997,75+ years,male,13,93200
+Uzbekistan,1997,15-24 years,male,278,2279700
+Uzbekistan,1997,75+ years,female,13,202000
+Uzbekistan,1997,15-24 years,female,120,2240100
+Uzbekistan,1997,25-34 years,female,88,1803700
+Uzbekistan,1997,55-74 years,female,44,961600
+Uzbekistan,1997,35-54 years,female,74,2011500
+Uzbekistan,1997,5-14 years,male,37,3159000
+Uzbekistan,1997,5-14 years,female,9,3071700
+Uzbekistan,1998,35-54 years,male,460,2062500
+Uzbekistan,1998,55-74 years,male,160,832800
+Uzbekistan,1998,25-34 years,male,302,1782600
+Uzbekistan,1998,75+ years,male,11,94200
+Uzbekistan,1998,15-24 years,male,266,2334400
+Uzbekistan,1998,15-24 years,female,152,2298600
+Uzbekistan,1998,75+ years,female,12,204400
+Uzbekistan,1998,25-34 years,female,94,1823300
+Uzbekistan,1998,55-74 years,female,42,950300
+Uzbekistan,1998,35-54 years,female,61,2129600
+Uzbekistan,1998,5-14 years,male,53,3222800
+Uzbekistan,1998,5-14 years,female,7,3125700
+Uzbekistan,1999,35-54 years,male,491,2177216
+Uzbekistan,1999,25-34 years,male,361,1811725
+Uzbekistan,1999,55-74 years,male,123,818124
+Uzbekistan,1999,15-24 years,male,328,2406752
+Uzbekistan,1999,75+ years,male,13,98024
+Uzbekistan,1999,15-24 years,female,163,2369338
+Uzbekistan,1999,75+ years,female,13,209948
+Uzbekistan,1999,25-34 years,female,98,1842587
+Uzbekistan,1999,55-74 years,female,39,923365
+Uzbekistan,1999,35-54 years,female,89,2257145
+Uzbekistan,1999,5-14 years,male,59,3260451
+Uzbekistan,1999,5-14 years,female,18,3155241
+Uzbekistan,2000,35-54 years,male,528,2289656
+Uzbekistan,2000,25-34 years,male,355,1843476
+Uzbekistan,2000,55-74 years,male,153,802122
+Uzbekistan,2000,15-24 years,male,350,2492264
+Uzbekistan,2000,75+ years,male,12,104358
+Uzbekistan,2000,75+ years,female,19,217711
+Uzbekistan,2000,15-24 years,female,180,2451893
+Uzbekistan,2000,25-34 years,female,106,1864696
+Uzbekistan,2000,55-74 years,female,48,896059
+Uzbekistan,2000,35-54 years,female,98,2381166
+Uzbekistan,2000,5-14 years,male,57,3279407
+Uzbekistan,2000,5-14 years,female,13,3166259
+Uzbekistan,2001,35-54 years,male,513,2389813
+Uzbekistan,2001,25-34 years,male,377,1884542
+Uzbekistan,2001,55-74 years,male,130,792247
+Uzbekistan,2001,15-24 years,male,363,2580294
+Uzbekistan,2001,75+ years,male,15,112545
+Uzbekistan,2001,75+ years,female,16,223250
+Uzbekistan,2001,15-24 years,female,176,2538466
+Uzbekistan,2001,25-34 years,female,109,1895215
+Uzbekistan,2001,55-74 years,female,40,881227
+Uzbekistan,2001,35-54 years,female,93,2492917
+Uzbekistan,2001,5-14 years,male,64,3281449
+Uzbekistan,2001,5-14 years,female,18,3159562
+Uzbekistan,2002,35-54 years,male,398,2474921
+Uzbekistan,2002,25-34 years,male,288,1927000
+Uzbekistan,2002,75+ years,male,17,123916
+Uzbekistan,2002,55-74 years,male,100,789412
+Uzbekistan,2002,15-24 years,male,325,2672936
+Uzbekistan,2002,75+ years,female,14,230394
+Uzbekistan,2002,25-34 years,female,107,1930142
+Uzbekistan,2002,15-24 years,female,141,2627925
+Uzbekistan,2002,35-54 years,female,91,2586025
+Uzbekistan,2002,55-74 years,female,27,877155
+Uzbekistan,2002,5-14 years,male,49,3260824
+Uzbekistan,2002,5-14 years,female,19,3131606
+Uzbekistan,2003,35-54 years,male,385,2557625
+Uzbekistan,2003,25-34 years,male,259,1966790
+Uzbekistan,2003,55-74 years,male,100,790059
+Uzbekistan,2003,75+ years,male,13,134173
+Uzbekistan,2003,15-24 years,male,235,2762675
+Uzbekistan,2003,15-24 years,female,151,2713618
+Uzbekistan,2003,25-34 years,female,99,1962726
+Uzbekistan,2003,75+ years,female,10,237495
+Uzbekistan,2003,55-74 years,female,31,877339
+Uzbekistan,2003,35-54 years,female,77,2675118
+Uzbekistan,2003,5-14 years,male,45,3219722
+Uzbekistan,2003,5-14 years,female,11,3085543
+Uzbekistan,2004,35-54 years,male,350,2639741
+Uzbekistan,2004,25-34 years,male,234,2012929
+Uzbekistan,2004,55-74 years,male,84,792630
+Uzbekistan,2004,15-24 years,male,237,2836903
+Uzbekistan,2004,75+ years,male,9,145877
+Uzbekistan,2004,15-24 years,female,137,2782222
+Uzbekistan,2004,75+ years,female,10,247300
+Uzbekistan,2004,25-34 years,female,69,2003119
+Uzbekistan,2004,35-54 years,female,70,2761019
+Uzbekistan,2004,55-74 years,female,18,880059
+Uzbekistan,2004,5-14 years,male,29,3167129
+Uzbekistan,2004,5-14 years,female,4,3031913
+Uzbekistan,2005,35-54 years,male,362,2712283
+Uzbekistan,2005,55-74 years,male,94,808793
+Uzbekistan,2005,25-34 years,male,238,2060925
+Uzbekistan,2005,75+ years,male,13,154634
+Uzbekistan,2005,15-24 years,male,184,2907415
+Uzbekistan,2005,15-24 years,female,114,2846661
+Uzbekistan,2005,25-34 years,female,69,2045225
+Uzbekistan,2005,35-54 years,female,79,2836489
+Uzbekistan,2005,75+ years,female,7,255163
+Uzbekistan,2005,55-74 years,female,21,896756
+Uzbekistan,2005,5-14 years,male,30,3105255
+Uzbekistan,2005,5-14 years,female,10,2970748
+Uzbekistan,2009,35-54 years,male,404,3072025
+Uzbekistan,2009,25-34 years,male,252,2295850
+Uzbekistan,2009,55-74 years,male,81,985960
+Uzbekistan,2009,15-24 years,male,242,3176656
+Uzbekistan,2009,15-24 years,female,186,3079271
+Uzbekistan,2009,25-34 years,female,85,2313972
+Uzbekistan,2009,75+ years,male,7,192006
+Uzbekistan,2009,75+ years,female,7,318983
+Uzbekistan,2009,35-54 years,female,65,3263931
+Uzbekistan,2009,55-74 years,female,15,1105076
+Uzbekistan,2009,5-14 years,male,37,2805898
+Uzbekistan,2009,5-14 years,female,18,2678474
+Uzbekistan,2010,35-54 years,male,371,3142694
+Uzbekistan,2010,25-34 years,male,235,2375259
+Uzbekistan,2010,55-74 years,male,102,1036963
+Uzbekistan,2010,15-24 years,male,246,3208299
+Uzbekistan,2010,15-24 years,female,208,3098743
+Uzbekistan,2010,75+ years,male,9,196160
+Uzbekistan,2010,25-34 years,female,93,2391172
+Uzbekistan,2010,35-54 years,female,101,3339076
+Uzbekistan,2010,5-14 years,male,48,2751752
+Uzbekistan,2010,75+ years,female,5,322899
+Uzbekistan,2010,55-74 years,female,16,1161422
+Uzbekistan,2010,5-14 years,female,30,2627344
+Uzbekistan,2011,35-54 years,male,457,3204569
+Uzbekistan,2011,25-34 years,male,271,2457050
+Uzbekistan,2011,15-24 years,male,264,3211080
+Uzbekistan,2011,15-24 years,female,248,3092119
+Uzbekistan,2011,55-74 years,male,76,1086405
+Uzbekistan,2011,25-34 years,female,139,2469295
+Uzbekistan,2011,75+ years,male,10,204956
+Uzbekistan,2011,35-54 years,female,78,3404363
+Uzbekistan,2011,5-14 years,male,45,2710780
+Uzbekistan,2011,55-74 years,female,19,1218296
+Uzbekistan,2011,75+ years,female,5,330662
+Uzbekistan,2011,5-14 years,female,28,2588474
+Uzbekistan,2012,35-54 years,male,404,3273281
+Uzbekistan,2012,55-74 years,male,133,1141487
+Uzbekistan,2012,25-34 years,male,290,2548472
+Uzbekistan,2012,15-24 years,female,333,3072826
+Uzbekistan,2012,15-24 years,male,311,3199204
+Uzbekistan,2012,75+ years,male,15,213713
+Uzbekistan,2012,25-34 years,female,148,2556673
+Uzbekistan,2012,35-54 years,female,89,3474788
+Uzbekistan,2012,5-14 years,male,67,2701361
+Uzbekistan,2012,55-74 years,female,25,1283060
+Uzbekistan,2012,75+ years,female,4,338557
+Uzbekistan,2012,5-14 years,female,16,2578408
+Uzbekistan,2013,35-54 years,male,481,3346411
+Uzbekistan,2013,25-34 years,male,328,2644648
+Uzbekistan,2013,15-24 years,female,323,3039740
+Uzbekistan,2013,15-24 years,male,320,3171202
+Uzbekistan,2013,55-74 years,male,119,1202790
+Uzbekistan,2013,75+ years,male,13,221002
+Uzbekistan,2013,25-34 years,female,146,2647820
+Uzbekistan,2013,35-54 years,female,99,3547895
+Uzbekistan,2013,75+ years,female,8,345180
+Uzbekistan,2013,5-14 years,male,61,2720938
+Uzbekistan,2013,55-74 years,female,21,1356298
+Uzbekistan,2013,5-14 years,female,31,2595000
+Uzbekistan,2014,35-54 years,male,519,3421300
+Uzbekistan,2014,25-34 years,male,318,2739150
+Uzbekistan,2014,15-24 years,female,347,2992817
+Uzbekistan,2014,55-74 years,male,144,1271111
+Uzbekistan,2014,15-24 years,male,347,3126905
+Uzbekistan,2014,75+ years,male,17,224995
+Uzbekistan,2014,25-34 years,female,162,2735238
+Uzbekistan,2014,35-54 years,female,107,3620833
+Uzbekistan,2014,75+ years,female,9,348465
+Uzbekistan,2014,5-14 years,male,60,2762158
+Uzbekistan,2014,5-14 years,female,44,2631600
+Uzbekistan,2014,55-74 years,female,21,1438935

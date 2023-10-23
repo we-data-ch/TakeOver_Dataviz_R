@@ -80,14 +80,14 @@ image_link <- function(image,url,...){
 
 .div.blue[
 - Visualisation Multidimensionnelle
-<!-- Personnalisation Avancée et Thèmes -->
+<!--Personnalisation Avancée et Thèmes -->
 ] 
 
 .div.blue[
 - Graphiques Interactifs et Projets Pratiques
 ] 
 
-<!-- comments -->
+<!--comments -->
 ???
 
 Ce cours n'est pas une introduction à R, mais une introduction à la visualisation de données avec R. Il est donc nécessaire d'avoir une connaissance de base de R pour suivre ce cours. Si vous n'avez pas de connaissances de base en R, vous pouvez suivre le cours [Introduction à R](https://www.datacamp.com/courses/free-introduction-to-r) sur DataCamp.
@@ -142,7 +142,7 @@ image_link(urlImage,url,width="270px")
 ]
 
 
-<!-- comments -->
+<!--comments -->
 ???
 - Hadley Wickham, le créateur de ggplot2, a écrit un livre sur la visualisation de données avec R, [R for Data Science](https://r4ds.had.co.nz/), qui est un excellent point de départ pour apprendre à utiliser ggplot2.
 
@@ -194,7 +194,7 @@ class: inverse center middle
   - **Réseau**: Network, Sankey, etc.
 
 
-<!-- comments-->
+<!--comments-->
 
 ???
 On peut faire 7 Meta categories de graphiques: Distribution, Relation, Ranking, Evolution, Partie d'un tout, Cartographie, Réseau.
@@ -229,11 +229,11 @@ image_link(url,url,width="200px")
 ]
 
 
-<!-- comments-->
+<!--comments-->
 
 ???
 
-- Les violons sont particulièrement adaptés lorsque la quantité de données est importante et qu'il est impossible de montrer des observations individuelles.
+- Les violons sont particulièrement adaptés lorsque la quantité de données est importante et qu'il est impossible de montrer des observations individuelles. on ajoute souvent un boxplot au milleu
 
 - Les histogrammes et les diagrammes de densité sont tous deux utiles pour visualiser la distribution des données, mais ils montrent des choses légèrement différentes. Les histogrammes montrent les frequences, tandis que les diagrammes de densité montrent les proportions.
 
@@ -276,7 +276,7 @@ image_link(url,url,width="200px")
 ]
 
 
-<!-- comments-->
+<!--comments-->
 
 ???
 
@@ -305,7 +305,7 @@ image_link(url,url,width="800px")
 
 ```
 
-<!-- commemnts -->
+<!--commemnts -->
 
 ???
 
@@ -343,7 +343,7 @@ image_link(url,url,width="200px")
 ]
 
 
-<!-- comments-->
+<!--comments-->
 
 ???
 Barplot vs histogramme
@@ -388,7 +388,7 @@ image_link(url,url,width="200px")
 ]
 
 
-<!-- comments-->
+<!--comments-->
 
 ???
 
@@ -398,7 +398,7 @@ Diagramme de Venn :  N'utilisez pas plus de 3 ensembles, cela rendrait la figure
 
 Les pie chart sont très critiqués et doivent être évités autant que possible. L'être humain est très mauvais pour traduire des angles en valeurs.
 
-Pourquoi ne pas plutôt envisager un barplot/lolipop plot ?
+Pourquoi ne pas plutôt envisager un stacked percentage bar plot ?
 
 ---
 
@@ -426,7 +426,7 @@ image_link(url,url,width="200px")
 ]
 
 
-<!-- comments-->
+<!--comments-->
 
 ???
 
@@ -471,7 +471,7 @@ image_link(url,url,width="200px")
 ]
 
 
-<!-- comments-->
+<!--comments-->
 
 ???
 
@@ -516,7 +516,7 @@ image_link(url,url,width="200px")
 ]
 
 
-<!-- comments-->
+<!--comments-->
 
 ???
 
@@ -543,37 +543,54 @@ class: inverse center middle
 ## Quiz #1
 
 
-Quel type de graphique est le plus adapté pour visualiser la corrélation entre les variables d'un dataset ?
--- 
-Correlogram 
--- 
 - Quel type de graphique est le plus adapté pour visualiser la relation entre deux variables continues (e.g. taille et poids) ?
--- 
-Scatter plot 
--- 
-Reponse : Violin plot / Question: Quel type de graphique est le plus adapté pour comparer visuellement la distribution de deux variables continues avec beaucoup de points (e.g. 
+--
+ **Scatter plot**
+--
+
+- Quel type de graphique est le plus adapté pour comparer visuellement la distribution de deux variables continues avec beaucoup de points (e.g. age d'une population par sexe) ?
+--
+ **Violon plot / boxplot**
+--
+
+- Quel type de graphique est le plus adapté pour visualiser la corrélation entre **toutes** les variables d'un dataset ?
+--
+ **Correlogram **
+--
 
 - Quel type de graphique est le plus adapté pour visualiser l'évolution de la température moyenne en France au cours des 50 dernières années ?
 --
-Reponse: line plot ou area plot
+ **Line plot ou area plot**
 --
+
 - Quel type de graphique est le plus adapté pour visualiser la répartition des ventes de voitures par marque ?
 --
-Reponse: bar plot
-
-- Quel type de graphique est le plus adapté pour visualiser la répartition des ventes de voitures par marque et par année ?
-- Reponse: stacked bar plot
+ **Bar plot**
+--
+ / Et par marque et par année ?
+--
+ **(Stacked) bar plot empilé**
+--
 
 - Quel type de graphique est le plus adapté pour visualiser les relations entre les pays de l'UE ?
-- Reponse: graph diagram
+--
+ **Graph diagram**
 
-- Quel type de graphique est le plus adapté pour visualiser les relations entre les pays de l'UE et les flux de migrants entre ces pays ?
-- Reponse: Sankey diagram
-
-- Quel type de graphique est le plus adapté pour visualiser le
-
-
+ 
 ---
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 class: inverse center middle
 
@@ -587,8 +604,10 @@ class: inverse center middle
 
 - GGplot2 est une implémentation de la grammaire des graphiques en R, crée par Hadley Wickham. 
 
+<br>
 - Vous fournissez les données, dites à ggplot2 comment faire correspondre les variables à l'esthétique, quelles graphiques utiliser, et il s'occupe des détails.
 
+<br>
 - Disponible sur R [ggplot2](https://ggplot2.tidyverse.org/) et Python [plotnine](https://plotnine.readthedocs.io/en/v0.12.3/)
 
 
@@ -607,11 +626,11 @@ image_link(url,url,width="270px")
 ```
 ]
 
-<!-- comments-->
+<!--comments-->
 
 ???
 
-Imaginer React vs Vanilla JS
+Imaginer React /Vue vs Vanilla JS
 les gens peuvent trouver ca "trop compliquer" mais c'est plus facile a utiliser et plus puissant
 
 
@@ -645,11 +664,6 @@ image_link(url,url,width="370px")
 ```
 ]
 
----
-
-class: inverse center middle
-
-# Familiarisation
 
 ---
 
@@ -674,7 +688,7 @@ kable(df[1:100, ],format="html",escape = F, col.names = colnames(df)) %>%
 ```
 
 
-<!-- comments-->
+<!--comments-->
 
 ???
 
@@ -715,7 +729,7 @@ ggplot(df, aes(x=population, y=suicides_no)) +
 
 ]
 
-<!-- comments -->
+<!--comments -->
 ???
 ils sont tous les deux des graphiques de dispersion, 
 mais deja ggplot2 me parait plus facile a lire et a comprendre
@@ -744,7 +758,7 @@ kable(df_wide[1:100, ],format="html",
 
 ```
 
-<!-- comments  -->
+<!--comments  -->
 
 ???
 
@@ -755,11 +769,11 @@ kable(df_wide[1:100, ],format="html",
 ```{r , eval=FALSE, echo=TRUE}
 # Basic R
 
-# First layer in one color (female)
+# D'abord une premiere couche avec les femmes
 plot(df_wide$population_female, 
      df_wide$suicides_no_female, col="blue") 
 
-# then  we overlay another layer (male)
+# après on ajoute les hommes
 points(df_wide$population_male, 
        df_wide$suicides_no_male, col="red") 
 ```
@@ -777,7 +791,7 @@ points(df_wide$population_female, df_wide$suicides_no_female, col="red")
 
 ]
 
-<!-- comments  -->
+<!--comments  -->
 ???
 Stupide et compliqué
 
@@ -823,7 +837,7 @@ ggplot(df, aes(x=population, y=suicides_no, color=sex)) +
 
 ]
 
-<!-- comments  -->
+<!--comments  -->
 ???
 Deja la syntaxe est plus simple, on a pas besoin de specifier les variables a chaque fois, on peut les specifier une fois pour toute dans aes.
 
@@ -834,6 +848,8 @@ On rajoute juste un nouveau mapping, ici "color" et bam tout le reste est fait p
 class: inverse center middle
 
 # Aesthetics 
+
+Les rouages de ggplot2
 
 ---
 
@@ -849,7 +865,7 @@ class: inverse center middle
   -   **fill** pour le remplissage
   -   et plein d'autres encore...
     
-<!-- comments-->
+<!--comments-->
 
 ???
 - **aes** est un objet qui contient les variables que l'on veut utiliser pour le graphique
@@ -881,7 +897,7 @@ ggplot(df, aes(x=population, y=suicides_no, color=country)) +
 
 ]
 
-<!-- comments  -->
+<!--comments  -->
 ???
 Super easy on rmeplace juste le color aestic par la variable country
 
@@ -913,7 +929,7 @@ ggplot(df, aes(x=population, y=suicides_no, shape=country)) +
 
 ]
 
-<!-- comments  -->
+<!--comments  -->
 ???
 Pff.. juste chnager color par shape !
 
@@ -923,11 +939,13 @@ class: inverse center middle
 
 # Geoms 
 
+Le plus utile
+
 ---
 
 ## Geoms 
 
-- Les **geoms** sont les élements géometrics qui vont reprensenter les données
+- Les **geoms** sont les élements géometrics qui vont **reprensenter** les données
     -   ** geom_point()** pour les nuage de points
     -  **geom_line()** pour les lignes
     -   **geom_bar()** pour les barres
@@ -945,12 +963,14 @@ help.search("^geom_",package="ggplot2")
 ```
 
 
-<!-- comments-->
+<!--comments-->
 
 ???
 geom stands for geometric object 
 
 il y a des dizaines de geoms dans ggplot2, on va en voir quelques unes aujourd'hui
+
+
 
 ---
 
@@ -961,6 +981,13 @@ url <- 'https://nbisweden.github.io/RaukR-2019/ggplot/presentation/ggplot_presen
 
 image_link(url,url,width="1070px")
 ```
+
+
+<!-- comments -->
+
+On en a deja vu quelques unes, mais il y a en des centaines d'autres
+
+point histogram et density sont les plus courants
 
 ---
 
@@ -993,18 +1020,16 @@ geom_smooth(method="lm", formula=y~x) +
 
 ]
 
-<!-- comments  -->
+<!--comments  -->
 ???
 
-L'analogie est celle des genes et de l'environnement. L'aes est les genes, les geoms sont l'environnement.
+on rajoute une courbe de tendance
 
-Dependant de l'environnement, les genes vont s'exprimer differement.
 
 ---
 
 
-## Regression pour tous les pays
-
+## Regression pour l'ensemble des pays
 
 
 
@@ -1029,7 +1054,7 @@ geom_smooth()
 
 ggplot(df, aes(x=population, 
                y=suicides_no)) +
-geom_point(aes( color=country), alpha=0.3) + 
+geom_point(aes(color=country), alpha=0.3) + 
 geom_smooth(method="lm", formula=y~x) +
   custom_theme
 
@@ -1037,7 +1062,7 @@ geom_smooth(method="lm", formula=y~x) +
 
 ]
 
-<!-- comments  -->
+<!--comments  -->
 ???
 En enlevent le color de aes, on peut le mettre dans geom_point et ca va colorer/grouper les points par les payes mais pas la courbe de tendance. 
 
@@ -1047,20 +1072,78 @@ Attention l'ordre compte.
 
 ---
 
+## Analogie anatomique
+
+
+.pull-left[
+```{r , eval=FALSE, echo=TRUE}
+ggplot(df, aes(x=population, 
+               y=suicides_no, label = age)) +
+geom_point(aes(color=country)) 
+
+
+
+
+
+
+ggplot(df, aes(x=population, 
+               y=suicides_no, label = age)) +
+geom_text(aes(color=country)) 
+```
+
+
+]
+
+
+.pull-right[
+
+```{r ,  fig.align="left", out.width="500px", out.height="400px"}
+
+x <- ggplot(df, aes(x=population, 
+               y=suicides_no, label = age)) +
+geom_point(aes(color=country)) +
+  custom_theme
+
+
+
+y <- ggplot(df, aes(x=population, 
+               y=suicides_no, label = age)) +
+geom_text(aes(color=country)) +
+  custom_theme
+
+gridExtra::grid.arrange(x,y,nrow=2)
+```
+
+]
+
+<!--comments  -->
+???
+
+
+L'analogie est celle des genes et de l'environnement. L'aes est les genes, les geoms sont l'environnement.
+
+Dependant de l'environnement, les genes vont s'exprimer differement.
+
+Certain aes ne vont rien faire avec certain geoms. Par exemple, shape ne va rien faire avec geom_smooth et label ne va rien faire avec geom_point alors quil change tout avec geom_text!
+
+---
+
 class: inverse center middle
 
 # Stats
+
+Le coeur du data sciencist
 
 ---
 
 ## Statistiques
 
 - On peut rajouter des statistiques sur les graphiques
-    -   **stat_smooth()** pour les courbes de tendances
-    -   **stat_summary()** pour les résumés statistiques
-    -   **stat_density()** pour les densités
-    -   **stat_ellipse()** pour les ellipses de confiance
-    -   **stat_qq()** pour les graphiques quantiles-quantiles
+    -   **smooth()** pour les courbes de tendances
+    -   **summary()** pour les résumés statistiques
+    -   **density()** pour les densités
+    -   **ellipse()** pour les ellipses de confiance
+    -   **qq()** pour les graphiques quantiles-quantiles
     -   et plein d'autres encore...
     
 ---
@@ -1070,7 +1153,9 @@ class: inverse center middle
 
 .pull-left[
 
-- Les statistiques calculent de nouvelles variables à partir des données d'entrée. Les geoms ont des statistiques par défaut.
+- Les statistiques calculent de nouvelles variables à partir des données d'entrée. Les geoms ont des statistiques par défaut mais on peut les changer.
+
+
 
 ```{r , eval=FALSE, echo=TRUE}
 
@@ -1080,7 +1165,8 @@ ggplot(iris) + geom_bar(aes(x=Sepal.Length),
 ggplot(iris) + geom_bar(aes(x=Species),
                         stat="count")
 
-ggplot(iris) + geom_bar(aes(x=Species,y=Sepal.Length),
+ggplot(iris) + geom_bar(aes(x=Species,
+                            y=Sepal.Length),
                         stat="identity")
 
 
@@ -1103,6 +1189,63 @@ gridExtra::grid.arrange(x,y,z,nrow=1)
 
 ---
 
+## Regression par pays (mais pour de vrai)
+
+.pull-left[
+```{r , eval=FALSE, echo=TRUE}
+ggplot(df, aes(x=population, 
+               y=suicides_no, 
+               color=country)) +
+geom_point() + 
+geom_smooth(method="lm", formula=y~x)
+# on rajoute une method a une formule
+
+
+ggplot(df, aes(x=population, 
+               y=suicides_no, 
+               color=country)) +
+geom_point() + 
+geom_smooth()
+# sinon par default geom_smooth() utilise
+# method = 'loess' and formula = 'y ~ x'
+
+```
+]
+
+
+.pull-right[
+
+```{r ,  fig.align="left", out.width="500px", out.height="450px"}
+
+x <- ggplot(df, aes(x=population, 
+               y=suicides_no, 
+               color=country)) +
+      geom_point(alpha=0.3) + 
+      geom_smooth(method="lm", formula=y~x) +
+        custom_theme
+
+
+y <- ggplot(df, aes(x=population, 
+               y=suicides_no, 
+               color=country)) +
+      geom_point(alpha=0.3) + 
+      geom_smooth() +
+        custom_theme
+
+gridExtra::grid.arrange(x,y,nrow=2)
+
+```
+
+]
+
+<!--comments  -->
+???
+
+je vous ai "menti" un peu. La regression il y avait des arguments caché dans ma commande
+
+
+---
+
 class: inverse center middle
 
 # Scales
@@ -1111,53 +1254,69 @@ To cut or no to cut
 
 ---
 
+## Graphiques malhonnêtes
+
+
+```{r, fig.align='center'}
+
+url <- "https://static1.squarespace.com/static/55b6a6dce4b089e11621d3ed/55b6d08fe4b0d8b921b02f83/55b6d0a3e4b0d8b921b03574/1438044323461/1000w/"
+
+image_link(url,url,width=600)
+
+```
+
+<!-- comments-->
+
+???
+
+
+Couper ou ne pas couper l'axe des Y est probablement l'un des sujets les plus controversés en matière de visualisation de données. Il y a clairement des acteurs malhonnetes qui vont couper l'axe des Y pour faire croire que les données sont plus importantes qu'elles ne le sont en réalité. Mais il y a aussi des cas où couper l'axe des Y est une bonne idée.
+
+Quand est-ce que c'est une bonne idée de couper l'axe des Y? Bah en general avec les times series on veut montrer les tendances et pas les valeurs absolues. Donc on peut couper l'axe des Y pour montrer les tendances VS un baseline; Mais il faut le faire avec parcimonie et en indiquant clairement que l'axe est coupé.
+
+
+barplot : Pour ce type de graphique, il existe un consensus : l'axe des ordonnées doit commencer à 0.
+Lineplot: il n'y a pas de consensus, même si, en général, il n'est pas nécessaire de commencer à 0.
+
+
+---
+
 ## Changer les échelles
+
+.pull-left[
+
+- On peut changer les échelles des axes
+    -   **scale_x_log10()** pour une échelle logarithmique
+    -   **scale_x_reverse()** pour inverser l'axe
+    -   **scale_x_sqrt()** pour une échelle racine carrée
 
 
 ```{r , eval=FALSE, echo=TRUE}
 ggplot(df, aes(x=population, 
                y=suicides_no)) +
-geom_point(aes( color=country), alpha=0.3) +
+geom_point(aes( color=country)) +
 scale_x_log10() +
 scale_y_log10() 
 ```
-
-.pull-left[
-
-```{r echo=TRUE, eval=FALSE}
-library(ggplot2)
-ggplot(diamonds) +
-  aes(cut, fill = cut) +
-  geom_bar(show.legend = FALSE) +
-  labs(
-    x = "Cut",
-    y = "Count",
-    title = "A Fancy diamonds Plot"
-  # ) 
-```
 ]
+
 .pull-right[
-```{r fig.align="center", fig.width=10, fig.height=6}
+```{r ,  fig.align="left", out.width="500px", out.height="400px"}
 
-ggplot(diamonds) +
-  aes(cut, fill = cut) +
-  geom_bar(show.legend = FALSE) +
-  labs(
-    x = "Cut",
-    y = "Count",
-    title = "A Fancy diamonds Plot"
-  ) +
- custom_theme + 
-  scale_xaringan_fill_discrete()
+ggplot(df, aes(x=population, 
+               y=suicides_no)) +
+geom_point(aes( color=country), alpha=0.3) +
+scale_x_log10() +
+scale_y_log10() +
+custom_theme
+
 ```
+
 ]
 
-
-<!-- comments -->
-
+<!--comments -->
 ???
-
-scaling est très facile avec ggplot2
+C'est hyper simple de changer les échelles des axes. Il suffit d'utiliser les fonctions scale_x_log10() et scale_y_log10() pour une échelle logarithmique, scale_x_reverse() pour inverser l'axe, scale_x_sqrt() pour une échelle racine carrée, etc.
 
 ---
 
@@ -1165,25 +1324,136 @@ class: inverse center middle
 
 # Position
 
+Comment positionner les geoms
+
 ---
 
 ## Position
 
+.pull-left[
+
 - On peut changer la position des geoms
-    -   **position_dodge()** pour les barres
-    -   **position_jitter()** pour les points
-    -   **position_stack()** pour les barres empilées
-    -   **position_fill()** pour les barres empilées en pourcentage
+    -   **dodge()** pour les barres côte à côte
+    -   **jitter()** pour les points avec un peu de bruit
+    -   **stack()** pour les barres empilées
     -   **position_identity()** pour les points
     -   et plein d'autres encore...
-    
-    s <- USArrests %>% mutate(state=rownames(.)) %>% slice(1:4) %>%
-                    gather(key=type,value=value,-state)
-p <- ggplot(us,aes(x=state,y=value,fill=type))
-p + geom_bar(stat="identity",position="stack")
+
+```{r , eval=FALSE, echo=TRUE}
+
+ggplot(df,aes(x=age,y=suicides_no,fill=country))
+ + geom_bar(stat="identity",position="stack")
 
 
-p + geom_bar(stat="identity",position="dodge")
+ggplot(df,aes(x=age,y=suicides_no,fill=country))
+ + geom_bar(stat="identity",position="dodge") 
+
+```
+
+]
+
+.pull-right[
+```{r ,  fig.align="left", out.width="500px", out.height="450px"}
+df$age <- gsub(" years", "", df$age)
+df$age <- factor(df$age, levels = c("5-14", "15-24", "25-34", "35-54", "55-74", "75+"))
+
+p <- ggplot(df,aes(x=age,y=suicides_no,fill=country)) + custom_theme
+
+x <- p + geom_bar(stat="identity",position="stack")
+y <- p + geom_bar(stat="identity",position="dodge") 
+
+gridExtra::grid.arrange(x,y, nrow=2)
+
+```
+
+]
+
+
+---
+
+## Jitter
+
+.pull-left[
+
+
+```{r , eval=FALSE, echo=TRUE}
+
+#sans jitter / sans alpha
+ggplot(df, aes(x=age, y=suicides_no, color=country)) +
+  geom_point()
+
+
+
+
+
+#avec jitter / avec alpha
+ggplot(df, aes(x=age, y=suicides_no, color=country)) +
+  geom_point(position="jitter", alpha=0.3) 
+
+```
+
+]
+
+
+.pull-right[
+```{r ,  fig.align="left", out.width="500px", out.height="450px"}
+
+#sans jitter / sans alpha
+x <- ggplot(df, aes(x=age, y=suicides_no, color=country)) +
+  geom_point() +
+  custom_theme
+
+
+#avec jitter / avec alpha
+y <- ggplot(df, aes(x=age, y=suicides_no, color=country)) +
+  geom_point(position="jitter", alpha=0.3) +
+  custom_theme
+
+gridExtra::grid.arrange(x,y, nrow=2)
+
+```
+
+]
+
+<!--comments -->
+???
+Premier est illisible est le second a deja pas mal plus de lisibilité
+
+
+---
+
+## Jitter + Boxplot / Violin
+
+.pull-left[
+
+
+```{r , eval=FALSE, echo=TRUE}
+
+#jitter  + boxplot
+ggplot(df, aes(x=age, y=suicides_no)) +
+  geom_boxplot() +
+  geom_point(position="jitter", alpha=0.3)
+
+```
+
+]
+
+
+.pull-right[
+```{r ,  fig.align="left", out.width="500px", out.height="450px"}
+
+ggplot(df, aes(x=age, y=suicides_no)) +
+  stat_boxplot(geom ='errorbar') + 
+  geom_boxplot(outlier.shape = NA) +
+  geom_point(position="jitter", alpha=0.3) + 
+  custom_theme
+
+```
+
+]
+
+<!--comments -->
+???
 
 
 
@@ -1218,9 +1488,28 @@ p <- ggplot(iris,aes(x=Sepal.Length,y=Sepal.Width,col=Species))
 p1 <- p+geom_point()
 plotly::ggplotly(p1,width=400,height=300)
 
+
 ---
 
-#  Iframe
+Benefits of ggplot2
+
+- Agile data exploration: rapid iteration
+- aestetics allow layering of hierarchies of features
+- geoms handles a lot so let to get wrong
+- dominates traditional graphics for rich datasets
+
+need very little changes
+geoms handles a lot for us
+---
+
+
+# Cheat sheet
+
+https://www.maths.usyd.edu.au/u/UG/SM/STAT3022/r/current/Misc/data-visualization-2.1.pdf
+
+---
+
+# Iframe
 
 .startup[
 
