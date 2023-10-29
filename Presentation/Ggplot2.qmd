@@ -1,0 +1,126 @@
+---
+editor: 
+  markdown: 
+    wrap: 72
+---
+
+All plots are composed of:
+
+-   **Data** that you want to visualise and a set of aesthetic
+    **mappings** describing how variables in the data are mapped to
+    aesthetic attributes that you can perceive.
+
+-   **Layers** made up of geometric elements and statistical
+    transformation. Geometric objects, **geoms** for short, represent
+    what you actually see on the plot: points, lines, polygons, etc.
+    Statistical transformations, stats for short, summarise data in many
+    useful ways. For example, binning and counting observations to
+    create a histogram, or summarising a 2d relationship with a linear
+    model.
+
+-   The **scales** map values in the data space to values in an
+    aesthetic space, whether it be colour, or size, or shape. Scales
+    draw a legend or axes, which provide an inverse mapping to make it
+    possible to read the original data values from the plot.
+
+-   A coordinate system, **coord** for short, describes how data
+    coordinates are mapped to the plane of the graphic. It also provides
+    axes and gridlines to make it possible to read the graph. We
+    normally use a Cartesian coordinate system, but a number of others
+    are available, including polar coordinates and map pro jections.
+
+-   A **facet**ing speciﬁcation describes how to break up the data into
+    subsets and how to display those subsets as small multiples. This is
+    also known as conditioning or latticing/trellising.
+
+-   A **theme** which controls the ﬁner points of display, like the font
+    size and background colour. While the defaults in ggplot2 have been
+    chosen with care, you may need to consult other references to create
+    an attractive plot.
+
+```{r loading the data and packages}
+library(tidyverse)
+data("starwars")
+```
+
+```{r Base plot}
+starwars_df %>% 
+  select(hair_color, mass, height) %>% 
+  ggplot(aes (mass, height, color = hair_color)) +
+  geom_point()
+```
+
+```{r Adding axes labels and a title}
+starwars_df %>% 
+  select(hair_color, mass, height) %>% 
+  ggplot(aes (mass, height, color = hair_color)) +
+  geom_point() +
+  labs(title = "Relation between character's masses and character's heights",
+       x = "Character's mass",
+       y = "Character's height", 
+       color = "Hair Color")
+```
+
+```{r Graph's title in two lines'}
+starwars_df %>% 
+  select(hair_color, mass, height) %>% 
+  ggplot(aes (mass, height, color = hair_color)) +
+  geom_point() +
+  labs(title = "Relation between character's masses \n and character's heights",
+       x = "Character's mass",
+       y = "Character's height", 
+       color = "Hair Color")
+```
+
+```{r Changing labels in the legend}
+starwars %>% 
+  select(hair_color, mass, height) %>% 
+  filter(hair_color %in% c("auburn", "auburn, grey", "auburn, white", "black", "blond", "blonde", "brown", "brown, grey", "grey", "white")) %>% 
+  ggplot(aes (mass, height, color = hair_color)) +
+  geom_point() +
+  labs(title = "Relation between character's masses \n and character's heights",
+       x = "Character's mass",
+       y = "Character's height", 
+       color = "Hair Color") 
+
+#TODO
+ scale_colour_manual(values = c(
+    "auburn" = "Test 1",
+    "auburn, grey" = "Test 2",
+    "auburn, white" = "Test 3",
+    "black" = "Test 4",
+    "blond" = "Test 5",
+    "blonde" = "Test 6",
+    "brown" = "Test 7",
+    "brown, grey" = "Test 8",
+    "grey" = "Test 9",
+    "white" = "Test 10"
+  ))
+  
+```
+
+## Breaks and Labels
+
+The breaks argument controls which values appear as tick marks on axes
+and keys on legends.
+
+```{r}
+starwars %>% 
+  select(hair_color, mass, height) %>% 
+  filter(hair_color %in% c("auburn", "auburn, grey", "auburn, white", "black", "blond", "blonde", "brown", "brown, grey", "grey", "white")) %>% 
+  ggplot(aes (mass, height, color = hair_color)) +
+  geom_point() +
+  labs(title = "Relation between character's masses \n and character's heights",
+       x = "Character's mass",
+       y = "Character's height", 
+       color = "Hair Color") +
+  scale_x_continuous(breaks = c(20, 40, 60, 80)) +
+  scale_y_continuous(breaks = c(100, 150, 200), labels = c("100 cm", "150 cm", "200 cm")) +
+  theme(legend.position = "left")
+theme(legend.position = "right")    #the default
+theme(legend.position = "none")
+theme(legend.position = "bottom")
+
+```
+
+scale_x_continuous (breaks = c(10))
