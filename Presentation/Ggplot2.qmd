@@ -2,6 +2,7 @@
 editor: 
   markdown: 
     wrap: 72
+    warnings: false
 ---
 
 All plots are composed of:
@@ -25,9 +26,9 @@ All plots are composed of:
 
 -   A coordinate system, **coord** for short, describes how data
     coordinates are mapped to the plane of the graphic. It also provides
-    axes and gridlines to make it possible to read the graph. We
+    axes and grid lines to make it possible to read the graph. We
     normally use a Cartesian coordinate system, but a number of others
-    are available, including polar coordinates and map pro jections.
+    are available, including polar coordinates and map projections.
 
 -   A **facet**ing speciﬁcation describes how to break up the data into
     subsets and how to display those subsets as small multiples. This is
@@ -41,28 +42,113 @@ All plots are composed of:
 ```{r loading the data and packages}
 library(tidyverse)
 data("starwars")
+#TODO how to prevent the following message
 ```
 
 ```{r Base plot}
-starwars_df %>% 
-  select(hair_color, mass, height) %>% 
+starwars %>% 
+  select(hair_color, mass, height, species, homeworld) %>% 
   ggplot(aes (mass, height, color = hair_color)) +
   geom_point()
 ```
 
-```{r Adding axes labels and a title}
-starwars_df %>% 
-  select(hair_color, mass, height) %>% 
+We would even mark in a distinct way the `NA`s ¡ 
+We have just to set the colour of `NA`s with the argument in the appropriate `scale*` function. In our case, `scale_fill_discrete(na.value = "colour_name")`.
+
+
+```{r Base plot with different colour for NAs}
+starwars %>% 
+  select(hair_color, mass, height, species, homeworld) %>% 
   ggplot(aes (mass, height, color = hair_color)) +
   geom_point() +
-  labs(title = "Relation between character's masses and character's heights",
-       x = "Character's mass",
-       y = "Character's height", 
-       color = "Hair Color")
+  scale_color_discrete(na.value = "gold") 
 ```
 
-```{r Graph's title in two lines'}
-starwars_df %>% 
+We can use other functions in our plots, each with their correspondent
+aesthetics to control how data is mapped. The main ones are:
+
+-   for scatter plots: `geom_point()` ,
+
+-   for line charts:
+
+    -   `geom_line()` : connects the data points producing lines from
+        left to right.
+
+    -   `geom_path` : connects the data points in the order they appear,
+        resulting in a non-linear path.
+
+-   for bar charts and histograms: `geom_bar()` ;
+
+-   for histograms: `geom_histogram()` ;
+
+-   for box plots : `geom_boxplot()` ;
+
+-   for heat-maps : `geom_tile()` ;
+
+-   for polygons and filled shapes: `geom_polygon()`
+
+Lastly, we can add text labels to a plot with `geom_text()` function.
+These are its main aesthetics: `label`, `color`, `size`, `angle`,
+`hjust`, `vjust` . Also, to avoid overlaps, we can use the argument
+`geom_text(check_overlap = TRUE, , vjust = "inward", hjust = "inward")` inside`geom_text()` function.
+
+```{r}
+starwars %>% 
+  select(hair_color, mass, height, species, homeworld, name) %>% 
+  ggplot(aes (mass, height, label = name)) +
+  geom_text(check_overlap = TRUE, vjust = "inward", hjust = "inward")
+```
+
+Most of these functions share the same aesthetics. Changing them can
+improve the readability of the plot. The most important one are:
+
+-   `color`: used to assign colors to data points, lines, or other plot
+    elements based on a variable;
+
+-   `fill`: used to specify the fill color of shapes, such as bars,
+    areas, or polygons;
+
+-   `size`: used to adjust the size of elements in your plot, such as
+    points or lines. Using size for a discrete variable is not
+    recommended;
+
+-   `alpha`: used to control the transparency or opacity of plot
+    elements. Higher values make elements more opaque, while lower
+    values make them more transparent;
+
+-   `shape`: used to assign different point shapes to data points.
+    Please, note that ggplot2 will only use six shapes at a time;
+
+-   `stroke`: to set the color of the border or outline of shapes;
+
+-   `linetype`: used to control the type of line in line plots, such as
+    solid, dashed, or dotted lines;
+
+-   `group`: used to group data points for certain geometries, such as
+    `geom_line()`, which connects points in the same group;
+
+-   `label`: used to specify the text labels associated with data
+    points. Typically used with `geom_text()` or `geom_label()` to
+    display labels for data points.
+
+-   `hjust` and `vjust`: used to control respectively the horizontal and
+    vertical justification of text labels in relation to the specified
+    position.
+
+-   for adding labeled point to a plot with a colored background:
+    `geom_label()`.
+
+-   for adding a smoother to the data and display the smooth and its
+    standard error: `geom_smooth`.
+
+-   for drawing lines between data points we can
+
+# Graph's Design
+
+## Title, legend, geom, axes,
+
+```{r Adding axes labels and a title in two lines}
+starwars %>% 
   select(hair_color, mass, height) %>% 
   ggplot(aes (mass, height, color = hair_color)) +
   geom_point() +
@@ -72,7 +158,34 @@ starwars_df %>%
        color = "Hair Color")
 ```
 
-```{r Changing labels in the legend}
+```{r With the CI}
+starwars %>%
+  select(hair_color, mass, height) %>%
+  filter(mass > 0, mass < 350, height > 0, height < 250) %>%  # Filter for mass and height ranges
+  ggplot(aes(mass, height)) +
+  geom_point() +
+  labs(
+    title = "Relation between character's masses and character's heights",
+    x = "Character's mass",
+    y = "Character's height"
+  ) +
+  geom_smooth(se = FALSE)
+```
+
+```{r Changing the colour of the dots}
+starwars %>% 
+  select(hair_color, mass, height) %>% 
+  ggplot(aes (mass, height)) +
+  geom_point(color = "blue") +
+  labs(title = "Relation between character's masses \n and character's heights",
+       x = "Character's mass",
+       y = "Character's height")
+
+# Another option is defining the colour with its exadecimal code:
+# color = "#FF5733"
+```
+
+```{r Changing legends labels and position}
 starwars %>% 
   select(hair_color, mass, height) %>% 
   filter(hair_color %in% c("auburn", "auburn, grey", "auburn, white", "black", "blond", "blonde", "brown", "brown, grey", "grey", "white")) %>% 
@@ -81,22 +194,45 @@ starwars %>%
   labs(title = "Relation between character's masses \n and character's heights",
        x = "Character's mass",
        y = "Character's height", 
-       color = "Hair Color") 
+       color = "Hair Color") +
+  theme(
+    legend.position = "left",
+    legend.text = element_text(size = 9, color = "brown", family = "Times New Roman"),
+    legend.title = element_text(size = 13, color = "blue", face = "bold", family = "Times New Roman")) +
+  scale_color_discrete(
+    labels = c("auburn" = "Auburn",
+    "auburn, grey" = "Auburn / Grey",
+    "auburn, white" = "Auburn / White",
+    "black" = "Black",
+    "blond" = "Blond",
+    "blonde" = "Blonde",
+    "brown" = "Brown",
+    "brown, grey" = "Brown / Grey",
+    "grey" = "Grey",
+    "white" = "White"
+    )) 
 
-#TODO
- scale_colour_manual(values = c(
-    "auburn" = "Test 1",
-    "auburn, grey" = "Test 2",
-    "auburn, white" = "Test 3",
-    "black" = "Test 4",
-    "blond" = "Test 5",
-    "blonde" = "Test 6",
-    "brown" = "Test 7",
-    "brown, grey" = "Test 8",
-    "grey" = "Test 9",
-    "white" = "Test 10"
-  ))
-  
+# theme(legend.position = "right")    #the default
+# theme(legend.position = "none")
+# theme(legend.position = "bottom")
+```
+
+
+```{r shape}
+# Example of adding shape to the plot
+  starwars %>% 
+  select(hair_color, mass, height) %>% 
+  filter(hair_color %in% c("auburn", "auburn, grey", "auburn, white", "black", "blond", "blonde", "brown", "brown, grey", "grey", "white")) %>% 
+  ggplot(aes (mass, height, color = hair_color, shape = hair_color)) +
+  geom_point() +
+  labs(title = "Relation between character's masses \n and character's heights",
+       x = "Character's mass",
+       y = "Character's height", 
+       color = "Hair Color",
+       shape = "Hair Color") +
+  theme(legend.position = "left")
+
+
 ```
 
 ## Breaks and Labels
@@ -114,13 +250,183 @@ starwars %>%
        x = "Character's mass",
        y = "Character's height", 
        color = "Hair Color") +
-  scale_x_continuous(breaks = c(20, 40, 60, 80)) +
-  scale_y_continuous(breaks = c(100, 150, 200), labels = c("100 cm", "150 cm", "200 cm")) +
-  theme(legend.position = "left")
-theme(legend.position = "right")    #the default
-theme(legend.position = "none")
-theme(legend.position = "bottom")
+  scale_x_continuous(breaks = c(0, 20, 40, 60, 80, 100, 120, 140, 160, 180)) +
+  scale_y_continuous(breaks = c(100, 150, 200), labels = c("100 cm", "150 cm", "200 cm"))
+  
+#FIXME why the x axe does not show the 0 value?
 
 ```
 
+
+
+
 scale_x_continuous (breaks = c(10))
+
+Inside the `geom_point` function several parameters can be specified.
+
+# Faceting
+
+Faceting serves as an alternative method to incorporate additional
+categorical variables into a plot. This technique segments the data into
+various subsets, subsequently generating and displaying an identical
+chart for each of these subsets, thus creating a matrix of graphs. This
+is particularly useful for categorical variables.
+
+There are two main functions to face. First one is `facet_wrap()`, which
+is most commonly used to facet by a plot by a single categorical
+variable. Inside this function we find the argument `nrow` to control
+the number of rows and the argument `ncol` to control the number of
+columns of the facet. and the second is `facet_grid()` mostly used to
+fact by a plot by two categorical values. In this last function, the
+number of columns is given by the number of levels of the variables we
+are faceting by.
+
+It is also possible to facet by a single categorical variable with
+`facet_grid`, but in that case, we need to write a `·` to indicate that
+no faceting should be done along that axis. For example, if we dont want
+to facet the `x` axis, we will write the following: `facet_grid(· ~ )`.
+
+```{r Facetting}
+starwars %>% 
+  select(hair_color, mass, height, birth_year) %>% 
+  filter(hair_color %in% c("auburn", "auburn, grey", "auburn, white", "black", "blond", "blonde", "brown", "brown, grey", "grey", "white")) %>% 
+  ggplot(aes (mass, height)) +
+  geom_point() +
+  labs(title = "Relation between character's masses \n and character's heights",
+       x = "Character's mass",
+       y = "Character's height", 
+       color = "Hair Color") +
+  
+  scale_y_continuous(breaks = c(100, 150, 200), labels = c("100 cm", "150 cm", "200 cm")) +
+  facet_wrap(~ hair_color, nrow = 3)
+
+# scale_x_continuous(breaks = c(0, 20, 40, 60, 80, 100, 120, 140, 160, 180)) +
+```
+
+Facetting is not very useful when facetting for a continuous variables
+¡¡¡
+
+## Facetting by a plot by two categorical variables
+
+We will do this with `facet_grid()` function, specifying the two
+variables inside the function in the following way
+`facet_grid(gender ~ hair_color)`.
+
+```{r Face_grid}
+starwars %>% 
+  select(hair_color, mass, height, gender) %>% 
+  filter(hair_color %in% c("auburn", "auburn, grey", "auburn, white", "black", "blond", "blonde", "brown", "brown, grey", "grey", "white")) %>% 
+  drop_na() %>% 
+  ggplot(aes (mass, height)) +
+  geom_point() +
+  labs(title = "Relation between character's masses \n and character's heights",
+       x = "Character's mass",
+       y = "Character's height", 
+       color = "Hair Color") +
+  
+  scale_y_continuous(breaks = c(100, 150, 200), labels = c("100 cm", "150 cm", "200 cm")) +
+  facet_grid(gender ~ hair_color) 
+```
+
+## Adding Vertical lines in each pane of a faceted plot
+
+Before adding lines, we need to calculate where these lines should be
+placed. Then with the function `geom_vline()` we will add the desired
+line.
+
+```{r}
+mean_mass <- starwars %>% 
+  select(hair_color, mass, height, gender) %>% 
+  filter(hair_color %in% c("auburn", "auburn, grey", "auburn, white", "black", "blond", "blonde", "brown", "brown, grey", "grey", "white")) %>% 
+  drop_na() %>% 
+  group_by(hair_color) %>% 
+  summarise(mass_mean = mean(mass))
+
+starwars %>% 
+  select(hair_color, mass, height, gender) %>% 
+  filter(hair_color %in% c("auburn", "auburn, grey", "auburn, white", "black", "blond", "blonde", "brown", "brown, grey", "grey", "white")) %>% 
+  drop_na() %>% 
+  ggplot(aes (mass, height)) +
+  geom_point() +
+  labs(title = "Relation between character's masses \n and character's heights",
+       x = "Character's mass",
+       y = "Character's height", 
+       color = "Hair Color") +
+  scale_y_continuous(breaks = c(100, 150, 200), labels = c("100 cm", "150 cm", "200 cm")) +
+  facet_grid(gender ~ hair_color) +
+  geom_vline(data = mean_mass, aes(xintercept = mass_mean))
+
+# FIXME check this plot
+```
+
+One common issue while faceting is that for some observations, the axes
+are not the most indicated ones to better read the plot. For this
+reason, we can use the `scales = "free"` argument of `facet_grid()` function.
+
+Another possible issue we can face while faceting is when facet labels (the categories of the variable we are faceting by) are so long that they get cut off. For this matter, we can use `labeller` argument of `facet_grid()` function this way
+
+`labeller = labeller(name_variable = label_wrap_gen(width = 25))`
+
+# Colour of the background
+
+```{r Colour of background}
+starwars %>% 
+  select(hair_color, mass, height) %>% 
+  filter(hair_color %in% c("auburn", "auburn, grey", "auburn, white", "black", "blond", "blonde", "brown", "brown, grey", "grey", "white")) %>% 
+  drop_na() %>% 
+  ggplot(aes (mass, height, color = hair_color)) +
+  geom_point() +
+  labs(title = "Relation between character's masses \n and character's heights",
+       x = "Character's mass (in Kgs)",
+       y = "Character's height (in cm)", 
+       color = "Hair Color") +
+  theme(
+    legend.title = element_text(size = 15, face = "bold"),
+    panel.background = element_rect(fill = "lightblue", 
+                                    colour = "red",
+                                    linewidth = 2)
+  ) +
+  scale_color_discrete(
+    labels = c("auburn" = "Auburn",
+    "auburn, grey" = "Auburn / Grey",
+    "auburn, white" = "Auburn / White",
+    "black" = "Black",
+    "blond" = "Blond",
+    "blonde" = "Blonde",
+    "brown" = "Brown",
+    "brown, grey" = "Brown / Grey",
+    "grey" = "Grey",
+    "white" = "White"
+    )) 
+
+# TODO theme_minimal overrides the arguments of theme?
+```
+
+# Annotation
+(copied and pasted from (https://ggplot2.tidyverse.org/articles/faq-annotation.html))
+```{r anotated counts}
+mpg %>%
+  dplyr::count(drv) %>%
+  ggplot(aes(x = drv, y = n)) +
+  geom_col() +
+  geom_text(aes(label = n), vjust = -0.5) +
+  coord_cartesian(ylim = c(0, 110))
+```
+
+```{r}
+mpg %>%
+  count(class, drv) %>%
+  ggplot(aes(x = class, fill = drv, y = n)) +
+  geom_col() +
+  geom_text(aes(label = n), size = 3, position = position_stack(vjust = 0.5))
+```
+
+
+```{r proportions}
+mpg %>%
+  dplyr::count(drv) %>%
+  mutate(prop = n / sum(n)) %>%
+  ggplot(aes(x = drv, y = prop)) +
+  geom_col()
+```
+
