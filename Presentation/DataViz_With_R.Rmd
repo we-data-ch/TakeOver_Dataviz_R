@@ -70,21 +70,21 @@ image_link <- function(image,url,...){
 
 
 .div.blue[
-- Grammaire des Graphiques
+- Grammaire des Graphiques et Théorie
 ]
 
 .div.blue[
-- Aesthetic Mapping 
+- Implémentation: ggplot2
 ]
 
 
 .div.blue[
-- Visualisation Multidimensionnelle
+- Aesthetic Mapping & Multidimensionalité
 <!--Personnalisation Avancée et Thèmes -->
 ] 
 
 .div.blue[
-- Graphiques Interactifs et Projets Pratiques
+- Projets Pratiques
 ] 
 
 <!--comments -->
@@ -1455,7 +1455,7 @@ ggplot(df, aes(x=age, y=suicides_no)) +
 <!--comments -->
 ???
 
-
+Un des types de plots que j'utilise le plus pour explorer les données, très puissant et très simple à faire
 
 ---
 
@@ -1466,54 +1466,271 @@ class: inverse center middle
 ---
 
 
-## Facettes
+## Facettes (Unidimensionnelles)
 
-Facetting in one dimensions
 
-wrap
-Facetting in two dimensions
+.pull-left[
 
-grid
+
+```{r , eval=FALSE, echo=TRUE}
+
+
+#meme echelle partout
+ggplot(df, aes(x=age, y=suicides_no)) +
+  geom_boxplot() +
+  geom_point(position="jitter", alpha=0.3) +
+  facet_wrap(~country)
+
+#echelle libre
+ggplot(df, aes(x=age, y=suicides_no)) +
+  geom_boxplot() +
+  geom_point(position="jitter", alpha=0.3) +
+  facet_wrap(~country, scales = "free")
+
+```
+
+]
+
+.pull-right[
+
+
+```{r ,  fig.align="left", out.width="500px", out.height="450px"}
+
+x <- ggplot(df, aes(x=age, y=suicides_no)) +
+      geom_boxplot() +
+      geom_point(position="jitter", alpha=0.3) +
+      facet_wrap(~country) +
+      custom_theme + 
+       theme(axis.text.x = element_text(size = 9, angle = 90))
+
+y <- ggplot(df, aes(x=age, y=suicides_no)) +
+      geom_boxplot() +
+      geom_point(position="jitter", alpha=0.3) +
+      facet_wrap(~country, scales = "free") +
+      custom_theme + 
+       theme(axis.text.x = element_text(size = 9, angle = 90))
+
+
+gridExtra::grid.arrange(x,y,nrow=2)
+
+```
+
+]
+
+
+<!-- comments -->
+???
+
+- On peut faire des facettes
+    -   **facet_wrap()** pour des facettes en une dimension
+    
 
 ---
+
+
+## Facettes (Multidimensionnelles: 2D)
+
+.pull-left[
+
+```{r , eval=FALSE, echo=TRUE}
+
+ggplot(df, aes(x=age, y=suicides_no)) +
+  geom_boxplot() +
+  geom_point(position="jitter", alpha=0.3) +
+  facet_grid(country~sex, scales = "free")
+
+```
+
+]
+
+.pull-right[
+
+```{r ,  fig.align="left", out.width="500px", out.height="450px"}
+
+ggplot(df, aes(x=age, y=suicides_no)) +
+  geom_boxplot() +
+  geom_point(position="jitter", alpha=0.3) +
+  facet_grid(country~sex, scales = "free") +
+  custom_theme + 
+  theme(axis.text.x = element_text(size = 9, angle = 90))
+
+```
+
+]
+
+
+<!-- comments -->
+???
+
+- ou en deux dimensions
+    -   **facet_grid()** 
+la c'est juste un exemple, la j'ai mis les echelles en libre pour que ca soit plus lisible mais c'est pas forcement une bonne idée
+
+
+---
+
+class: inverse center middle
+
+# Tout ensemble
+
+
+---
+
+
+## Mettons tout ensemble
+
+
+On va essayer de poser la question: 
+
+Comment peut-on visualiser une **comparaison par sexe** des tendances du **nombre de suicide** à travers **les années** dans **chaque pays** et dans chaque **groupe d'age**?
+
+<br> 
+<br> 
+--
+ggplot(**df**, aes(x=
+--
+ **year**, 
+--
+ y=
+--
+ **suicides_no**,
+--
+ color=
+--
+ **sex**)) +
+--
+<br>   geom_line() +
+--
+<br>   geom_smooth(method = 
+--
+ **"lm"**, se = FALSE)
+--
+ <br>   facet_grid(
+--
+ **country~age**, scales = "free") +
+
+
+
+
+<!-- comment: -->
+???
+
+On peut ainsi voir une ligne de regression pour chaque groupe. Ce qui nous permet de voir clairement ce qui se passe avec le nombre de suicide a travers le temps dans chaque pays et dans chaque groupe d'age, et par sex.
+
+Voila en 4 ligne, on peut obtenir une visualisation assez complexe et qui tient la route. Cela nous aurait pris beeeeaucoup plus de temps avec un approche tradtionnelle. et le pire c'est que si on finiissait avec cela avec une approche tradtionnelle cela serait encore hyper chiant de changer si on aime pas le resultat
+
+J'espere que cet exemple vous montre l'interet des facettes, on peut faire des graphiques tres riches en information et tres lisibles. et cela montre aussi l´agilité du framework ggplot2
+
+
+---
+
+
+```{r ,  fig.align="center", out.width="650px"}
+
+ggplot(df, aes(x=year, y=suicides_no,color=sex)) +
+  geom_line() +
+  geom_smooth(formula= 'y~x', method = "lm", se = FALSE) + 
+  facet_grid(country~age, scales = "free") +
+  custom_theme + 
+  theme(axis.text.x = element_text(size = 9, angle = 90))
+
+
+```
+
+---
+
 class: inverse center middle
 
 # Interactivité
+
+le fun!
 
 ---
 
 ## Facile avec Plotly !
 
-p <- ggplot(iris,aes(x=Sepal.Length,y=Sepal.Width,col=Species))
-p1 <- p+geom_point()
-plotly::ggplotly(p1,width=400,height=300)
 
+.pull-left[
 
----
+```{r , eval=FALSE, echo=TRUE}
+#creer le graphique
+p <- ggplot(df, aes(x=population, y=suicides_no)) +
+      geom_point(aes(color=country)) +
+      geom_smooth() +
+      custom_theme 
 
-Benefits of ggplot2
+#envelopper dans ggplotly
+plotly::ggplotly(p)
+``` 
 
-- Agile data exploration: rapid iteration
-- aestetics allow layering of hierarchies of features
-- geoms handles a lot so let to get wrong
-- dominates traditional graphics for rich datasets
-
-need very little changes
-geoms handles a lot for us
----
-
-
-# Cheat sheet
-
-https://www.maths.usyd.edu.au/u/UG/SM/STAT3022/r/current/Misc/data-visualization-2.1.pdf
-
----
-
-# Iframe
-
-.startup[
-
- <iframe src="http://example.com/" width="100%" height="500px" id="iframe1" marginheight="0" frameborder="0" onload='javascript:resizeIframe(this);'></iframe>
- 
 ]
+
+
+.pull-right[
+
+```{r ,  fig.align="left", out.width="500px", out.height="450px"}
+
+p <- ggplot(df, aes(x=population, y=suicides_no)) +
+      geom_point(aes(color=country)) +
+      geom_smooth() +
+      custom_theme 
+
+
+plotly::ggplotly(p)
+``` 
+
+]
+
+
+<!-- comments -->
+???
+
+- ggplotly() permet de transformer un graphique ggplot2 en graphique plotly
+
+---
+
+class: inverse center middle
+
+# Conclusions
+
+En bref
+
+---
+
+## Avantages de ggplot2
+
+- Exploration agile des données : itération rapide
+- L'aesthétique permet de superposer des hiérarchies de caractéristiques
+- Les géoms gèrent une grande partie des éléments complexes, ce qui réduit les risques d'erreur
+- Domine l'approche traditionnelle pour les ensembles de données riches
+
+
+<!-- comments -->
+???
+
+ne nécessite que très peu de changements
+
+---
+
+
+## Cheat sheet
+
+
+
+```{r ,  fig.align="right"}
+urlImage <- "./img/cheat.png"
+url <- "https://www.maths.usyd.edu.au/u/UG/SM/STAT3022/r/current/Misc/data-visualization-2.1.pdf"
+image_link(urlImage,url,width="650px")
+
+```
+
+
+
+---
+
+## Web R Console
+
+
+ <iframe src="https://munoztd0.shinyapps.io/Tuto_learnR_Data_Viz/" width="100%" height="500px" id="iframe1" marginheight="0" frameborder="0" onload='javascript:resizeIframe(this);'></iframe>
+ 
  
