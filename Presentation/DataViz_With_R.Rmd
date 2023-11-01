@@ -1,6 +1,6 @@
 ---
 title: "Introduction à la Visualisation de Données et à la Grammaire des Graphiques avec R"
-author: " <br/>David Munoz Tord, Vestin, Iván"
+author: " <br/>David Munoz Tord, Vestin Hategekimana, Iván Lorenci De Francisco"
 date: " <br/>  `r format(Sys.Date(), '%Y-%b-%d')`"
 output:
   xaringan::moon_reader:
@@ -15,7 +15,7 @@ output:
 ---
 
 
-```{r setup, echo=FALSE}
+```{r setup, echo=FALSE, fig.showtext = TRUE}
 options(htmltools.dir.version = FALSE, warn = -1, message = -1, knitr.duplicate.label = 'allow')
 knitr::opts_chunk$set(
   dpi=300,
@@ -1636,6 +1636,18 @@ ggplot(df, aes(x=year, y=suicides_no,color=sex)) +
 
 
 ```
+
+---
+
+class: inverse center middle
+
+# Travail Pratique 1: Base + graph design
+
+---
+
+class: inverse center middle
+
+# Travail Pratique 2: Documentation et reproduction de graphs
 
 ---
 
