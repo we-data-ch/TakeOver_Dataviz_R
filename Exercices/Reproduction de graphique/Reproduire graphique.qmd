@@ -1,6 +1,9 @@
 ---
 title: "Reproduisez ces graphiques"
-format: html
+format: 
+  html:
+    code-fold: true
+    code-summary: "Show the code"
 editor: visual
 execute: 
   warning: false
@@ -19,6 +22,8 @@ library(tidyverse)
 library(nycflights13)
 library(gapminder)
 library(datasets)
+
+#install.packages("tidyverse", "nycflights13", "gapminder")
 ```
 
 ### Graphique 1: Diamonds ("diamonds" dataset)

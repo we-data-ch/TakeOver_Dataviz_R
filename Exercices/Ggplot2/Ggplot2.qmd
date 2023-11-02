@@ -47,6 +47,7 @@ Tous les tracés sont composés de **données** que vous souhaitez visualiser et
 
 
 ```{r loading the data and packages}
+options(warn = -1)
 library(tidyverse)
 data("starwars")
 #TODO how to prevent the following message
