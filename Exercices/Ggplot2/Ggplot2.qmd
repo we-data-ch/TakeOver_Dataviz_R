@@ -224,7 +224,7 @@ What can be improved of this graphic?
 Create a new plot with `mass` variable on x-axis and `height` on the y-axis.
 Filter the weight of the observations between 0 kg and 350, and the height between 0 and 250 cm. `filter` function is your ally here. Moreover, add a trend line together with its confidence interval and change the colour of the data points to burgundy (#800020). Note that you can change the colour with the following argument `color = "name_of_colour_or_hexadecimal_code` in `geom_point()` function.
 
-FYI: If you want a more precise colour, you can use its hexadecimal code which can be found here: (https://www.colorhexa.com) .
+FYI: If you want a more precise colour, you can use its hexadecimal code which can be found [here](https://www.colorhexa.com).
 
 Give a proper look to you plot with the layer `labs()` of exercise 3 without the argument of the colour of the points.
 
@@ -242,7 +242,6 @@ starwars %>%
   ) +
   geom_smooth(se = TRUE)
 
-#TODO how to embed a link to a website. see above. on the knitted doc, if we click on that website, it does not send us to it.
 ```
 
 
