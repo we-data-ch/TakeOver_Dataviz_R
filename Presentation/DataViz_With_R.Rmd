@@ -1,6 +1,6 @@
 ---
 title: "Introduction à la Visualisation de Données et à la Grammaire des Graphiques avec R"
-author: " <br/>David Munoz Tord, Vestin Hategekimana, Iván Lorenci De Francisco"
+author: " <br/>David Munoz Tord, Vestin Hategekimana & Iván Lorenci De Francisco"
 date: " <br/>  `r format(Sys.Date(), '%Y-%b-%d')`"
 output:
   xaringan::moon_reader:
@@ -17,6 +17,7 @@ output:
 
 ```{r setup, echo=FALSE, fig.showtext = TRUE}
 options(htmltools.dir.version = FALSE, warn = -1, message = -1, knitr.duplicate.label = 'allow')
+
 knitr::opts_chunk$set(
   dpi=300,
   out.width = "100%",
@@ -49,7 +50,7 @@ xaringanExtra::use_logo(
 
 ```{r packages-and-func, results='hide', message=FALSE, include=FALSE, warning=FALSE}
 #this is to check to see if package are installed and if not to install them or just load them if they are installed!
-if(!require(pacman)) {install.packages(c("pacman", "remotes"))}
+if(!require(pacman)) {install.packages(c("pacman"))}
 
 pacman::p_load(dplyr, dbplyr, tidyverse, hrbrthemes, xaringanthemer, kableExtra)
 
@@ -86,6 +87,10 @@ image_link <- function(image,url,...){
 .div.blue[
 - Projets Pratiques
 ] 
+
+<a href="https://we-data-ch.github.io/TakeOver_Dataviz_R/Presentation/DataViz_With_R.html">
+`r icons::icon_style(icons::fontawesome("link"), fill = "#1c5253")` Link to follow this presentation !
+</a>
 
 <!--comments -->
 ???
@@ -1750,3 +1755,39 @@ image_link(urlImage,url,width="650px")
  <iframe src="https://munoztd0.shinyapps.io/Tuto_learnR_Data_Viz/" width="100%" height="500px" id="iframe1" marginheight="0" frameborder="0" onload='javascript:resizeIframe(this);'></iframe>
  
  
+ 
+ 
+---
+class: inverse center middle
+
+
+# Thanks!
+
+
+<a href="mailto:david.munoz@mailbox.org">
+.white[`r icons::icon_style(icons::fontawesome("paper-plane"), fill = "white")` david.munoz@mailbox.org]
+</a>
+
+<a href="https://github.com/we-data-ch/TakeOver_Dataviz_R">
+.white[`r icons::icon_style(icons::fontawesome("link"), fill = "white")` This presentation repository]
+</a>
+
+<a href="http://twitter.com/tord_munoz">
+.white[`r icons::icon_style(icons::fontawesome("twitter"), fill = "white")` @tord_munoz]
+</a>
+
+<a href="https://github.com/munoztd0">
+.white[`r icons::icon_style(icons::fontawesome("github"), fill = "white")` @munoztd0]
+</a>
+
+<a href="https://www.youtube.com/channel/UCGktdbvbc_H-JEkYYTvwRVw">
+.white[`r icons::icon_style(icons::fontawesome("youtube"), fill = "white")` We Data YouTube]
+</a>
+
+<br>
+
+Slides created via the R packages:
+
+*xaringan* and *xaringanthemer*
+
+
