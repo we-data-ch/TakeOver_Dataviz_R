@@ -45,10 +45,13 @@ Tous les tracés sont composés de **données** que vous souhaitez visualiser et
     pour créer un graphique attrayant.
     
 
+```{r, echo=FALSE}
+options(warn = -1)
+```
 
 ```{r loading the data and packages}
 options(warn = -1)
-library(tidyverse)
+library(tidyverse, warn.conflicts = FALSE)
 data("starwars")
 #TODO how to prevent the following message
 ```
