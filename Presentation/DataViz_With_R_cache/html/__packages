@@ -13,3 +13,5 @@ lubridate
 hrbrthemes
 xaringanthemer
 kableExtra
+htmltools
+icons

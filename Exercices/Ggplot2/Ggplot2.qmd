@@ -58,10 +58,7 @@ data("starwars")
 
 ### Exercise 1
 
-For the following exercises we will use the `starwars` dataset from `dplyr` package
-The base plot we will work on is the one with the `name`, `mass`, `height` and `hair_color` variables.
-Plot it using `geom_point()` function. 
-How can we improve its readability?
+"Pour les exercices suivants, nous utiliserons l'ensemble de données `starwars` du package `dplyr`. Le graphique de base sur lequel nous travaillerons est celui des variables `name`, `mass`, `height` et `hair_color`. Tracez-le en utilisant la fonction `geom_point()`. 
 
 
 ```{r Base plot}
@@ -71,9 +68,9 @@ starwars %>%
   geom_point()
 ```
 
-We could even mark in a distinct way the `NA`s ¡ We have just to set the
-colour of `NA`s with the argument in the appropriate `scale*` function.
-In our case, `scale_fill_discrete(na.value = "colour_name")`.
+Comment pouvons-nous améliorer sa lisibilité ?"
+
+Nous pourrions même marquer de manière distincte les `NA`s ! Il suffit de définir la couleur des `NA`s avec l'argument dans la fonction `scale*` appropriée. Dans notre cas, `scale_fill_discrete(na.value = "nom_de_la_couleur")`.
 
 ```{r Base plot with different colour for NAs}
 starwars %>% 
@@ -115,7 +112,7 @@ inside`geom_text()` function.
 ### Exercise 2
 Instead of plotting the observations with dots, plot them with the name of the character to which they make reference.
 Use, `geom_text` function with the following arguments `check_overlap = TRUE, vjust = "inward", hjust = "inward"` instead of `geom_point`. 
-
+Au lieu de représenter les observations avec des points, représentez-les avec le nom du personnage auquel elles se réfèrent. Utilisez la fonction `geom_text` avec les arguments suivants `check_overlap = TRUE, vjust = "inward", hjust = "inward"` au lieu de `geom_point`.
 ```{r}
 starwars %>% 
   select(hair_color, mass, height, species, homeworld, name) %>% 
@@ -165,7 +162,7 @@ improve the readability of the plot. The most important one are:
 -   for adding a smoother to the data and display the smooth and its
     standard error: `geom_smooth`.
 
--   for drawing lines between data points we can
+
 
 
 
@@ -178,13 +175,21 @@ improve the readability of the plot. The most important one are:
 ### Exercise 3
 
 Working on exercise 1's plot, add it a title of your choice, a title to x and y axes and a title to the legend. 
-You can do this with `labs` function and the following arguments. `title = "your_title` for the title; `x = "name_x_axis` ; `y = "name_y_axis"` ; `color = "title of the legend"` for the title of your legend.
+You can do this with `labs()` function and the following arguments. `title = "your_title` for the title; `x = "name_x_axis` ; `y = "name_y_axis"` ; `color = "title of the legend"` for the title of your legend.
 
 If your plot's title is too long, consider splitting it in two lines with `\n` argument between the two parts of the title. Like the following: `title = "Relation between character's masses \n and character's heights"`
 
 Also, consider eliminating the weird values contained in `hair_colour` variable using the following code: `filter(hair_color %in% c("auburn", "auburn, grey", "auburn, white", "black", "blond", "blonde", "brown", "brown, grey", "grey", "white"))`.
 
-Lastly, put the legend on the left while and edit the displayed names of the values within the legend. You may use the following functions and arguments.
+Lastly, put the legend on the left while and edit the displayed names of the values within the legend. You may use the following functions and arguments: `theme.position = "left")` ; `scale_color_discrete(labels = c("auburn" = "Auburn","auburn, grey" = "Auburn / Grey","auburn, white" = "Auburn / White","black" = "Black","blond" = "Blond","blonde" = "Blonde","brown" = "Brown","brown, grey" = "Brown / Grey","grey" = "Grey","white" = "White"))`.
+
+En travaillant sur le graphique de l'exercice 1, ajoutez-lui un titre de votre choix, un titre pour les axes des x et y, ainsi qu'un titre pour la légende. Vous pouvez le faire avec la fonction `labs()` et les arguments suivants : `title = "votre_titre"` pour le titre ; `x = "nom_de_l'axe_x"` ; `y = "nom_de_l'axe_y"` ; `color = "titre de la légende"` pour le titre de votre légende.
+
+Si le titre de votre graphique est trop long, envisagez de le diviser en deux lignes avec l'argument \n entre les deux parties du titre, comme suit : `title = "Relation entre les masses des personnages \n et les hauteurs des personnages"`.`
+
+De plus, envisagez d'éliminer les valeurs étranges contenues dans la variable `hair_color` à l'aide du code suivant : `filter(hair_color %in% c("auburn", "auburn, grey", "auburn, white", "black", "blond", "blonde", "brown", "brown, grey", "grey", "white"))`.
+
+Enfin, placez la légende à gauche et modifiez les noms affichés des valeurs dans la légende. Vous pouvez utiliser les fonctions et arguments suivants: `theme.position = "left")` ; `scale_color_discrete(labels = c("auburn" = "Auburn","auburn, grey" = "Auburn / Grey","auburn, white" = "Auburn / White","black" = "Black","blond" = "Blond","blonde" = "Blonde","brown" = "Brown","brown, grey" = "Brown / Grey","grey" = "Grey","white" = "White"))`.
 
 ```{r Adding axes labels and a title in two lines, changing legend}
 starwars %>% 
@@ -216,11 +221,11 @@ starwars %>%
 # theme(legend.position = "right")    #the default
 # theme(legend.position = "none")
 # theme(legend.position = "bottom")
-
 ```
 
 What can be improved of this graphic?
 
+Qu'est-ce qui peut être amélioré sur ce graphique ?
 
 ### Exercise 4
 
@@ -415,7 +420,7 @@ Another possible issue we can face while faceting is when facet labels
 they get cut off. For this matter, we can use `labeller` argument of
 `facet_grid()` function this way
 
-`labeller = labeller(name_variable = label_wrap_gen(width = 25))`
+`labeller = labeller(name_variable = label_wrap_gen(width = 25))`.
 
 # Colour of the background
 
