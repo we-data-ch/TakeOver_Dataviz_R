@@ -1650,9 +1650,113 @@ class: inverse center middle
 
 ---
 
+## Suivez le guide!
+
+### Ouvrez un script R ou Rmarkdown/Quarto
+
+- Nous allons passer à la partie empirique dans laquelle nous allons créer un graphique basique.
+
+- Une attention particulière sera donnée à tous les éléments que nous avons appris
+
+- Nous parlerons aussi de l'utilité des labels
+
+---
+
 class: inverse center middle
 
 # Travail Pratique 2: Documentation et reproduction de graphs
+
+
+---
+
+### Les étapes de la réalisation d'un graphique
+
+Maintenant que nous avons les bases nous pouvons voir ce qui se passe dans les faits lorsqu'on souhaite faire un graphique:
+
+--
+
+1. Imaginer le graphique
+
+    - Un croquis peut-être utile!
+    
+--
+    
+2. Choisir le graphique
+    
+--
+    
+3. Préparer les données: [dplyr](https://dplyr.tidyverse.org/reference/index.html) et [tidyr](https://tidyr.tidyverse.org/reference/index.html)
+    
+    - **dplyr**: `select()`, `filter()` / **tidyr**: `drop_na()`
+    
+--
+    
+4. Réaliser la structure de base
+
+--
+    
+5. Améliorer
+
+---
+
+### 1. Imaginer le graphique
+
+Il faut répondre aux questions suivantes:
+
+1. Quelles sont les variables que je veux utiliser?
+
+    - Type: Continues, catégorielles?
+    
+--
+    
+2. Qu'est-ce que je veux montrer?
+
+    - Distribution? Composition? Relation? Comparaison? 
+    
+--
+    
+3. Qu'elle est l'histoire que je veux raconter?
+
+    - Pourquoi ce graphique?
+    
+    - Qu'est-ce qui doit être mis en avant?
+
+---
+
+### 2. Choisir le graphique
+
+.center[
+
+```{r ,  fig.align="center"}
+urlImage <- "https://www.labnol.org/images/2008/data-chart-type.png"
+url <- "https://www.labnol.org/software/find-right-chart-type-for-your-data/6523/"
+image_link(urlImage,url,width="650px")
+
+```
+
+]
+
+---
+
+### 4. Réaliser la structure de base 
+
+*Ressources pour le choix du geom:*
+
+ - [R Graph Gallery](https://r-graph-gallery.com/index.html)
+ 
+### 5. Améliorer
+
+- [R Graph Gallery ggplot2](https://r-graph-gallery.com/ggplot2-package.html)
+
+- [ggplot2 function references](https://ggplot2.tidyverse.org/reference/)
+
+---
+
+class: center middle
+
+# Exercice: reproduire les graphiques
+
+**Ouvrir "Reproduire graphique exercice.qmd"**
 
 ---
 
@@ -1763,13 +1867,16 @@ class: inverse center middle
 
 # Thanks!
 
+<a href="https://github.com/we-data-ch/TakeOver_Dataviz_R">
+.white[`r icons::icon_style(icons::fontawesome("link"), fill = "white")` This presentation repository]
+</a>
+
+<a href="https://www.youtube.com/channel/UCGktdbvbc_H-JEkYYTvwRVw">
+.white[`r icons::icon_style(icons::fontawesome("youtube"), fill = "white")` We Data YouTube]
+</a>
 
 <a href="mailto:david.munoz@mailbox.org">
 .white[`r icons::icon_style(icons::fontawesome("paper-plane"), fill = "white")` david.munoz@mailbox.org]
-</a>
-
-<a href="https://github.com/we-data-ch/TakeOver_Dataviz_R">
-.white[`r icons::icon_style(icons::fontawesome("link"), fill = "white")` This presentation repository]
 </a>
 
 <a href="http://twitter.com/tord_munoz">
@@ -1780,9 +1887,37 @@ class: inverse center middle
 .white[`r icons::icon_style(icons::fontawesome("github"), fill = "white")` @munoztd0]
 </a>
 
-<a href="https://www.youtube.com/channel/UCGktdbvbc_H-JEkYYTvwRVw">
-.white[`r icons::icon_style(icons::fontawesome("youtube"), fill = "white")` We Data YouTube]
+.pull-left[
+
+<a href="mailto:Ivan.Lorenci@etu.unige.ch">
+.white[`r icons::icon_style(icons::fontawesome("paper-plane"), fill = "white")` Ivan.Lorenci@etu.unige.ch]
 </a>
+
+<a href="http://twitter.com/IvanLdF">
+.white[`r icons::icon_style(icons::fontawesome("twitter"), fill = "white")` @IvanLdF]
+</a>
+
+<a href="https://github.com/ivanldf13">
+.white[`r icons::icon_style(icons::fontawesome("github"), fill = "white")` @ivanldf13]
+</a>
+
+]
+
+.pull-right[
+
+<a href="mailto:vestin.hategekimana@unige.ch">
+.white[`r icons::icon_style(icons::fontawesome("paper-plane"), fill = "white")` vestin.hategekimana@unige.ch]
+</a>
+
+<a href="http://twitter.com/PEcodemo">
+.white[`r icons::icon_style(icons::fontawesome("twitter"), fill = "white")` @PEcodemo]
+</a>
+
+<a href="https://github.com/CyuHat">
+.white[`r icons::icon_style(icons::fontawesome("github"), fill = "white")` @CyuHat]
+</a>
+
+]
 
 <br>
 

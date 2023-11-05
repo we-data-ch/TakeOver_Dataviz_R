@@ -7,7 +7,7 @@ format:
 editor: visual
 execute: 
   warning: false
-  echo: true
+  echo: false
 ---
 
 ## Reproduisez les graphiques sur cette page
@@ -23,8 +23,40 @@ library(nycflights13)
 library(gapminder)
 library(datasets)
 
-#install.packages("tidyverse", "nycflights13", "gapminder")
+# ou
+
+pacman::p_load(tidyvers, nycflights13, gapminder, datasets)
 ```
+
+## Indication de style
+
+Vous pouvez commencer votre graphique avec le nom de votre jeu de données et la "pipe function" `%>%` ça permet d'être plus flexible lorsqu'on veut faire des modifications avec les autres packages du tidyverse.
+
+:::: columns
+:::{.column width="40%"}
+
+```r
+ggplot(iris, aes(Sepal.Length)) +
+  geom_density()
+```
+
+:::
+
+:::{.column width="10%"}
+
+:::
+
+:::{.column width="40%"}
+
+```r
+iris %>% 
+  ggplot(aes(Sepal.Length)) +
+  geom_density()
+```
+
+:::
+
+::::
 
 ### Graphique 1: Diamonds ("diamonds" dataset)
 
@@ -64,6 +96,10 @@ Variables:
 
 -   **manufacturer:** dodge, ford, toyota, volkswagen, etc.
 
+Nettoyage:
+
+-   `filter(manufacturer %in% c("dodge", "ford", "toyota", "volkswagen"))`
+
 ```{r}
 mpg %>%
   filter(manufacturer %in% c("dodge", "ford", "toyota", "volkswagen")) %>% 
@@ -87,9 +123,17 @@ Variables:
 
 -   **arr_delay:** Retard à l'arrivée en minutes
 
+Nettoyage:
+
+-   tidyr: `drop_na(dep_delay, arr_delay)`
+
+    ou
+
+-   dplyr: `filter(!is.na(dep_delay), !is.na(arr_delay))`
+
 ```{r}
 flights %>%
-  filter(!is.na(dep_delay), !is.na(arr_delay)) %>%
+  drop_na(dep_delay, arr_delay) %>%
   ggplot(aes(x = dep_delay, y = arr_delay)) +
   geom_hex(bins = 30) +
   labs(title = "Relation entre les retards au départ et à l'arrivée",
@@ -177,6 +221,12 @@ variables:
 
 -   **city:** Villes
 
+Nettoyage:
+
+-   Partie 1: `filter(city %in% c("Austin", "Collin County", "Dallas", "Houston", "San Antonio")`
+
+-   Partie 2: `summarise(sales = mean(sales), .by = c(city, year))`
+
 *Note: Il est nécessaire de faire la moyenne des vente par an.*
 
 ```{r}
@@ -203,9 +253,15 @@ Variables:
 
 -   **n_phones:** Nombre de téléphones
 
+Nettoyage:
+
+-   Partie 1:
+
+*Note: Il est nécessaire de faire la somme du nombre de téléphone par région*
+
 ```{r}
 WorldPhones %>% 
-  as_tibble() %>% 
+  as_tibble() %>%
   gather(region, n_phones) %>% 
   summarise(n_phones = sum(n_phones),
             .by = region) %>% 
