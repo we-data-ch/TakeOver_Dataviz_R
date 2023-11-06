@@ -67,81 +67,104 @@ image_link <- function(image,url,...){
 ```
 
 
-# Qui sommes-nous?
-
-<!-- add images square next to the name -->
-.pull-left[
-
-```{r ,  fig.show='hold'}
-url <- "https://wedata.ch/img/team/DMT_pic_square.png"
-image_link(url,url,width="100px")
-
-
-url <- "https://wedata.ch/img/team/vestin.webp"
-image_link(url,url,width="100px")
-
-
-url <- "https://wedata.ch/img/team/vestin.webp"
-image_link(url,url,width="100px")
+```{r ,  fig.align="center"}
+url <- "./img/wedata.png"
+urlLink <- "https://www.youtube.com/channel/UCGktdbvbc_H-JEkYYTvwRVw"
+image_link(url,urlLink, width = "900px")
 
 ```
 
+---
+
+# Qui sommes-nous?
+
+
+<div style="display: flex; align-items: center; margin-bottom: 50px;">
+  <img src="https://wedata.ch/img/team/DMT_pic_square.png" alt="David" width="100" height="100 "style="margin-right: 50px;">
+  <div>
+    <strong> David Muñoz Tord </strong>: Data Scientist et développeur R (Ancien doctorant en Neurosciences Computationnelles à l'UniGE)
+  </div>
+</div>
+
+
+<div style="display: flex; align-items: center; margin-bottom: 50px;">
+  <img src="https://wedata.ch/img/team/vestin.webp" alt="Vestin" width="100" height="100" style="margin-right: 50px;">
+  <div>
+   <strong>Vestin Hategekimana </strong>: Doctorant en Démographie à l'UniGE passionné de statistique et de programmation.
+  </div>
+</div>
+
+
+<div style="display: flex; align-items: center;  margin-bottom: 50px;">
+  <img src="https://media.licdn.com/dms/image/C4D03AQGgEsuLz0oX6g/profile-displayphoto-shrink_800_800/0/1585054960331?e=1704931200&v=beta&t=R67KbRAEuLjfdkCULU6Z71VmIUG8Xyvuy3oWE_pcfnc" alt="Ivan" width="100"  height="100" style="margin-right: 50px;">
+  <div>
+    <strong> Ivàn Lorenci De Francisco </strong>: Master en Science Politique, réalisant un certificat en  Statisitques Appliqués à l'UniGE. Intérêt pour les statistiques et le text mining.
+  </div>
+</div>
+
+<a href="https://we-data-ch.github.io/TakeOver_Dataviz_R/Presentation/DataViz_With_R.html">
+`r icons::icon_style(icons::fontawesome("link"), fill = "#1c5253")` Lien vers cette presentation !
+</a>     
+<a href="https://github.com/we-data-ch/TakeOver_Dataviz_R">
+`r icons::icon_style(icons::fontawesome("link"), fill = "#1c5253")` Lien vers le repo, code et exercices !
+</a>
+
+
+
+---
+
+# Plan
+
+
+.pull-left[
+
+**Partie 1 (08:30 - 09:15)** *David*
+- Grammaire des graphiques et théorie
+- Quiz 1
+- Implémentaion
+- Familiarisation
+
+**Pause (09:15 - 09:30)**
+
+**Partie 2 (09:30 - 10:15)** *Vestin*
+- Choix du graphique
+- Lire la documentation
+- Exercices - reproduire des graphiques
 
 ]
 
 .pull-right[
+**Pause (10:15 - 10:30)**
 
-- David Munoz Tord: Data Scientist chez WeData
-- Vestin Hategekimana: Data Scientist chez WeData
-- Iván Lorenci De Francisco: Data Scientist chez WeData
+**Partie 3 (10:30 - 11:15)** *Iván*
+- Design de graphique (+exploration)
+     - Labels / Texte
+
+**Pause (11:15 - 11:30)**
+
+**Partie 4 (11:30 - 12:30)** *Tous*
+- Conclusions
+- Ressource + Documentation
+- Interactivité
 
 ]
 
 
-
----
-
-# Table des matières
-
-
-.div.blue[
-- Grammaire des Graphiques et Théorie
-]
-
-.div.blue[
-- Implémentation: ggplot2
-]
-
-
-.div.blue[
-- Aesthetic Mapping & Multidimensionalité
-<!--Personnalisation Avancée et Thèmes -->
-] 
-
-.div.blue[
-- Projets Pratiques
-] 
-
-<a href="https://we-data-ch.github.io/TakeOver_Dataviz_R/Presentation/DataViz_With_R.html">
-`r icons::icon_style(icons::fontawesome("link"), fill = "#1c5253")` Link to follow this presentation !
-</a>
 
 <!--comments -->
 ???
 
-Ce cours n'est pas une introduction à R, mais une introduction à la visualisation de données avec R. Il est donc nécessaire d'avoir une connaissance de base de R pour suivre ce cours. Si vous n'avez pas de connaissances de base en R, vous pouvez suivre le cours [Introduction à R](https://www.datacamp.com/courses/free-introduction-to-r) sur DataCamp.
+On va essayer de ce fixer a ce plan mais c'est tres probable qu'on deborde un peu partout.
 
-De plus, ce cours ne pourra pas etre une exaustif quant a l'utilisation de ggplot2 car cela pourrait prendres des jours, mais il vous donnera les bases pour commencer à explorer et à créer vos propres graphiques.
+Hésitez pas a demandez si vous avez envie d'une pause.
 
 ---
-
-
 
 # But
 
 - Tentative d'inciter les gens à en savoir plus par eux-mêmes
 
-- Partager mon point de vue personnel sur la raison pour laquelle la grammaire des graphiques domine pour la plupart des ensembles de données
+- Partager notre point de vue personnel sur la raison pour laquelle la grammaire des graphiques domine pour la plupart des ensembles de données
 
 
 
@@ -152,42 +175,15 @@ image_link(url,url,width="1000px")
 ```
 
 
+<!-- comments -->
 
----
-
-class: inverse center middle
-
-# Ressources
-
-.pull-left[
-
-```{r ,  fig.align="center"}
-urlImage <- "https://r4ds.hadley.nz/cover.jpg"
-url <- "https://r4ds.hadley.nz/data-visualize.html"
-image_link(urlImage,url,width="270px")
-```
-]
-
-
-
-.pull-right[
-```{r ,  fig.align="center"}
-urlImage <- "https://m.media-amazon.com/images/I/51smGgbUUjL._SL1251_.jpg"
-url <- "http://www.ievbras.ru/ecostat/Kiril/R/Biblio_N/R_Eng/Wickham2016.pdf"
-image_link(urlImage,url,width="250px")
-
-```
-]
-
-Et plus intéractif par Ben Baumer: <a href="https://mdsr-book.github.io/mdsr2e/index.html">
-.white[`r icons::icon_style(icons::fontawesome("github"), fill = "white")` Modern Data Science with R]
-</a>
-
-<!--comments -->
 ???
-- Hadley Wickham, le créateur de ggplot2, a écrit un livre sur la visualisation de données avec R, [R for Data Science](https://r4ds.had.co.nz/), qui est un excellent point de départ pour apprendre à utiliser ggplot2.
 
-Par contre je conseillerais specialement de checker le ebook de Ben Baumer, qui est plus interactif et plus moderne. En plus je suis un peu biaiser car c'etait mon prof de stats a Smith College, et c'est lui qui ma introduit a R et ggplot2.
+Ce cours n'est pas une introduction à R, mais une introduction à la visualisation de données avec R. 
+
+De plus, ce cours ne pourra pas etre une exaustif quant a l'utilisation de ggplot2 car cela pourrait prendres des jours, mais il vous donnera les bases pour commencer à explorer et à créer vos propres graphiques.
+
+Ce cours a plutot pour but d'inciter les gens à en savoir plus par eux-mêmes et de partager notre point de vue personnel sur la raison pour laquelle la grammaire des graphiques domine pour la plupart des ensembles de données
 
 
 ---
@@ -196,28 +192,52 @@ class: inverse center middle
 
 # Grammaire des Graphiques
 
+<!-- comments -->
+
+???
+
+bref description de la grammaire des graphiques
+
 ---
 
 ## Grammaire des Graphiques
 
 
-- La grammaire des graphiques est un framework pour construire des graphiques en couches, en utilisant des composants de base pour construire des graphiques plus complexes
+- La grammaire des graphiques est un framework pour construire des **graphiques en couches**, en utilisant des **composants de base** pour construire des graphiques plus complexes
 
 
 
 ## Pourquoi?
 
-- Framework agile pour l'exploration des données
+- Framework **agile** pour l'exploration des données
 
-- Permet de créer des graphiques complexes avec peu de code
+- Permet de créer des **graphiques complexes avec peu de code**
 
-- Géneralise facilement à de vaste ensemble de variables avec des hiérarchies complexes
+- **Géneralise facilement** à de vaste ensemble de variables avec des hiérarchies complexes
+
+<!-- comments -->
+
+???
+
+La gramamire des graphiques est un framework pour construire des graphiques en couches, en utilisant des composants de base pour construire des graphiques plus complexes.
+
+Pourquoi utiliser la grammaire des graphiques?
+Alors parce que c'est un framework agile pour l'exploration des données, qui permet de créer des graphiques complexes avec peu de code, et qui géneralise facilement à de vaste ensemble de variables avec des hiérarchies complexes
+
+
 
 ---
 
 class: inverse center middle
 
 # Dataviz: Théorie
+
+
+<!-- comments -->
+
+???
+
+Passons maintenant à la théorie de la visualisation de données.
 
 ---
 
@@ -238,7 +258,14 @@ class: inverse center middle
 <!--comments-->
 
 ???
-On peut faire 7 Meta categories de graphiques: Distribution, Relation, Ranking, Evolution, Partie d'un tout, Cartographie, Réseau.
+
+On va essayer de faire un aperçu général de tous les genre de graphiques que l'on peut faire. Pas de code ou de synthaxe pour l instant, juste des images pour vous montrer ce que l'on peut faire.
+
+On peut faire 7 Meta categories de graphiques: Distribution, Relation, Ranking, Evolution, Partie d'un tout, Cartographie, Réseau. On va maintenant les explorer un par un.
+
+Je m'excuse d'avance pour les anglicismes, mais je trouve que les mots en anglais sont plus clairs et plus précis que les mots en français souvent pour ce domaine.
+
+Hesitez pas à poser des questions sur les graphiques que je vais montrer, je vais aller assez vite pour pouvoir montrer le plus de graphiques possible mais je peux revenir en arrière si vous avez des questions.
 
 
 ---
@@ -274,16 +301,22 @@ image_link(url,url,width="200px")
 
 ???
 
-- Les violons sont particulièrement adaptés lorsque la quantité de données est importante et qu'il est impossible de montrer des observations individuelles. on ajoute souvent un boxplot au milleu
+on commence avec les graphiques de distribution, qui permettent de visualiser la tendance d'une ou plusieurs variables numériques.
 
-- Les histogrammes et les diagrammes de densité sont tous deux utiles pour visualiser la distribution des données, mais ils montrent des choses légèrement différentes. Les histogrammes montrent les frequences, tandis que les diagrammes de densité montrent les proportions.
+- Les violin plot sont particulièrement adaptés lorsque la quantité de données est importante et qu'il est impossible de montrer des observations individuelles. on ajoute souvent un boxplot au milleu pour montrer la médiane et les quartiles.
+
+- Les histogrammes et les graphique de densité sont tous deux utiles pour visualiser la distribution des données, mais ils montrent des choses légèrement différentes. Les histogrammes montrent les frequences, tandis que les diagrammes de densité montrent les proportions.
 
 - Un boxplot montre la distribution des données quantitatives d'une manière qui facilite les comparaisons entre les variables ou entre les niveaux d'une variable catégorielle.
 
-La ligne qui divise la boîte en deux parties représente la médiane. Les extrémités de la boîte indique les quartiles supérieur et inférieur. Les lignes extrêmes indiquent la valeur la plus élevée et la plus basse, apres cela on vois des  valeurs aberrantes. 
-/ Attention! Le boxplot cache la taille de l'échantillon de chaque groupe, il faut l'afficher avec une annotation ou la largeur de la boîte. / !
+En detail: 
+La ligne qui divise la boîte en deux parties représente la médiane. Les extrémités de la boîte indique les quartiles supérieur et inférieur. Les lignes extrêmes indiquent la valeur la plus élevée et la plus basse, apres cela on vois des  valeurs aberrantes/ outliers
 
-Ordonner votre boxplot/violine par la médiane peut le rendre plus efficace
+/ Attention! Le boxplot cache la taille de l'échantillon de chaque groupe, il faut l'afficher avec une annotation le n. / !
+
+
+un petit conseil:
+Ordonner votre boxplot/violin plot par la médiane peut le rendre plus efficace
 
 
 ---
@@ -321,30 +354,96 @@ image_link(url,url,width="200px")
 
 ???
 
-La Overplotting est l'erreur la plus fréquente lorsque la taille de l'échantillon est élevée.
+maintenant on va voir les graphiques de relation, qui permettent de visualiser la relation entre 2 variables continues.
 
-N'oubliez pas de montrer les sous-groupes si vous en avez.
+- Les scatter plot sont la version la plus simple et la plus utilisée pour visualiser la relation entre deux variables continues. Ils sont particulièrement utiles pour identifier les valeurs aberrantes/outlier et les tendances. N'oubliez pas de montrer les sous-groupes si vous en avez.
 
-carte thermique : Il faut souvent normaliser les données
+Ici le "Overplotting" est l'erreur la plus fréquente, c'est lorsque la taille de l'échantillon est élevée et que les points se chevauchent. Il existe plusieurs solutions pour cela, comme les jitter, les alpha, les contours, etc quon verra plus en detail plus tard.
 
-Pensez aux échelles (log, sqrt, etc.) ! Et où elles commencent , a 0 ou autre chose ?
+Pensez aux échelles (log, sqrt, etc.) ! Et où elles commencent , a 0 ou autre chose ? On en reparlera plus tard en detail
 
-heatmap : C'est un peu comme regarder un tableau de données depuis le haut.
+heatmap : C'est un peu comme regarder un tableau de données depuis le haut. Les valeurs individuelles dans une matrice sont représentées par des couleurs. Les couleurs peuvent être utilisées pour représenter des valeurs numériques discrètes ou continues. Il faut souvent normaliser les données pour que les couleurs soient comparables. 
 
-/ ! La palette de couleurs est importante / !
 
-N'oubliez pas une légende pour la taille des bulles 
+correlogram: C'est une matrice, où chaque point représente la corrélation entre deux variables. Les couleurs sont utilisées pour représenter la force de la corrélation. 
+
+Pour ces deux dernier type / ! La palette de couleurs est importante  on revient dessus dans la prochaine slide/ !
+
+bubble plot: C'est un nuage de points avec une troisième variable numérique associée à la taille du cercle. Il est utile pour visualiser les relations entre trois variables.
+
+N'oubliez pas une légende pour la taille des bulles ! On va voir pourquoi dans les prochaines slides aussi
+
 
 ---
 
-#### Pourquoi les graphiques en 3D sont une mauvaise idée
+#### Pallette de couleurs
+
+.pull-left[
+
+```{r ,  fig.align="center"}
+url <- "https://blog.datawrapper.de/wp-content/uploads/2021/03/full-210101_colorscales24-768x178.png"
+
+image_link(url,url,width="600px")
+```
+
+- Quand utiliser des échelles de couleurs séquentielles et quand utiliser des échelles de couleurs divergentes ?
+
+**Rule of thumb**: S'il existe une valeur intermédiaire significative, utilisez des couleurs divergentes. Sinon, utilisez des couleurs séquentielles.
+
+]
+
+.pull-right[
+
+```{r ,  fig.align="center"}
+url <- "https://blog.datawrapper.de/wp-content/uploads/2021/03/full-210101_colorscales39-1024x435.png"
+image_link(url,url,width="600px")
+```
+]
 
 
+<!-- comments -->
+
+???
+
+Et les couleurs doivent être choisies avec soin pour qu'elles soient interprétables.
+
+Ne mettez pas trop de couleurs dans la palette de votre heatmap. Veillez à ce qu'elle soit simple et interprétable. Les échelles séquentielles utilisant plusieurs teintes sont utiles si les teintes sont étroitement liées les unes aux autres. Dans le cas contraire, la heatmap risque de ressembler à une mosaïque colorée qui semble attrayante au premier abord, mais qui laisse les lecteurs avec une douzaine de questions.
+
+S'il existe une valeur intermédiaire significative, utilisez des couleurs divergentes. Il peut s'agir de
+
+- zéro, par exemple la croissance économique positive et négative
+- 50 %, par exemple le vote entre deux choix
+- la moyenne ou la médiane, par exemple l'âge inférieur et supérieur à l'âge médian
+- un seuil convenu, par exemple des niveaux de revenus inférieurs et supérieurs au seuil de pauvreté
+- un objectif, par exemple des revenus inférieurs et supérieurs à l'objectif trimestriel
+
+
+
+---
+
+#### Pourquoi les graphiques en 3D sont une mauvaise idée ?
+
+.pull-left[
 ```{r ,  fig.align="right"}
 url <- "./img/failureCircle.png"
 image_link(url,url,width="800px")
 
 ```
+
+]
+
+.pull-right[
+
+#### Pouvez-vous identifier le problème avec ce graphique en 3D?
+
+```{r ,  fig.align="center"}
+
+url <- "https://miro.medium.com/v2/resize:fit:720/format:webp/1*44jIdwGAialtNdCljjoh6g.png"
+image_link(url,url,width="800px")
+
+```
+
+]
 
 <!--commemnts -->
 
@@ -354,6 +453,9 @@ n'utilisez jamais le graphique à bulles 3D parce qu'il s'échelonne quadratique
 
 La perspective est également la pire chose que l'on puisse faire à un graphique, car les objets les plus éloignés semblent plus petits, mais notre cerveau les perçoit comme étant plus grands qu'ils ne le sont.
 
+Les deux camemberts représentent des données identiques. Dans le diagramme à secteurs en 2D, il est facile de voir que les couleurs bleue et grise (pommes et bananes) sont de taille égale. 
+
+Dans le diagramme en 3D, en revanche, le gris semble beaucoup plus grand que le bleu. En outre, le gris et le rose foncé semblent de taille égale en 3D, tandis que le bleu apparaît comme le plus petit. Nous percevons donc 3 choses de manière incorrecte dans le diagramme circulaire en 3D. Cela est dû au principe de la distorsion de la perspective.
 
 ---
 
@@ -387,19 +489,28 @@ image_link(url,url,width="200px")
 <!--comments-->
 
 ???
+
+Ranking : Comparer des valeurs numériques (unique ou moyenner) entre elles
+
 Barplot vs histogramme
 Barplot a ne pas confondre avec un histogramme. 
 
-C-a-d -> la distance entre les barres n'a pas de sens, alors que la distance entre les barres dans un histogramme est importante.
+Dans un barplot la distance entre les barres n'a pas de d'importance, alors que la distance entre les barres dans un histogramme est importante.
 
-Des noms tres longs ? Pensez à une version horizontale.
-trier son barplot permet souvent de mieux comprendre la situation.
+Des noms tres longs ? Pensez à une version horizontale du bar chart.
+
+un autre petit truc:
+trier son barplot permet souvent de mieux comprendre la situation!
 
 
-Les lollipop plot sont souvent plus attrayants que les diagrammes en barres, où la barre est transformée en une ligne et un point, ce qui est plus attrayant et transmet aussi bien l'information tout en étant moins encombré. je recommande.
+Les lollipop plot sont souvent plus attrayants que les barplot, où la barre est transformée en une ligne et un point, ce qui est plus attrayant et transmet aussi bien l'information tout en étant moins encombré. je recommande.
+
+Le spider plot / radar est un type de graphique bidimensionnel conçu pour représenter une ou plusieurs séries de valeurs sur plusieurs variables quantitatives communes. Chaque variable possède son propre axe, tous les axes étant reliés au centre de la figure.
+
+Le spider chart est souvent critiqué dans la dataviz, et ce n'est probablement pas la meilleure façon de transmettre l'information. Vous pouvez souvent utiliser un graphique parralle ou un lollipop plot à la place qui permet de mieux comparé les valeurs.
 
 Les wordcloud sont hype, mais ils déforment souvent la réalité et ne sont pas très effiace. Par exemple, les mots longs seront plus visibles etc..
-Utiliser plutôt un lolipop plot horizontal trier ?
+Utiliser plutôt un lolipop plot horizontal trier si vous avez peu de valeurs.
 
 Le graphique parallèle permet de visualiser plusieurs dimensions à la fois. Il est souvent préférable au graphique en araignée, car les valeurs sont plus faciles à comparer lorsqu'elles sont disposées le long d'un seul axe vertical ou horizontal. 
 
@@ -426,6 +537,23 @@ image_link(url,url,width="200px")
 - **doughnut and pie chart**: un cercle divisé en secteurs qui représentent chacun une proportion de l'ensemble
 
 
+.pull-left[
+
+
+- **stacked bar chart**: chaque barre est divisée en segments qui représentent chacun une proportion de l'ensemble.
+
+]
+
+
+.pull-right[
+```{r ,  fig.align="center"}
+
+url <- "https://i.stack.imgur.com/5WeCu.png"
+
+image_link(url,url,width="200px")
+
+```
+]
 ]
 
 
@@ -433,17 +561,20 @@ image_link(url,url,width="200px")
 
 ???
 
+Partie d'un tout, pour illustrer des proportions numériques.
+
 Treemaps ont l'avantage d'utiliser efficacement l'espace, ce qui les rend utiles pour représenter une grande quantité de données. Mais n'annotez pas plus de 3 niveaux de la hiérarchie, cela rendrait la figure illisible.
 
-Diagramme de Venn :  N'utilisez pas plus de 3 ensembles, cela rendrait la figure illisible.
+Diagramme de Venn :  Chaque ensemble est représenté par un cercle, la taille du cercle représente l'importance du groupe, l'intersection des cercles indique les points communs entre les groupes.
+N'utilisez pas plus de 3 ensembles, cela commence a rendre la figure illisible.
 
-Les pie chart sont très critiqués et doivent être évités autant que possible. L'être humain est très mauvais pour traduire des angles en valeurs.
+Les pie chart sont très critiqués et doivent être évités autant que possible. L'être humain est très mauvais pour traduire des angles en valeurs. et comme on la vue, la 3D les rends pire
 
-Pourquoi ne pas plutôt envisager un stacked percentage bar plot ?
+Pourquoi ne pas plutôt envisager un stacked percentage bar plot ? chaque barre est divisée en segments qui représentent chacun une proportion de l'ensemble.
 
 ---
 
-#### Evolution: Montrer des tendances temporelles pour ou plusieurs variables numeriqies
+#### Evolution: Montrer des tendances temporelles pour ou plusieurs variables numeriques
 
 .pull-left-small[
 
@@ -458,7 +589,7 @@ image_link(url,url,width="200px")
 
 - **line plot**: chaque observation est représentée par un point, les points sont reliés par des lignes
 
-- **area plot**:  extension d'un line plot, la zone entre l'axe des x et la ligne est rempli par une couleur
+- **area plot**: extension d'un line plot, la zone entre l'axe des x et la ligne est rempli par une couleur
 
 <br>
 - **stacked area et streamcharts**: extension d'un area plot, les zones sont empilées les unes sur les autres pour montrer l'évolution de plusieurs groupes
@@ -471,13 +602,16 @@ image_link(url,url,width="200px")
 
 ???
 
-Lineplot : il est similaire à un scatter plot, à ceci près que les points de mesure sont ordonnés (généralement en fonction de leur valeur sur l'axe des x) et reliés par des segments de ligne droite. Un graphique linéaire est souvent utilisé pour visualiser une tendance dans les données sur des intervalles de temps - une série chronologique - et la ligne est donc souvent tracée chronologiquement.
+Evolution: Montrer des tendances temporelles pour ou plusieurs variables numeriques
 
-Attention au graphique spaghetti : trop de lignes rendent le graphique illisible.
+Lineplot / graphique linéaire: il est similaire à un scatter plot, à ceci près que les points de mesure sont ordonnés (généralement en fonction de leur valeur sur l'axe des x) et reliés par des segments de ligne droite. Un graphique linéaire est souvent utilisé pour visualiser une tendance dans les données sur des intervalles de temps - une série chronologique
 
-Je suis un grand fan des area chart et je pense qu'ils rendent la tendance plus évidente que l'utilisation d'un lineplot
+Attention au graphique spaghetti : trop de lignes rendent le graphique illisible !
 
-Stacked area : il peut être difficile de lire l'évolution d'un groupe spécifique. L'ordre des groupes (de bas en haut) peut avoir une influenc.
+Area chart: est une extension d'un line plot, la zone entre l'axe des x et la ligne est rempli par une couleur. Je suis un grand fan des area chart et je pense qu'ils rendent la tendance plus évidente que l'utilisation d'un lineplot souvent.
+
+Stacked area : une extension d'un area plot, les zones sont empilées les unes sur les autres pour montrer l'évolution de plusieurs groupes. il peut être difficile de lire l'évolution d'un groupe spécifique. L'ordre des groupes (de bas en haut) peut avoir une influence! 
+
 Streamgraph (Graphique en flux) : il n'y a pas de coin : les bords sont arrondis, ce qui donne une belle impression de flux. 
 
 Bon pour étudier les proportions relatives de l'ensemble.
@@ -516,16 +650,16 @@ image_link(url,url,width="200px")
 
 ???
 
-Les cartes sont un excellent moyen de visualiser des données géographiques.
+Les cartes sont un excellent moyen de visualiser des données géographiques. je ne vais pas m'attarder dessus car c'est un sujet à part entière. mais en bref:
 
-carte choroplèthe : Normalisez votre variable : vous ne pouvez pas comparer des chiffres bruts entre des régions de taille ou de population différentes.
+**carte choroplèthe** : chaque région est colorée en fonction de la valeur d'une variable, noubliez pas de Normalisez votre variable : vous ne pouvez pas comparer des chiffres bruts entre des régions de taille ou de population différentes.
 
 Si vos régions ont des tailles très diverses, cela introduit un biais.
-Ne l'appelez pas carte choroplèthe, mais carte chOrOpleth.
+Ne l'appelez pas carte chloroplèthe, mais carte chOrOpleth je fais toujouts la faute.
 
-La carte hexagonale est une sorte de carte choroplèthe. Elle supprime le biais introduit par la taille différente des régions dans la carte choroplèthe, puisque chaque région est représentée par le même hexagone.
+La **carte hexagonale** est une sorte de carte choroplèthe. Elle supprime le biais introduit par la taille différente des régions dans la carte choroplèthe, puisque chaque région est représentée par le même hexagone.
 
-Le cartogramme vise à corriger le biais : lorsqu'une variable est agrégée par région, une région avec très peu de points de données semblera aussi importante qu'une région avec beaucoup de points de données.
+Le **cartogramme** distort la carte en fonction de la valeur d'une variable , cela vise à corriger les biais : lorsqu'une variable est agrégée par région, une région avec très peu de points de données semblera aussi importante qu'une région avec beaucoup de points de données.
 
 
 ---
@@ -561,23 +695,31 @@ image_link(url,url,width="200px")
 
 ???
 
-Les réseaux constituent un domaine de recherche à part entière. Les diagrammes de réseaux ne sont pas faciles à comprendre. Donnez beaucoup d'explications à votre public lorsque vous les présentez.
+Réseaux: Visualiser des relations entre des entités (noeuds et liens)
+
+Les réseaux constituent un domaine de recherche à part entière aussui. Les diagrammes de réseaux ne sont pas faciles à comprendre. Donc pensez a donnez beaucoup d'explications à votre public lorsque vous les présentez.
 Attention à l'encombrement et à l'absence de connexions faibles ?
 
-Chord: L'ordre des groupes autour du cercle est important, il est préférable de minimiser le nombre d'arcs qui se croisent.
+Chord graph: chaque entité est représentée par un arc, la taille de l'arc est proportionnelle à la valeur d'une variable. L'ordre des groupes autour du cercle est important, il est préférable de minimiser le nombre d'arcs qui se croisent.
 
-Il existe plusieurs types de graphs dirgams Ils peuvent être dirigés (flux) ou non dirigés (connexion). Les liens peuvent être mis en évidence ou non.
+**graph diagram**: la taille des noeuds et des arcs est proportionnelle à la valeur d'une variable. Il existe plusieurs types de graphs diagrams Ils peuvent être dirigés (flux) ou non-dirigés (connexion). Les liens peuvent être mis en évidence ou non.
 
-Sankey diagrams permet de visualiser les flux. 
+**Sankey diagrams** : plusieurs entités (nœuds) sont représentées par des rectangles, la relation entre ces entités est représentée par des liens proportionnels à une valeur, cela permet de visualiser les flux. 
 
 
-Arc : permet de mettre en évidence les clusters en 2D
+**arc diagram**: nœuds sont affichés le long d'un axe unique et les liens sont représentés par des arcs, cela  permet de mettre en évidence les clusters en 2D
 
 ---
 
 class: inverse center middle
 
 # Quiz #1
+
+<!-- comments -->
+
+???
+
+Ok pfiou, on a fait le tour du monde des graphiques. Maintenant, un petit quiz pour voir comment vous refléchissez à la visualisation de données.
 
 ---
 
@@ -586,7 +728,7 @@ class: inverse center middle
 
 - Quel type de graphique est le plus adapté pour visualiser la relation entre deux variables continues (e.g. taille et poids) ?
 --
- **Scatter plot**
+ **Scatter plot/ Diagramme de dispersion**
 --
 
 - Quel type de graphique est le plus adapté pour comparer visuellement la distribution de deux variables continues avec beaucoup de points (e.g. age d'une population par sexe) ?
@@ -599,14 +741,14 @@ class: inverse center middle
  **Correlogram **
 --
 
-- Quel type de graphique est le plus adapté pour visualiser l'évolution de la température moyenne en France au cours des 50 dernières années ?
+- Quel type de graphique est le plus adapté pour visualiser l'évolution de la température moyenne en Suisse au cours des 50 dernières années ?
 --
- **Line plot ou area plot**
+ **Line plot/ area plot**
 --
 
 - Quel type de graphique est le plus adapté pour visualiser la répartition des ventes de voitures par marque ?
 --
- **Bar plot**
+ **Bar plot/ lollipop plot**
 --
  / Et par marque et par année ?
 --
@@ -618,24 +760,20 @@ class: inverse center middle
  **Graph diagram**
 
  
+
+ 
 ---
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 class: inverse center middle
 
 # Implémentation: GGplot2 
+
+<!-- comments -->
+
+???
+
+On souffle un peu et on passe à l'implémention de ces graphiques en R avec ggplot2. pour l'instant on se concentre sur la syntaxe du coup pas besoin de coder de votre coté, on fera des exercices plus tard.
 
 ---
 
@@ -652,10 +790,7 @@ class: inverse center middle
 - Disponible sur R [ggplot2](https://ggplot2.tidyverse.org/) et Python [plotnine](https://plotnine.readthedocs.io/en/v0.12.3/)
 
 
-
 ]
-
-
 
 
 .pull-right-small[
@@ -671,8 +806,15 @@ image_link(url,url,width="270px")
 
 ???
 
-Imaginer React /Vue vs Vanilla JS
-les gens peuvent trouver ca "trop compliquer" mais c'est plus facile a utiliser et plus puissant
+- GGplot2 est une implémentation de la grammaire des graphiques en R, crée par Hadley Wickham. 
+
+- Vous fournissez les données, dites à ggplot2 comment faire correspondre les variables à l'esthétique, quelles graphiques utiliser, et il s'occupe des détails.
+
+- Disponible sur R et python (appellé) plotnine
+
+Imaginer React /Vue vs Vanilla JS. quelqu'un fais du web ? 
+
+Moi je suis pas trop web developper, mais j'ai du faire des site pour des amis/associations. Et j'ai evidemment commencé en vanilla JS et ca me suffisait pour faire des petits trucs simple.. Et apres mes potes devs mont dit de passer sur React ou Vue. Et au debut j'ai trouvé ca trop compliqué ca me rendais fou cest components partout. Mais apres avoir compris le truc, j'ai trouvé ca beaucoup plus simple, puissant et je peux reutiliser beaucoup de code partout sans avoir a me soucier des details.
 
 
 ---
@@ -706,11 +848,26 @@ image_link(url,url,width="370px")
 ]
 
 
+
+<!-- comments -->
+
+???
+
+Voyons voir la syntaxe de ggplot2. Elle se consiste de differents couches: Les data (les données à utiliser pour créer le graphique), les esthétiques (les caractéristiques visuelles du graphique), la géométrie (la forme qui représente les données), les échelles (comment les caractéristiques visuelles sont converties en valeurs d'affichage), les statistiques (transformations statistiques. Count, Moyennes, etc.), les coordonnées (système numérique pour déterminer la position de la géométrie. Cartésien, Polaire, etc.), les facettes (diviser les données en sous-ensembles), et le theme (personnalisation des éléments non liés aux données).
+
+On va maintenant passer en revue ces couches une par une.
+
 ---
 
 class: inverse center middle
 
 # Familiarisation
+
+<!-- comments -->
+
+???
+
+On va commencer par se familiariser avec ggplot2. On va voir comment créer un graphique simple, et comment ajouter des couches pour le personnaliser.
 
 ---
 
@@ -733,8 +890,11 @@ kable(df[1:100, ],format="html",escape = F, col.names = colnames(df)) %>%
 
 ???
 
+Voici un jeux de données que je vais utiliser pour illustrer mes propos. Il consiste en des données demographiques sur les taux de suicides dans différents pays entre 1995 et 2016. Je sais pas tres joyeux .. mais super indicatif pour ce qu'on va faire. (vous pouvez trouvez le jeux de données ainsi que tout le code de ce cours sur le repo de github, on vous passera le lien bientot (sinon si vous etes curieux vous pouvez allez a la derniere slide de cette presentation)
+
 
 ---
+
 ## Basic R VS GGplot2
 
 .pull-left[
@@ -772,12 +932,15 @@ ggplot(df, aes(x=population, y=suicides_no)) +
 
 <!--comments -->
 ???
-ils sont tous les deux des graphiques de dispersion, 
+
+Basique R vs ggplot2. On va commencer par faire un graphique simple avec les deux methodes.
+
+Ce sont tous les deux des graphiques de dispersion, 
 mais deja ggplot2 me parait plus facile a lire et a comprendre
 
 En quelque mots, le premier parametre est le dataframes, le deuxieme est aes qui est un objet qui contient les variables que l'on veut utiliser pour le graphique, ici x pour l'axe des abscisses et y pour l'axe des ordonnées,
 
-et le troisieme est la geometrie du graphique, ici un point
+et le troisieme est la geometrie du graphique, ici un graphique de point AKA dispertion
 
 ---
 
@@ -802,6 +965,9 @@ kable(df_wide[1:100, ],format="html",
 <!--comments  -->
 
 ???
+
+Comment colorer les points par sexe? traditionnellement, on utilisait le fromat wide des données pour les graphiques groupés voici a quoi ca ressemble, une colonne pour les femmes et une colonne pour les hommes
+
 
 ---
 ## Old school way
@@ -834,7 +1000,9 @@ points(df_wide$population_female, df_wide$suicides_no_female, col="red")
 
 <!--comments  -->
 ???
-Stupide et compliqué
+
+La maniere traditionelle de faire ca, c'est de faire un graphique avec les femmes, puis d'ajouter les hommes par dessus.
+Stupide et compliqué.. et pas du tout scalable si on a vraiment plein de groupes
 
 ---
 
@@ -880,9 +1048,12 @@ ggplot(df, aes(x=population, y=suicides_no, color=sex)) +
 
 <!--comments  -->
 ???
+
+miantenant on va faire la meme chose avec ggplot2, on va utiliser le format long (les data comme on les avait dans la premiere slide/ non modifié), une colonne = une variable/une information, c'est aussi ce qu'on appelle tidy data (qui veux dire données rangées).
+
 Deja la syntaxe est plus simple, on a pas besoin de specifier les variables a chaque fois, on peut les specifier une fois pour toute dans aes.
 
-On rajoute juste un nouveau mapping, ici "color" et bam tout le reste est fait pour nous
+On rajoute juste un nouveau mapping, ici "color" et bam tout le reste est fait pour nous! Pas sympa ca?
 
 ---
 
@@ -892,12 +1063,20 @@ class: inverse center middle
 
 Les rouages de ggplot2
 
+<!--comments  -->
+???
+
+Allons voir un peu plus en details comment ca marche
+
 ---
 
 ## Aesthetics
 
+Les aesthetics sont le **mapping des variables**, c'est ce qui permet de rajouter de **l'information/ des dimensions au graphique**, on peut en rajouter autant qu'on veut, mais il faut que ca reste lisible.
+
   -   **x** pour l'axe des abscisses
   -   **y** pour l'axe des ordonnées
+  -   **z** poour l'axe des profondeurs
   -   **color** pour la couleur (les bords)
   -   **size** pour la taille
   -   **shape** pour la forme
@@ -909,7 +1088,7 @@ Les rouages de ggplot2
 <!--comments-->
 
 ???
-- **aes** est un objet qui contient les variables que l'on veut utiliser pour le graphique
+- **aes** est un objet qui contient les variables que l'on veut utiliser pour le graphique, c'est qu'on pourrait comparer aux dimentions du graphiques. Par exemple x et y sont les dimentions principales, et color, size, shape, alpha, linetype, fill sont des dimentions secondaires qui permettent de rajouter de l'information au graphique en plus de trois dimentions de bases. Vous captez ?
 
 ---
 
@@ -940,9 +1119,10 @@ ggplot(df, aes(x=population, y=suicides_no, color=country)) +
 
 <!--comments  -->
 ???
-Super easy on rmeplace juste le color aestic par la variable country
 
-La maniere traditionnelle de faire des graphiques groupés aurait demandé de recodé le tout
+maintenant admettons qu'on veut colorer par pays, c'est aussi simple que de changer le mapping de color par country!
+
+La maniere traditionnelle de faire des graphiques groupés aurait demandé de recodé le tout (pas flexible)
 
 ---
 
@@ -972,7 +1152,9 @@ ggplot(df, aes(x=population, y=suicides_no, shape=country)) +
 
 <!--comments  -->
 ???
-Pff.. juste chnager color par shape !
+
+maintentant tu veux changer la forme par pays?
+Pff.. en un claquement de doigt, il faut juste changer color par shape et voila ! 
 
 ---
 
@@ -980,7 +1162,12 @@ class: inverse center middle
 
 # Geoms 
 
-Le plus utile
+Le lexique des graphiques
+
+<!--comments  -->
+???
+
+Maintenant que vous savez comment mapper des dimensions aux graphiques, on va voir les differents types de graphiques que l'on peut faire avec ggplot2
 
 ---
 
@@ -1007,9 +1194,11 @@ help.search("^geom_",package="ggplot2")
 <!--comments-->
 
 ???
-geom stands for geometric object 
+geom viens de geometric object si jamais 
 
-il y a des dizaines de geoms dans ggplot2, on va en voir quelques unes aujourd'hui
+- Les **geoms** sont les élements géometrics qui vont **reprensenter** les données
+
+il y a des dizaines de geoms dans ggplot2, on va en voir quelques uns aujourd'hui mais si vous voules une liste exhaustive, vous pouvez faire typer cette ligne de code sur R
 
 
 
@@ -1028,7 +1217,7 @@ image_link(url,url,width="1070px")
 
 On en a deja vu quelques unes, mais il y a en des centaines d'autres
 
-point histogram et density sont les plus courants
+point histogram et density sont les plus courants.. Est-ce que vous avez des questions sur certains de ceux la ?
 
 ---
 
@@ -1063,8 +1252,9 @@ geom_smooth(method="lm", formula=y~x) +
 
 <!--comments  -->
 ???
-
-on rajoute une courbe de tendance
+Maintenant on va voir comment faire une regression pour chaque pays
+on rajoute une courbe de tendance (geom smooth).
+Donc on voit qu'on peut rajouter des geoms a la suite, et que les geoms sont cumulatifs.
 
 
 ---
@@ -1105,11 +1295,10 @@ geom_smooth(method="lm", formula=y~x) +
 
 <!--comments  -->
 ???
-En enlevent le color de aes, on peut le mettre dans geom_point et ca va colorer/grouper les points par les payes mais pas la courbe de tendance. 
 
-Elle reste globale.
+Mais si on enlevent le color de aes, on peut le mettre dans la couche du geom_point et ca va colorer/grouper les points par pays mais pas la courbe de tendance. elle, Elle reste globale.
 
-Attention l'ordre compte.
+Attention l'ordre compte!
 
 ---
 
@@ -1160,12 +1349,11 @@ gridExtra::grid.arrange(x,y,nrow=2)
 <!--comments  -->
 ???
 
-
-L'analogie est celle des genes et de l'environnement. L'aes est les genes, les geoms sont l'environnement.
+L'analogie est celle des genes et de l'environnement. L'aes sont les genes, les geoms sont l'environnement.
 
 Dependant de l'environnement, les genes vont s'exprimer differement.
 
-Certain aes ne vont rien faire avec certain geoms. Par exemple, shape ne va rien faire avec geom_smooth et label ne va rien faire avec geom_point alors quil change tout avec geom_text!
+Certain aes ne vont rien faire avec certain geoms. Par exemple, shape ne va rien faire avec geom_smooth et label ne va rien faire avec geom_point alors quil change tout avec geom_text! On voit ici en bas que maintenant on a des labels (l'age des gens) sur les points.
 
 ---
 
@@ -1173,7 +1361,7 @@ class: inverse center middle
 
 # Stats
 
-Le coeur du data sciencist
+Le coeur du data scientist
 
 ---
 
@@ -1842,7 +2030,10 @@ plotly::ggplotly(p)
 <!-- comments -->
 ???
 
-- ggplotly() permet de transformer un graphique ggplot2 en graphique plotly
+On va pas s'attarder la dessus car cela n'est pas le but de ce cours, mais je voulais vous montrer que c'est possible et que c'est facile.
+- ggplotly() permet de transformer un graphique ggplot2 en graphique interactif
+
+Pourquoi ? Cela peut etre tres utile pour explorer les donnees, et pour presenter les donnees a un public non technique! vraiment underatted a mon avis
 
 ---
 
@@ -1857,11 +2048,11 @@ En bref
 ## Avantages de ggplot2
 
 <br><br>
-- Exploration agile des données : itération rapide
+- **Exploration agile des données** : itération rapide
 
-- L'aesthétique permet de superposer des hiérarchies de caractéristiques
+- L'aesthétique permet de **superposer des hiérarchies** de caractéristiques
 
-- Les géoms gèrent une grande partie des éléments complexes, ce qui réduit les risques d'erreur
+- Les géoms gèrent une grande partie des éléments complexes, ce qui **réduit les risques d'erreur**
 
 - Domine l'approche traditionnelle pour les ensembles de données riches
 
@@ -1869,10 +2060,54 @@ En bref
 <!-- comments -->
 ???
 
-ne nécessite que très peu de changements
+On arrive a la fin donc je voulais juste vous rappeler les avantages de la grammar of graphics.
+Permet l'Exploration agile des données : itération rapide, on peut facilement changer les variables, les graphiques, les couleurs, les themes, etc.
+
+Permetde Superposer des hiérarchies de caractéristiques: on peut superposer des variables, des facettes, des couleurs, des themes, etc.
+
+Les géoms gèrent une grande partie des éléments complexes, ce qui réduit les risques d'erreur: on a vu que les geoms permettent de faire des graphiques complexes sans avoir a se soucier de la logique derriere
+
+Finalement, ggplot2 domine l'approche traditionnelle pour les ensembles de données riches ET complexes
 
 ---
 
+
+
+class: inverse center middle
+
+# Ressources
+
+.pull-left[
+
+```{r ,  fig.align="center"}
+urlImage <- "https://r4ds.hadley.nz/cover.jpg"
+url <- "https://r4ds.hadley.nz/data-visualize.html"
+image_link(urlImage,url,width="270px")
+```
+]
+
+
+
+.pull-right[
+```{r ,  fig.align="center"}
+urlImage <- "https://m.media-amazon.com/images/I/51smGgbUUjL._SL1251_.jpg"
+url <- "http://www.ievbras.ru/ecostat/Kiril/R/Biblio_N/R_Eng/Wickham2016.pdf"
+image_link(urlImage,url,width="250px")
+
+```
+]
+
+Et plus intéractif par Ben Baumer: <a href="https://mdsr-book.github.io/mdsr2e/index.html">
+.white[`r icons::icon_style(icons::fontawesome("github"), fill = "white")` Modern Data Science with R]
+</a>
+
+<!--comments -->
+???
+- Hadley Wickham, le créateur de ggplot2, a écrit un livre sur la visualisation de données avec R, [R for Data Science](https://r4ds.had.co.nz/), qui est un excellent point de départ pour apprendre à utiliser ggplot2.
+
+Par contre je conseillerais specialement de checker le ebook de Ben Baumer, qui est plus interactif et plus moderne. En plus je suis un peu biaiser car c'etait mon prof de stats a Smith College, et c'est lui qui ma introduit a R et ggplot2.
+
+---
 
 ## Cheat sheet
 
@@ -1885,7 +2120,11 @@ image_link(urlImage,url,width="650px")
 
 ```
 
+<!-- Comments -->
 
+???
+
+Voici un cheat sheet pour ggplot2, qui resume les principales fonctions de ggplot2, juste cliquer dessus
 
 ---
 
@@ -1895,7 +2134,11 @@ image_link(urlImage,url,width="650px")
  <iframe src="https://munoztd0.shinyapps.io/Tuto_learnR_Data_Viz/" width="100%" height="500px" id="iframe1" marginheight="0" frameborder="0" onload='javascript:resizeIframe(this);'></iframe>
  
  
- 
+ <!-- Comments -->
+
+???
+
+Voici un lien vers une web R console, qui vous permet de tester ggplot2 en ligne, sans avoir a installer R sur votre ordinateur!
  
 ---
 class: inverse center middle
@@ -1960,5 +2203,14 @@ class: inverse center middle
 Slides created via the R packages:
 
 *xaringan* and *xaringanthemer*
+
+<!-- Comments -->
+
+???
+
+
+Si vous avez des questions, n'hesitez pas a me les poser maintenant ou nous contacter par mail, sur twitter, ou sur github!
+
+D'ailleurs ici vous avez le lien github du repo de cette presentation, et le lien vers notre chaine youtube, ou vous pouvez trouver des tutoriels sur R et sur d'autres sujets!
 
 
