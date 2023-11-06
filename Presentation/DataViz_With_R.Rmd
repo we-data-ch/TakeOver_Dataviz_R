@@ -66,6 +66,13 @@ image_link <- function(image,url,...){
 }
 ```
 
+.center[
+```{r out.width=900}
+knitr::include_graphics("img/wedata.png")
+```
+]
+
+---
 
 # Table des matières
 
