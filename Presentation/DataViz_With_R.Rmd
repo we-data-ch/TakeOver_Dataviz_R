@@ -118,30 +118,32 @@ image_link(url,urlLink, width = "900px")
 
 .pull-left[
 
-**Partie 1 (08:30 - 09:20)** *David*
-- Grammaire des graphiques et théorie
-- Quiz 1
-- Implémentation
-- Familiarisation
+**Partie 1a (08:30 - 09:20)** *David*
+- Grammaire des graphiques
+- Implémentation avec ggplot2
 
 **Pause (09:20 - 09:30)**
 
-**Partie 2 (09:30 - 10:20)** *Iván*
+**Partie 1b (09:30 - 09:50)** *Vestin*
+- Implémentation avec ggplot2 (suite)
+
+**Partie 2 (09:50 - 10:40)** *Iván*
 - Design de graphique (+exploration)
      - Labels / Texte
+     
 ]
 
 .pull-right[
-**Pause (10:20 - 10:30)**
+**Pause (10:40 - 10:50)**
 
-**Partie 3 (10:30 - 11:20)** *Vestin*
+**Partie 3 (10:50 - 11:40)** *Vestin*
 - Choix du graphique
 - Lire la documentation
 - Exercices - reproduire des graphiques
 
-**Pause (11:20 - 11:30)**
+**Pause (11:40 - 11:50)**
 
-**Partie 4 (11:30 - 12:00)** *Tous*
+**Partie 4 (11:50 - 12:00)** *Tous*
 - Conclusions
 - Ressource + Documentation
 - Interactivité
@@ -406,14 +408,11 @@ image_link(url,url,width="600px")
 
 Et les couleurs doivent être choisies avec soin pour qu'elles soient interprétables.
 
-Ne mettez pas trop de couleurs dans la palette de votre heatmap. Veillez à ce qu'elle soit simple et interprétable. Les échelles séquentielles utilisant plusieurs teintes sont utiles si les teintes sont étroitement liées les unes aux autres. Dans le cas contraire, la heatmap risque de ressembler à une mosaïque colorée qui semble attrayante au premier abord, mais qui laisse les lecteurs avec une douzaine de questions.
-
 S'il existe une valeur intermédiaire significative, utilisez des couleurs divergentes. Il peut s'agir de
 
 - zéro, par exemple la croissance économique positive et négative
 - 50 %, par exemple le vote entre deux choix
 - la moyenne ou la médiane, par exemple l'âge inférieur et supérieur à l'âge médian
-- un seuil convenu, par exemple des niveaux de revenus inférieurs et supérieurs au seuil de pauvreté
 - un objectif, par exemple des revenus inférieurs et supérieurs à l'objectif trimestriel
 
 
@@ -491,7 +490,6 @@ image_link(url,url,width="200px")
 
 Ranking : Comparer des valeurs numériques (unique ou moyenner) entre elles
 
-Barplot vs histogramme
 Barplot a ne pas confondre avec un histogramme. 
 
 Dans un barplot la distance entre les barres n'a pas de d'importance, alors que la distance entre les barres dans un histogramme est importante.
@@ -502,14 +500,12 @@ un autre petit truc:
 trier son barplot permet souvent de mieux comprendre la situation!
 
 
-Les lollipop plot sont souvent plus attrayants que les barplot, où la barre est transformée en une ligne et un point, ce qui est plus attrayant et transmet aussi bien l'information tout en étant moins encombré. je recommande.
-
 Le spider plot / radar est un type de graphique bidimensionnel conçu pour représenter une ou plusieurs séries de valeurs sur plusieurs variables quantitatives communes. Chaque variable possède son propre axe, tous les axes étant reliés au centre de la figure.
 
-Le spider chart est souvent critiqué dans la dataviz, et ce n'est probablement pas la meilleure façon de transmettre l'information. Vous pouvez souvent utiliser un graphique parralle ou un lollipop plot à la place qui permet de mieux comparé les valeurs.
+Le spider chart est souvent critiqué dans la dataviz, et ce n'est probablement pas la meilleure façon de transmettre l'information. Vous pouvez souvent utiliser un graphique parralle ou un bar plot à la place qui permet de mieux comparé les valeurs.
 
 Les wordcloud sont hype, mais ils déforment souvent la réalité et ne sont pas très effiace. Par exemple, les mots longs seront plus visibles etc..
-Utiliser plutôt un lolipop plot horizontal trier si vous avez peu de valeurs.
+Utiliser plutôt un bar  plot horizontal trier si vous avez peu de valeurs.
 
 Le graphique parallèle permet de visualiser plusieurs dimensions à la fois. Il est souvent préférable au graphique en araignée, car les valeurs sont plus faciles à comparer lorsqu'elles sont disposées le long d'un seul axe vertical ou horizontal. 
 
@@ -634,7 +630,7 @@ image_link(url,url,width="200px")
 - **carte**: projection de coordonnées géographiques sur une carte
 
 <br>
-- **chloropleth**:  chaque région est colorée en fonction de la valeur d'une variable
+- **choropleth**:  chaque région est colorée en fonction de la valeur d'une variable
 
 <br>
 - **hexbin map**: chaque région est remplie de petits hexagones, la couleur de l'hexagone indique la valeur d'une variable
@@ -651,10 +647,7 @@ image_link(url,url,width="200px")
 
 Les cartes sont un excellent moyen de visualiser des données géographiques. je ne vais pas m'attarder dessus car c'est un sujet à part entière. mais en bref:
 
-**carte choroplèthe** : chaque région est colorée en fonction de la valeur d'une variable, noubliez pas de Normalisez votre variable : vous ne pouvez pas comparer des chiffres bruts entre des régions de taille ou de population différentes.
-
-Si vos régions ont des tailles très diverses, cela introduit un biais.
-Ne l'appelez pas carte chloroplèthe, mais carte chOrOpleth je fais toujouts la faute.
+**carte choroplèthe** : chaque région est colorée en fonction de la valeur d'une variable,
 
 La **carte hexagonale** est une sorte de carte choroplèthe. Elle supprime le biais introduit par la taille différente des régions dans la carte choroplèthe, puisque chaque région est représentée par le même hexagone.
 
@@ -701,7 +694,7 @@ Attention à l'encombrement et à l'absence de connexions faibles ?
 
 Chord graph: chaque entité est représentée par un arc, la taille de l'arc est proportionnelle à la valeur d'une variable. L'ordre des groupes autour du cercle est important, il est préférable de minimiser le nombre d'arcs qui se croisent.
 
-**graph diagram**: la taille des noeuds et des arcs est proportionnelle à la valeur d'une variable. Il existe plusieurs types de graphs diagrams Ils peuvent être dirigés (flux) ou non-dirigés (connexion). Les liens peuvent être mis en évidence ou non.
+**graph**: la taille des noeuds et des arcs est proportionnelle à la valeur d'une variable. Il existe plusieurs types de graphs diagrams Ils peuvent être dirigés (flux) ou non-dirigés (connexion). Les liens peuvent être mis en évidence ou non.
 
 **Sankey diagrams** : plusieurs entités (nœuds) sont représentées par des rectangles, la relation entre ces entités est représentée par des liens proportionnels à une valeur, cela permet de visualiser les flux. 
 
@@ -747,7 +740,7 @@ Ok pfiou, on a fait le tour du monde des graphiques. Maintenant, un petit quiz p
 
 - Quel type de graphique est le plus adapté pour visualiser la répartition des ventes de voitures par marque ?
 --
- **Bar plot/ lollipop plot**
+ **Bar plot**
 --
  / Et par marque et par année ?
 --
@@ -889,7 +882,7 @@ kable(df[1:100, ],format="html",escape = F, col.names = colnames(df)) %>%
 
 ???
 
-Voici un jeux de données que je vais utiliser pour illustrer mes propos. Il consiste en des données demographiques sur les taux de suicides dans différents pays entre 1995 et 2016. Je sais pas tres joyeux .. mais super indicatif pour ce qu'on va faire. (vous pouvez trouvez le jeux de données ainsi que tout le code de ce cours sur le repo de github, on vous passera le lien bientot (sinon si vous etes curieux vous pouvez allez a la derniere slide de cette presentation)
+Voici un jeux de données que je vais utiliser pour illustrer mes propos. Il consiste en des données demographiques sur les taux de suicides dans différents pays entre 1995 et 2016. Je sais pas tres joyeux .. mais super indicatif pour ce qu'on va faire. (vous pouvez trouvez le jeux de données ainsi que tout le code de ce cours sur le repo de github
 
 
 ---
@@ -913,7 +906,8 @@ plot(df$population, df$suicides_no)
 
 .pull-right[
 ```{r , eval=FALSE, echo=TRUE}
-ggplot(data=df, mapping=aes(x=population, y=suicides_no)) + 
+ggplot(data=df, mapping=aes(x=population, 
+                            y=suicides_no)) + 
   geom_point() # ggplot2
 ```
 
@@ -1019,6 +1013,11 @@ kable(df[1:100, ],format="html",escape = F, col.names = colnames(df)) %>%
 ```
 
 
+<!--comments  -->
+???
+
+miantenant on va faire la meme chose avec ggplot2, on va utiliser le format long (les data comme on les avait dans la premiere slide/ non modifié), une colonne = une variable/une information, c'est aussi ce qu'on appelle tidy data (qui veux dire données rangées).
+
 ---
 
 ## Comment colorer les points par sexe?
@@ -1047,8 +1046,6 @@ ggplot(df, aes(x=population, y=suicides_no, color=sex)) +
 
 <!--comments  -->
 ???
-
-miantenant on va faire la meme chose avec ggplot2, on va utiliser le format long (les data comme on les avait dans la premiere slide/ non modifié), une colonne = une variable/une information, c'est aussi ce qu'on appelle tidy data (qui veux dire données rangées).
 
 Deja la syntaxe est plus simple, on a pas besoin de specifier les variables a chaque fois, on peut les specifier une fois pour toute dans aes.
 
@@ -1214,9 +1211,11 @@ image_link(url,url,width="1070px")
 
 <!-- comments -->
 
+???
+
 On en a deja vu quelques unes, mais il y a en des centaines d'autres
 
-point histogram et density sont les plus courants.. Est-ce que vous avez des questions sur certains de ceux la ?
+point histogram et density sont les plus courants..
 
 ---
 
@@ -1252,7 +1251,8 @@ geom_smooth(method="lm", formula=y~x) +
 <!--comments  -->
 ???
 Maintenant on va voir comment faire une regression pour chaque pays
-on rajoute une courbe de tendance (geom smooth).
+
+On rajoute just une courbe de tendance (geom smooth).
 Donc on voit qu'on peut rajouter des geoms a la suite, et que les geoms sont cumulatifs.
 
 
