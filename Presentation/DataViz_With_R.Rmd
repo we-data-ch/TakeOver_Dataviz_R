@@ -1,6 +1,6 @@
 ---
 title: "Introduction à la Visualisation de Données et à la Grammaire des Graphiques avec R"
-author: " <br/>David Munoz Tord, Vestin Hategekimana & Iván Lorenci De Francisco"
+author: " <br/>David Munoz Tord, Vestin Hategekimana, Iván Lorenci De Francisco"
 date: " <br/>  `r format(Sys.Date(), '%Y-%b-%d')`"
 output:
   xaringan::moon_reader:
@@ -67,6 +67,40 @@ image_link <- function(image,url,...){
 ```
 
 
+# Qui sommes-nous?
+
+<!-- add images square next to the name -->
+.pull-left[
+
+```{r ,  fig.show='hold'}
+url <- "https://wedata.ch/img/team/DMT_pic_square.png"
+image_link(url,url,width="100px")
+
+
+url <- "https://wedata.ch/img/team/vestin.webp"
+image_link(url,url,width="100px")
+
+
+url <- "https://wedata.ch/img/team/vestin.webp"
+image_link(url,url,width="100px")
+
+```
+
+
+]
+
+.pull-right[
+
+- David Munoz Tord: Data Scientist chez WeData
+- Vestin Hategekimana: Data Scientist chez WeData
+- Iván Lorenci De Francisco: Data Scientist chez WeData
+
+]
+
+
+
+---
+
 # Table des matières
 
 
@@ -130,8 +164,7 @@ class: inverse center middle
 ```{r ,  fig.align="center"}
 urlImage <- "https://r4ds.hadley.nz/cover.jpg"
 url <- "https://r4ds.hadley.nz/data-visualize.html"
-image_link(urlImage,url,width="300px")
-
+image_link(urlImage,url,width="270px")
 ```
 ]
 
@@ -141,17 +174,20 @@ image_link(urlImage,url,width="300px")
 ```{r ,  fig.align="center"}
 urlImage <- "https://m.media-amazon.com/images/I/51smGgbUUjL._SL1251_.jpg"
 url <- "http://www.ievbras.ru/ecostat/Kiril/R/Biblio_N/R_Eng/Wickham2016.pdf"
-image_link(urlImage,url,width="270px")
+image_link(urlImage,url,width="250px")
 
 ```
 ]
 
+Et plus intéractif par Ben Baumer: <a href="https://mdsr-book.github.io/mdsr2e/index.html">
+.white[`r icons::icon_style(icons::fontawesome("github"), fill = "white")` Modern Data Science with R]
+</a>
 
 <!--comments -->
 ???
 - Hadley Wickham, le créateur de ggplot2, a écrit un livre sur la visualisation de données avec R, [R for Data Science](https://r4ds.had.co.nz/), qui est un excellent point de départ pour apprendre à utiliser ggplot2.
 
-
+Par contre je conseillerais specialement de checker le ebook de Ben Baumer, qui est plus interactif et plus moderne. En plus je suis un peu biaiser car c'etait mon prof de stats a Smith College, et c'est lui qui ma introduit a R et ggplot2.
 
 
 ---
