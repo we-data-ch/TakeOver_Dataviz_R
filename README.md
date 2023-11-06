@@ -2,37 +2,29 @@
 Unige take over Workshop Dataviz with R
 
 ## Plan
-**Partie 1 (08:30 - 09:15)** *David*
-- Introduction
-- Grammaire des graphiques
-- Dataviz: théorie
+
+**Partie 1 (08:30 - 09:20)** *David*
+- Grammaire des graphiques et théorie
 - Quiz 1
-- Implémentaion
+- Implémentation
 - Familiarisation
-- Aesthetic
-- Geoms
-- Stats
-- Scales
-- Position
-- Facet
-- Tout ensemble
 
-**Pause (09:15 - 09:30)**
+**Pause (09:20 - 09:30)**
 
-**Partie 2 (09:30 - 10:15)** *Vestin*
+**Partie 2 (09:30 - 10:20)** *Iván*
+- Design de graphique (+exploration)
+     - Labels / Texte
+
+**Pause (10:20 - 10:30)**
+
+**Partie 3 (10:30 - 11:20)** *Vestin*
 - Choix du graphique
 - Lire la documentation
 - Exercices - reproduire des graphiques
 
-**Pause (10:15 - 10:30)**
+**Pause (11:20 - 11:30)**
 
-**Partie 3 (10:30 - 11:15)** *Iván*
-- Design de graphique (+exploration)
-     - Labels / Texte
-- 
-
-**Pause (11:15 - 11:30)**
-
-**Partie 4 (11:30 - 12:30)** *Tous*
+**Partie 4 (11:30 - 12:00)** *Tous*
+- Conclusions
 - Ressource + Documentation
 - Interactivité
